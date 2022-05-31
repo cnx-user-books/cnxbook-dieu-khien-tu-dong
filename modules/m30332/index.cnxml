@@ -1,0 +1,421 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Các hệ tuyến tính</title>
+  <metadata>
+  <md:content-id>m30332</md:content-id><md:title>Các hệ tuyến tính</md:title>
+  <md:abstract>+ ĐẠI CƯƠNG.
++ HÀM HỆ THỐNG.
++ HÀM CHUYỂN PHỨC: (COMPLEX TRANSFER FUNTION).
++ CÁC MẠCH LỌC.
++ CÁC LỌC THỰC TẾ.
++ CÁC LỌC TÁC ĐỘNG.
++ TÍCH CỦA THỜI GIAN VÀ KHỔ BĂNG.
++ CÔNG SUẤT VÀ NĂNG LƯỢNG.
++ PHÂN TÍCH PHỔ.</md:abstract>
+  <md:uuid>21f2ba1e-854a-41c3-a1f3-b7ab279a0818</md:uuid>
+</metadata>
+
+<content>
+    <para id="id6225807">ĐẠI CƯƠNG: </para>
+    <para id="id6225811">Một hệ thống là một tập hợp những định luật liên kết một hàm thời gian ở ngỏ ra với mỗi hàm thời gian ơ ngỏ vào.</para>
+    <para id="id6225821">Sơ đồ khối biểu diễn một hệ thống vẽ ở hình 3. 1.</para>
+    <para id="id6225827">r(t)s(t)</para>
+    <para id="id5583745">Hình 3.1</para>
+    <para id="id5583750">- Input hay nguồn tin r(t).</para>
+    <para id="id5583755">- Output hay đáp ứng của nguồn tin s(t).</para>
+    <para id="id5583761">Cấu trúc vật lý thực tế của hệ xác định hệ thức chính xác giữa r(t) và s(t). Sự liên hệ giữa Input và Ouput được dùng ký hiệu là mũi tên một chiều.</para>
+    <figure id="id5539058">
+      <media id="id1167144568901" alt=""><image src="graphics1.wmf" mime-type="image/wmf" height="22" width="76"/></media>
+    </figure>
+    <para id="id5539082">Nếu hệ là một mạch điện, r(t) có thể là điện thế hoặc dòng điện và s(t) có thể là điện thế hoặc dòng điện được đo bất kỳ nơi đâu trong mạch.</para>
+    <list id="id5539092" list-type="enumerated">
+      <item>Một hệ được nói là Chồng chất ( Superposition ) nếu đáp ứng do tổng các tín hiệu vào là tổng của các đáp ứng riêng tương ứng. Nghĩa là, nếu s1(t) là đáp ứng của r1(t) và s2(t) là đáp ứng của r2(t) thì đáp ứng của r1(t) + r2(t) là s1(t) + s2(t).</item>
+    </list>
+    <para id="id6226984">Nếu<figure id="id6226994"><media id="id1167144759550" alt=""><image src="graphics2.wmf" mime-type="image/wmf" height="24" width="86"/></media></figure></para>
+    <figure id="id5900531">
+      <media id="id1167144740593" alt=""><image src="graphics3.wmf" mime-type="image/wmf" height="24" width="89"/></media>
+    </figure>
+    <para id="id5900555">Thì:  <figure id="id5902761"><media id="id1167145749679" alt=""><image src="graphics4.wmf" mime-type="image/wmf" height="24" width="176"/></media></figure> (3.1)</para>
+    <para id="id5902793">Một khái niệm liên quan đến tính chồng chất là sự tuyến tính. Giả sử r1(t)  s1(t) và r2(t)  s2(t). Hệ thống được nói là tuyến tính nếu hệ thức sau đây được giữ đúng với mọi trị giá của các hằng a và b:</para>
+    <para id="id5757291"><figure id="id5757296"><media id="id1167140027980" alt=""><image src="graphics5.wmf" mime-type="image/wmf" height="24" width="221"/></media></figure>(3.2)</para>
+    <para id="id5757322">Một hệ thống được nói là “ Không đổi theo thời gian “ ( Time invariant ) nếu đáp ứng của một tín hiệu vào không phụ thuộc vào thời điểm mà tín hiệu đó tác động lên hệ.</para>
+    <para id="id5759996">Một thời trễ ( Time shift ) trong tín hiệu vào sẽ gây ra một thời trễ bằng như vậy trong đáp ứng của nó : </para>
+    <para id="id5760004">Nếu <figure id="id5760011"><media id="id1167147195413" alt=""><image src="graphics6.wmf" mime-type="image/wmf" height="22" width="76"/></media></figure></para>
+    <para id="id5548759">Thì <figure id="id5548774"><media id="id1167140053357" alt=""><image src="graphics7.wmf" mime-type="image/wmf" height="25" width="132"/></media></figure>,với mọi t0 thực.</para>
+    <para id="id5754174">Một điều kiện đủ cho một mạch điện không đổi theo thời gian là các thành phần của nó có trị giá không đổi với thời gian ( giả sử các điều kiện đầu không đổi ). Đó là điện trở, tụ và cuộn cảm.</para>
+    <section id="id-742911569006">
+      <title>Hàm hệ thống</title>
+      <para id="id5754195">Để đặc trưng hóa một hệ thống tuyến tính không đổi theo thời gian, ta có thể dùng một phương pháp rất đơn giản. Thay vì cấn biết đáp ứng của mỗi tín hiệu vào, ta chỉ cần biết đáp ứng của một tín hiệu thử (test input) mà thôi. Tín hiệu thử là xung lực. Xem phép chồng:</para>
+      <para id="id6188694">r(t) = r(t) x  (t) </para>
+      <para id="id6188711"> = <media id="id1167143746431" alt=""><image src="graphics8.wmf" mime-type="image/wmf" height="39" width="124"/></media>(3.3)</para>
+      <para id="id5900454">Ta xem tích phân là trường hợp giới hạn của một tổng:</para>
+      <para id="id5900460"><figure id="id5900467"><media id="id1167147023182" alt=""><image src="graphics9.wmf" mime-type="image/wmf" height="47" width="222"/></media></figure>(3.4)</para>
+      <para id="id5569585">Phương trình (3.4) biểu diễn tổng trọng lượng của xung lực bị trễ. Như vậy, tín hiệu ra là một tổng các đáp ứng ra bị trễ của một xung lực duy nhất.</para>
+      <para id="id5569596">Giả sử, ta biết đáp ứng ra của mạch do một xung lực duy nhất gây ra và ký hiệu đó là h(t) (đáp ứng xung lực).</para>
+      <para id="id5569605">Vậy đáp ứng do tín hiệu vào của phương trình (3.4) là:</para>
+      <para id="id5569612"><figure id="id6127117"><media id="id1167143344359" alt=""><image src="graphics10.wmf" mime-type="image/wmf" height="47" width="224"/></media></figure> (3.5)</para>
+      <para id="id6127144">Nếu lấy giới hạn, nó trở thành tích phân:</para>
+      <figure id="id6127153">
+        <media id="id1167144760272" alt=""><image src="graphics11.wmf" mime-type="image/wmf" height="39" width="158"/></media>
+      </figure>
+      <para id="id5887100">s(t) = r(t) x h(t)(3.6) </para>
+      <para id="id5900360">Phương trình (3.6) chứng tỏ rằng đáp ứng của bất kỳ tín hiệu vào nào cũng có thể tìm được bằng cách chồng nó với đáp ứng xung lực của hệ thống.</para>
+      <para id="id5900370">Ảnh Fourier của xung lực là 1. Vậy một cách trực giác, ta thấy (t) chứa tất cả mọi tần số. Vì thế xung lực thường được xem như là một tín hiệu thử (Test Signal) cho hệ thống. Cho một xung lực ở ngỏ vào hệ thống, ngỏ ra ta có đáp ứng h(t). Căn cứ trên h(t), ta có thể xác định được những đặt trưng của hệ.</para>
+      <para id="id5900392">(t)h(t)</para>
+      <para id="id5220259">Hình 3.2: Đáp ứng xung lực</para>
+      <para id="id5220264">Ta không thể tạo được một xung lực lý tưởng trong thực tế mà chỉ có thể xem nó xấp xỉ với một xung có biên độ thật lớn và rất hẹp.</para>
+      <para id="id5220275">Lấy biến đổi F phương trình (3.6) :</para>
+      <para id="id5220287">S(f) = R(f) H(f) (3.7)</para>
+      <para id="id5220302"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>H</m:mi><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">=</m:mo><m:mfrac><m:mrow><m:mi>S</m:mi><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:mi>R</m:mi><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H \( f \) = {  {S \( f \) }  over  {R \( f \) } } } {}</m:annotation></m:semantics></m:math>Hoặc(3.8) </para>
+      <para id="id5567807">H(f) là hàm chuyển hoặc hàm hệ thống.</para>
+    </section>
+    <section id="id-975381345093">
+      <title>HÀM CHUYỂN PHỨC: (complex transfer funtion)</title>
+      <para id="id5836777">Hàm chuyển phức của một hệ là tỉ số phasor ở ngỏ ra và phasor ở ngỏ vào. Phasor là một số phức biểu diễn biên độ và pha của hàm sin. Tỉ số các phasor là một hàm phức của tần số. Trong trường hợp đặt biệt, ngõ vào là dòng điện và ngõ ra là điện thế, thì hàm chuyển phức là một tổng trở phức (complex impedance).</para>
+      <para id="id5836791">Td: Xem Hình 3.3. Trong đó, i1 (t) là ngõ vào và v(t) là ngõ ra.</para>
+      <figure id="id5836812">
+        <media id="id1167148389400" alt=""><image src="../../media/graphics12-1dc4.png" mime-type="image/png" height="138" width="278"/></media>
+      </figure>
+      <para id="id6189410">Hình 3.3</para>
+      <para id="id6189415">Hàm chuyển cho bởi:</para>
+      <para id="id6189420"><media id="id1167144986499" alt=""><image src="graphics13.wmf" mime-type="image/wmf" height="46" width="107"/></media>(3.9)</para>
+      <para id="id5553451">Nếu i2 (t) là Output, hàm chuyển là :</para>
+      <para id="id5553463"><media id="id1167144974207" alt=""><image src="graphics14.wmf" mime-type="image/wmf" height="46" width="107"/></media>(3.10)</para>
+      <para id="id5858750">Ta đã dùng cùng ký hiệu H(f) để chỉ hàm chuyển phức của hệ và đó cũng chính là ảnh Fourier của đáp ứng xung lực.</para>
+      <para id="id5858760">H(f)=F[h(t)]</para>
+    </section>
+    <section id="id-303293050172">
+      <title>Các mạch lọc:</title>
+      <para id="id5858786">Các mạch lọc dùng để làm giảm thành phần tần số không mong muốn khỏi một sóng.</para>
+      <para id="id5858794">Nhiều hệ thống thông tin có chứa các mạch lọc lý tưởng không làm méo tín hiệu.</para>
+      <para id="id5567832">Một tín hiệu bị méo (distorted) khi dạng sóng cơ bản của nó bị biến dạng - Lưu ý là r(t) có thể được nhân bởi một hằng và bị dời (thời gian) mà không làm thay đổi dạng sóng cơ bản, trường hợp này không xem là tín hiệu bị méo.</para>
+      <para id="id5567846">Xem A.r (t - t0) là một phiên bản của r(t)  - Trong đó A và t0 là những hằng thực bất kỳ. A không thể bằng zero.</para>
+      <para id="id5567867">F  Ar (t - t0)  Ae- j2f to R(f)(3.11)</para>
+      <para id="id5755375">Ta xem đó như là Output của một hệ tuyến tính với input là r(t) và hàm hệ thống</para>
+      <para id="id5757026">H(f) = Ae- j2f to(3.12) </para>
+      <para id="id5757063">H(f) là hàm phức, được vẽ ở Hình 3.4 (xuất và pha).</para>
+      <figure id="id5279617">
+        <media id="id1167144705751" alt=""><image src="../../media/graphics15-ceef.png" mime-type="image/png" height="235" width="434"/></media>
+      </figure>
+      <para id="id5279645">Hình 3.4: Những đặc tính của một hệ không méo.</para>
+      <section id="id-950420796966">
+        <title>Lọc hạ thông lý tưởng.</title>
+        <para id="id5279659">Một lọc hạ thông lý tưởng là một hệ tuyến tính, tác động giống như một lọc lý tưởng không méo. Những thành phần tần số lớn hơn tần số cắt của lọc đều bị chặn, không xuất hiện ở ngỏ ra. Tần số cắt là tần số cao nhất được đi qua mạch lọc, Ký hiệu là fm.</para>
+        <para id="id5284703">Hàm hệ thống là:</para>
+        <figure id="id5284711">
+          <media id="id1167144558845" alt=""><image src="graphics16.wmf" mime-type="image/wmf" height="58" width="168"/></media>
+        </figure>
+        <para id="id5284735">Hàm chuyển của mạch hạ thông lý tưởng được vẽ ở Hình 3.5. Nhớ là, vì h(t) thì thực, nên suất của H(f) thì chẳn và pha thì lẻ. (Hình 3.4)</para>
+        <para id="id6277653"><figure id="id5789382"><media id="id1167142837116" alt=""><image src=".wmf" mime-type="image/wmf" height="28" width="42"/></media></figure>Afm-fm-fmfm<figure id="id6309273"><media id="id1167145877629" alt=""><image src=".wmf" mime-type="image/wmf" height="28" width="60"/></media></figure>Hình 3.5: Đặc tính của lọc hạ thông lý tưởng.</para>
+        <para id="id6257285">Đáp ứng xung` lực của lọc hạ thông lý tưỏng có được bằng cách tính biến đổi F ngược.</para>
+        <para id="id6257297"><media id="id1167148033999" alt=""><image src="graphics17.wmf" mime-type="image/wmf" height="50" width="190"/></media>(3.13)</para>
+        <para id="id6186807">
+          <media id="id1167143418350" alt=""><image src="graphics18.wmf" mime-type="image/wmf" height="49" width="129"/></media>
+        </para>
+        <para id="id6263431">fm<figure id="id6263461"><media id="id1167142877817" alt=""><image src="graphics19.png" mime-type="image/png" height="148" width="339"/></media></figure></para>
+        <para id="id5692129">Hình 3.6: Đáp ứng xung lực của hạ thông lý tưởng. </para>
+      </section>
+      <section id="id-556957538875">
+        <title>Lọc dãy thông lý tưởng:</title>
+        <para id="id5692144">Lọc dãy thông lý tưởng cho qua những tần số giữa hai tần số khác không, fL và fH. Nó tác động như một hệ không méo lý tưởng, tín hiệu ra không chứa những thành phần tần số nằm ngoài dãy thông lọc. Hàm hệ thống của nó:</para>
+        <para id="id5692168"><media id="id1167147105191" alt=""><image src="graphics20.wmf" mime-type="image/wmf" height="56" width="196"/></media>(3.14)</para>
+        <figure id="id6327857">
+          <media id="id1167140086804" alt=""><image src="../../media/graphics21-205f.png" mime-type="image/png" height="200" width="441"/></media>
+        </figure>
+        <para id="id6280102">Hình 3.7: Hàm hệ thống của lọc dãy thông lý tưởng.</para>
+        <para id="id6280109"><figure id="id6280119"><media id="id1167146789214" alt=""><image src=".png" mime-type="image/png" height="170" width="410"/></media></figure>fH fL-fH -fL<figure id="id6307684"><media id="id1167146128240" alt=""><image src=".wmf" mime-type="image/wmf" height="44" width="53"/></media></figure><figure id="id6307708"><media id="id1167143403092" alt=""><image src=".wmf" mime-type="image/wmf" height="44" width="54"/></media></figure>Đáp ứng xung lực của lọc, có thể tính bằng càch F -1 của H(f). (Khai triển từ đáp ứng xung lực của lọc hạ thông và dùng định lý dời tần). Hàm hệ thống có thể viết :</para>
+        <para id="id5761888"><media id="id1167144921536" alt=""><image src="graphics22.wmf" mime-type="image/wmf" height="47" width="296"/></media>(3.15)</para>
+        <para id="id5761920">Hình 3.8: Đặc tính của lọc dãy và hạ thông.</para>
+        <para id="id5761926">Nếu ta định nghĩa điểm giữa (midpoint) của dãy thông (trung bình của fL và fH) là fav : </para>
+        <figure id="id6029670">
+          <media id="id1167147011151" alt=""><image src="graphics23.wmf" mime-type="image/wmf" height="43" width="88"/></media>
+        </figure>
+        <para id="id6029693">Đáp ứng xung lực cho bởi:</para>
+        <para id="id6029698">h(t) = hLP(t)ej2favt + hLP(t) e-j2favt </para>
+        <para id="id5858835">= 2hLP(t)cos2favt= 2hLP(t)cos[ (fL + fH)t ](3.16)</para>
+        <para id="id5858883">Từ pt (3.13) ta có :</para>
+        <para id="id5756589"><media id="id1167140229279" alt=""><image src="graphics24.wmf" mime-type="image/wmf" height="43" width="168"/></media> (3.17)</para>
+        <para id="id5756622">Kết hợp (3.16) và (3.17) thêm vào tính chất dời thời gian, ta tìm được đáp ứng xung lực của dãy thông lý tưởng:</para>
+        <para id="id5756631"><media id="id1167143345686" alt=""><image src="graphics25.wmf" mime-type="image/wmf" height="47" width="347"/></media>(3.18)</para>
+        <figure id="id6227895">
+          <media id="id1167144528204" alt=""><image src="graphics26.png" mime-type="image/png" height="229" width="603"/></media>
+        </figure>
+        <para id="id6227919">Hình 3.9: Đáp ứng của lọc dãy thông lý tưởng</para>
+        <para id="id6227925">Dạng sóng của đáp ứng xung lực tương tự như của lọc hạ thông. Khi 2 tần số giới hạn trở nên lớn so với hiệu số giữa chúng, đáp ứng xung lực giống đường chấm chấm (đáp ứng xung lực của lọc hạ thông và ảnh qua gương của nó ). Điều đó xảy ra khi tần số của dãy lọc lớn hơn so với bề rộng của dãy thông. Nhận xét này có ý nghĩa khi ta khảo sát về sự biến điệu AM.</para>
+      </section>
+      <section id="id-252226100978">
+        <title>Sự méo dạng:</title>
+        <para id="id5281821">Méo tuyến tính có thể gây ra những vấn đề trong các hệ thống truyền xung hoặc trong thông tin số. Sự méo này được đặc trưng bởi thời gian lan tỏa (spreading) do hiệu ứng nhiều đường hoặc do đặc tính của kênh.</para>
+        <para id="id5281834">H(f) = A(f)e-j(f) (3.19)</para>
+        <para id="id5281858">A(f): Thừa số biên độ ; (f): Thừa số pha.</para>
+        <para id="id5239312">Sự méo dạng sinh ra từ hai thừa số phụ thuộc tần số ở phương trình (3.19). Nếu A(f) không là hằng, ta có sự méo biên độ. Nếu (f) không tuyến tính với f, ta có sự méo pha.</para>
+        <list id="id5239329" list-type="bulleted">
+          <item>Méo biên độ.</item>
+        </list>
+        <para id="id5239336">Trước hết Giả sử (f) tuyến tính với f.</para>
+        <para id="id5239348">Hàm chuyển có dạng:</para>
+        <para id="id5239353">H(f) = A(f)e-j2fto (3.20)</para>
+        <para id="id5612341">Trong đó hằng số tỉ lệ của pha là t0 , vì nó biểu diễn cho thời trễ của kênh.</para>
+        <para id="id5612354">Một cách tổng quát để phân tích biểu thức này với sự biến thiên của biên độ là khai triển A(f) thành chuổi Fonrier.</para>
+        <para id="id5612364"><media id="id1167143290444" alt=""><image src="graphics27.wmf" mime-type="image/wmf" height="51" width="113"/></media>(3.21)</para>
+        <para id="id5630977">Các hạng của tổng có dạng</para>
+        <para id="id5630982"><media id="id1167153520135" alt=""><image src="graphics28.wmf" mime-type="image/wmf" height="53" width="189"/></media>(3.22)</para>
+        <para id="id5631018">Chúng ta có thể liên kết với lọc Cosine, mà đặc tuyến biên độ cho sóng Cosine trong dãy thông như hình 3.10 (với n = 2).</para>
+        <figure id="id5364859">
+          <media id="id1167143428284" alt=""><image src="graphics29.png" mime-type="image/png" height="166" width="292"/></media>
+        </figure>
+        <para id="id5364883">Hình 3.10: Lọc cosine</para>
+        <para id="id5364888">Hàm hệ thống của lọc này là:</para>
+        <figure id="id5364897">
+          <media id="id1167144505856" alt=""><image src="graphics30.wmf" mime-type="image/wmf" height="53" width="200"/></media>
+        </figure>
+        <para id="id5752979">
+          <media id="id1167144539145" alt=""><image src="graphics31.wmf" mime-type="image/wmf" height="58" width="410"/></media>
+        </para>
+        <para id="id5753010">Nếu input là r(t) vào lọc cosine bị giới hạn bởi băng tần thì Output là:</para>
+        <para id="id5753018"><media id="id1167153475609" alt=""><image src="graphics32.wmf" mime-type="image/wmf" height="53" width="347"/></media>(3.23)</para>
+        <para id="id6061736">Phương trình (3.23) cho thấy đáp ứng có dạng của một phiên bản không méo của input cộng thêm 2 phiên bản bị dời thời gian (time - shifted) ( tiếng vang / đa lộ ) echoes/multipaths.</para>
+        <para id="id6061753">Trở lại trường hợp lọc tổng quát, ta thấy Output của một hệ với sự méo biên độ là một tổng các input bị trễ.</para>
+        <para id="id6061762">Vậy với:</para>
+        <para id="id6061767"><media id="id1167140098345" alt=""><image src="graphics33.wmf" mime-type="image/wmf" height="53" width="203"/></media>(3.24)</para>
+        <para id="id5633123">Thì Output do một input r(t) là :</para>
+        <para id="id5633128"><media id="id1167144965309" alt=""><image src="graphics34.wmf" mime-type="image/wmf" height="56" width="321"/></media>(3.25)</para>
+        <para id="id5633164">Thí dụ:</para>
+        <para id="id5633168">Xem lọc có đặc tính tam giác như Hình 3.11. Giả sử pha thì tuyến tính, với độ dốc -2t0. Tìm Output của mạch này khi input là <media id="id1167153454865" alt=""><image src="graphics35.wmf" mime-type="image/wmf" height="43" width="111"/></media></para>
+        <figure id="id5933904">
+          <media id="id1167150264700" alt=""><image src="graphics36.png" mime-type="image/png" height="170" width="285"/></media>
+        </figure>
+        <para id="id5933928">Hình 3.11</para>
+        <para id="id5840274">Giải : </para>
+        <para id="id5840279">Khai triển H(f) thành chuổi F</para>
+        <para id="id5840288">
+          <media id="id1167155098132" alt=""><image src="graphics37.wmf" mime-type="image/wmf" height="43" width="419"/></media>
+        </para>
+        <para id="id5840321">r(t) bị giới hạn trong khoảng sao cho tất cả tần số đều qua mạch lọc. Điều này đúng vì R(f) = 0 tại các tần số trên 200/2 và mạch lọc cắt tại f = 1000/. Nếu ta giữ 3 số hạng khác không đầu tiên thì Output sẽ là:s(t) = r(t) * h(t).</para>
+        <figure id="id5568085">
+          <media id="id1167140095889" alt=""><image src="graphics38.wmf" mime-type="image/wmf" height="50" width="383"/></media>
+        </figure>
+        <figure id="id5568112">
+          <media id="id1167148299448" alt=""><image src="graphics39.wmf" mime-type="image/wmf" height="50" width="297"/></media>
+        </figure>
+        <para id="id5568136">Kết quả này được vẽ như hình 3.12 với to = 0,05 sec.</para>
+        <para id="id5760614">Những đỉnh đánh dấu X là những đỉnh không méo của s(t).</para>
+        <para id="id5760621"><figure id="id5760631"><media id="id1167144919035" alt=""><image src=".png" mime-type="image/png" height="284" width="552"/></media></figure>Hình 3.12</para>
+        <list id="id5760671" list-type="bulleted">
+          <item>Méo pha :</item>
+        </list>
+        <para id="id5760680">Sự thay đổi pha từ trường hợp không méo (pha tuyến tính) có thể được đặc trưng bằng sự thay đổi độ dốc của đặc tuyến pha và đặc tuyến của một đường từ gốc đến một điểm trên đường cong đặc tuyến.</para>
+        <para id="id5284056">Ta định nghĩa Trễ nhóm (Group delay hay trễ bao hình) và trễ pha (Phase delay) như sau:</para>
+        <para id="id5284075">tgr (f) <media id="id1167146133125" alt=""><image src="graphics40.png" mime-type="image/png" height="18" width="12"/></media><media id="id1167144651336" alt=""><image src="graphics41.wmf" mime-type="image/wmf" height="43" width="44"/></media></para>
+        <para id="id5541049">tph (f) <media id="id1167144901204" alt=""><image src="graphics42.png" mime-type="image/png" height="18" width="12"/></media><media id="id1167143538482" alt=""><image src="graphics43.wmf" mime-type="image/wmf" height="43" width="33"/></media>(3.26)</para>
+        <figure id="id5933112">
+          <media id="id1167143360801" alt=""><image src="graphics44.png" mime-type="image/png" height="171" width="336"/></media>
+        </figure>
+        <para id="id5933136">Hình 3.13 : Trễ nhóm và trễ pha.</para>
+        <para id="id5933141">* Đối với một kênh Không méo lý tưởng, đặc tuyến pha là một đường thẳng. Vậy trễ nhóm và trễ pha đều không đổi với mọi f. Thật vậy, cả hai sẽ bằng với thời trễ t0 của tín hiệu vào.</para>
+      </section>
+    </section>
+    <section id="id-196511111731">
+      <title>Các lọc thực tế:</title>
+      <para id="id6306550">Bây giờ ta trình bày những mạch thực tế, xấp xỉ với các lọc dãy thông và hạ thông lý tưởng. Giả sử rằng H(f) tiến đến hàm hệ thống của một lọc lý tưởng - Một sự thay đổi nhỏ của H(f) có thể đưa đến một sự thay đổi tương đối lớn của H(t). Ta có thể khảo sát những hậu quả của sự thay đổi từ tính chất biên độ không đổi hoặc từ tính chất tuyến tính của pha của hàm hệ thống của lọc lý tưởng.</para>
+      <section id="id-379155289679">
+        <title>Lọc hạ thông:</title>
+        <para id="id6306571">Mạch thụ động đơn giản nhất xấp xỉ với một lọc hạ thông là mạch chỉ chứa một thành phần tích trữ năng lượng. Thí dụ mạch RC như Hình 3.13 . Điều này đúng, vì khi tần số tăng, tụ xem như bị nối tắt.</para>
+        <para id="id6306587"><figure id="id6306598"><media id="id1167142903959" alt=""><image src=".png" mime-type="image/png" height="130" width="255"/></media></figure>i(t)Hình 3.13: Lọc hạ thông RC </para>
+        <para id="id5901965"/>
+        <para id="id5901969">Hàm chuyển:</para>
+        <para id="id5901974"><media id="id1167147041095" alt=""><image src="graphics45.wmf" mime-type="image/wmf" height="46" width="244"/></media>(3.27)</para>
+        <para id="id5859313">Suất và pha: </para>
+        <para id="id5859318">
+          <media id="id1167144968704" alt=""><image src="graphics46.wmf" mime-type="image/wmf" height="51" width="157"/></media>
+        </para>
+        <para id="id5612546"> (f) = - tan-1 (2fRC)</para>
+        <para id="id5612569"><media id="id1167146149301" alt=""><image src="graphics47.wmf" mime-type="image/wmf" height="49" width="15"/></media>Nếu đặt RC =<media id="id1167140071086" alt=""><image src="graphics48.wmf" mime-type="image/wmf" height="43" width="26"/></media>, suất của hàm chuyển giảm đến <media id="id1167144974171" alt=""><image src="graphics49.wmf" mime-type="image/wmf" height="46" width="29"/></media> tại tần số 1 Hz. Ta gọi đó là tần số cắt 3 db của lọc.</para>
+        <para id="id5874532">Hình 3. 14 chỉ suất và pha của mạch RC, so sánh với đường cong độ lợi của một lọc hạ thông lý tưởng có tần số cắt 1Hz.</para>
+        <figure id="id5874545">
+          <media id="id1167144642546" alt=""><image src="../../media/graphics50-6da5.png" mime-type="image/png" height="640" width="667"/></media>
+        </figure>
+        <para id="id6201916">Hình 3.14: Các đặc tuyến của lọc RC</para>
+        <para id="id6201921">Ta xem đáp ứng xung lực của 2 hệ thống. </para>
+        <para id="id6201927">- Đối với lọc hạ thông lý tưởng:</para>
+        <para id="id6201933"><media id="id1167148072188" alt=""><image src="graphics51.wmf" mime-type="image/wmf" height="43" width="135"/></media>(3.28)</para>
+        <para id="id6201966">- Đối với mạch RC, với RC = 2:</para>
+        <para id="id6201982">h(t) = e - 2 t(3.29)</para>
+        <para id="id5903984">
+        ***SORRY, THIS MEDIA TYPE IS NOT SUPPORTED.***
+      Hai đáp ứng này vẽ ở Hình 3.15. Ở đây, ta đã chọn tùy ý thời trễ của mạch hạ thông lý tưởng là 10 sec để hình vẽ dễ phân biệt.</para>
+        <para id="id5904022">Hình 3.15: So sánh các đáp ứng xung lực.</para>
+        <para id="id5904028">Bây giờ hãy xem sóng vuông vào hai mạch lọc. Ta dùng một sóng vuông có tần số cơ bản là 1/4Hz (bằng cách dùng số hạng đầu tiên khác zero của chuỗi Fourier), hình 3.16a.</para>
+        <para id="id6263313">Lọc hạ thông lý tưởng với tần số cắt 1Hz chỉ cho qua hai số hạng đầu tiên khác Zero (đó là, tần số 1/4Hz và 3/4Hz). Trong khi đó, mạch RC (với sự giảm 3dB ở 1 Hz)làm méo đáng kể các thành phần này (Hình 3.16b). Không chỉ thế, nó còn thu nhận năng lượng tín hiệu tại tần số cắt.</para>
+        <figure id="id6263332">
+          <media id="id1167144699466" alt=""><image src="graphics52.png" mime-type="image/png" height="588" width="667"/></media>
+        </figure>
+        <para id="id6263356">Hình 3.16: So sánh đáp ứng của sóng vuông với 2 lọc.</para>
+        <para id="id6263362">Có một vài loại mạch xấp xỉ với lọc hạ thông lý tưởng. Mỗi loại biểu lộ những tính chất riêng.</para>
+        <list id="id6263372" list-type="enumerated">
+          <item>Lọc Butteworts làm mất sóng dư trong dãy tần số đi qua và làm giảm các tần số không mong muốn ngoài dãy này. Nó được xem là loại lọc làm phẳng tối đa.</item>
+          <item>Lọc Chebyshev giảm các tần số không mong muốn hiệu quả hơn lọc Butteworts, nhưng làm phẳng sóng dư kém hơn. </item>
+          <item>Các lọc cổ điển quan trọng khác gồm lọc Bessel, Papoulis, Gauss.</item>
+        </list>
+        <para id="id5364768">Ta chú ý đến lọc Butteworts:</para>
+        <para id="id5364774">Biên độ của lọc hạ thông lý tưởng có thể tính xấp xỉ bởi hàm:</para>
+        <para id="id5364781"><media id="id1167140290394" alt=""><image src="graphics53.wmf" mime-type="image/wmf" height="51" width="156"/></media>(3.30)</para>
+        <para id="id5364814">Hàm này được vẽ, với vài trị giá của n, như hình 3.17. Ta chỉ vẽ nữa dương của trục f, vì hàm chẳn. Chọn fm = <media id="id1167140090701" alt=""><image src="graphics54.wmf" mime-type="image/wmf" height="43" width="26"/></media> cho hình vẽ. (Khi thiết kế có thể chọn bất kỳ tần số cắt nào). Nhớ là khi n chọn lớn, đặc tuyến Butteworts sẽ tiến đến đặc tuyến của lọc hạ thông lý tưởng.</para>
+        <para id="id5841824">Nếu h(t) thực (Vì là hệ thống vật lý ), phần thực của H(f) chẳn, trong khi phần ảo lẽ. Vậy :</para>
+        <para id="id5841833">H(f) = H * (-f )(3.31)</para>
+        <para id="id5841840">và H (f)2 = H(f)H*(f)(3.32)</para>
+        <para id="id5582705"><figure id="id5582716"><media id="id1167154707059" alt=""><image src=".png" mime-type="image/png" height="151" width="217"/></media></figure>fm=1/2Từ đó, kết hợp với phương trình (3.30), đủ để thiết kế các lọc Butteworts.</para>
+        <para id="id5930779">Hình 3.17: Hàm độ lợi Butteworts</para>
+        <para id="id5930784">Tương đương. Thiết kế một lọc Butteworts cấp 3 (n = 3) với tần số cắt fm = <media id="id1167144502125" alt=""><image src="graphics55.wmf" mime-type="image/wmf" height="43" width="26"/></media></para>
+        <para id="id5930825">Giải:</para>
+        <para id="id5930830">Từ phương trình (3.30) ta có:</para>
+        <para id="id5930836">
+          <media id="id1167145040492" alt=""><image src="graphics56.wmf" mime-type="image/wmf" height="46" width="119"/></media>
+        </para>
+        <para id="id5839266">Đổi nó về biến đổi laplace bằng cách đặt s = j2f. Quan sát vị trí tương đối của các lực và zero của hàm:</para>
+        <para id="id5839279">
+          <media id="id1167140071364" alt=""><image src="graphics57.wmf" mime-type="image/wmf" height="43" width="193"/></media>
+        </para>
+        <para id="id5839310">Các lực của H(s)2 là 6 nghiệm đơn vị. Chúng cách điều nhau quanh vòng tròn đơn vị. Ba cực kết hợp với H(S) ba nữa mặt phẳng trái. Ba cực kia với H(-S). Vậy H(S) được tính từ các lực của nó:</para>
+        <para id="id5754389"><media id="id1167144522472" alt=""><image src="graphics58.wmf" mime-type="image/wmf" height="47" width="328"/></media>(3.33)</para>
+        <para id="id5754421"><figure id="id5754424"><media id="id1167143628334" alt=""><image src="../../media/graphics59.png" mime-type="image/png" height="237" width="285"/></media></figure>Hình 3.18: 6 nghiệm</para>
+        <para id="id5754457">Nếu v (t) là đáp ứng và i(t) là nguồn, hàm hệ thống của phương trình (3.33) tương ứng với mạch của hình hình 3.19a.</para>
+        <para id="id5815980">
+          <figure id="id5815990">
+            <media id="id1167143592290" alt=""><image src=".png" mime-type="image/png" height="232" width="692"/></media>
+          </figure>
+          <figure id="id5816043">
+            <media id="id1167145752223" alt=""><image src="graphics60.wmf" mime-type="image/wmf" height="132" width="346"/></media>
+          </figure>
+        </para>
+        <para id="id6316983">(b)</para>
+        <para id="id6316987">Hình 3.19: Lọc Butteworts cấp 3</para>
+        <para id="id6316992">Những mạch lọc cấp cao hơn sẽ được làm đầy đủ bằng cách dùng thêm mắt lọc. Linh kiện thêm vào là cuộn cảm nối tiếp, tụ song song.</para>
+      </section>
+      <section id="id-67088321837">
+        <title>Lọc dãy thông </title>
+        <para id="id6317011">Mạch thụ động đơn giản nhất xấp xỉ với một lọc dãy thông lý tưởng là mạch chứa hai thành phần tích trữ năng lượng.</para>
+        <para id="id6317020">Tương đương như mạch RLC vẽ ở hình 3.20:</para>
+        <para id="id6317028"><figure id="id6317031"><media id="id1167144699538" alt=""><image src="graphics61.png" mime-type="image/png" height="116" width="214"/></media></figure>Hình 3.20: Lọc dãy thông RLC</para>
+        <para id="id6317061">Nếu output lấy ngay qua LC đấu song song, thì mạch trên xấp xỉ với một lọc dãy thông. Điều này đúng, vì khi tần số tiến đến zero, cuộn cảm xem như bị nối tắt. Và khi tần số tiến đến , tụ xem như bị nối tắt. Như vậy đáp ứng của mạch tiến đến 0 ở cả hai đầu và cực đại ở giữa.</para>
+        <para id="id6327704"><media id="id1167140033780" alt=""><image src="graphics62.wmf" mime-type="image/wmf" height="46" width="214"/></media>(3.34)</para>
+        <para id="id6327736">Suất: </para>
+        <para id="id6327741">
+          <media id="id1167143431610" alt=""><image src="graphics63.wmf" mime-type="image/wmf" height="79" width="235"/></media>
+        </para>
+        <para id="id6327773">Suất cực đại tại 2f = <media id="id1167152546688" alt=""><image src="graphics64.wmf" mime-type="image/wmf" height="49" width="42"/></media>. Điều này được xem như là tần số cộng hưởng lý tưởng của lọc.</para>
+        <para id="id5669071">Hình 3.21 chỉ đặc tính của mạch RLC. Ở đó, ta chọn R= L= C= 1.</para>
+        <figure id="id5669081">
+          <media id="id1167143162165" alt=""><image src="graphics65.png" mime-type="image/png" height="343" width="668"/></media>
+        </figure>
+        <para id="id5669105">Hình 3.21: Các đặc tính của lọc RLC</para>
+        <para id="id6186171">Đáp ứng xung lực của mạch RLC được cho bởi biến đổi ngược F - 1</para>
+        <para id="id6186186">h(t) = 1,15 e-t/2 sin (1,15t)</para>
+        <para id="id6186210">Nó được so sánh với đáp ứng xung lực của lọc dãy thông lý tưởng (phương trình (3.18))</para>
+        <para id="id6186218">
+          <media id="id1167144637107" alt=""><image src="graphics66.wmf" mime-type="image/wmf" height="47" width="361"/></media>
+        </para>
+        <para id="id6186254"><figure id="id5363313"><media id="id1167144725192" alt=""><image src=".png" mime-type="image/png" height="319" width="622"/></media></figure>Hình 3.22 : So sánh những đáp ứng xung lực.</para>
+        <para id="id5363383">Hình 3.22 cho thấy đáp ứng xung lực của mạch RLC và của mạch dãy thông lý tưởng. Ta chọn fH = 0,1Hz và fL = 0,25Hz là các điểm 3db nhớ là hệ số Q của mạch RLC thì rất thấp vì tỉ số của độ rộng kênh và tần số giữa gần bằng 1.</para>
+      </section>
+    </section>
+    <section id="id-722667775328">
+      <title>Các lọc tác động </title>
+      <para id="id5105331">Ở phần trên ta đã khảo sát vài mạch lọc thực tế đơn giản dùng cuộn cảm, tụ và điện trở. Những mạch lọc như vậy gọi là lọc thụ động, vì tất cả các thành phần ấy hoặc hấp thu hoặc tích trữ năng lượng.</para>
+      <para id="id5105341">Một mạch lọc gọi là tác động nếu nó chứa các thành phần còn lại của một mạch. Lọc tác động không hấp thu năng lượng tín hiệu mong muốn, như các lọc thụ động. Chúng có nhiều khả năng được thiết kế đơn giản và các hàm chuyển có thể thực hiện được (Trong khi các lọc thụ động, trong vài áp dụng, thí dụ lọc audio, cần đến rất nhiều cuộn cảm và tụ ).</para>
+      <para id="id5105355">Bộ phận cơ bản xây dựng các lọc tác động là op.amp. Các tính chất của op.amp, việc phân tích và thiết kế các lọc tác động là phần rất quan trọng của điện tử học. Nhưng ở đây ta sẽ không lặp lại. Chỉ giới thiệu hai loại lọc tác động tiêu biểu.</para>
+      <figure id="id5105376">
+        <media id="id1167140319447" alt=""><image src="../../media/graphics67.png" mime-type="image/png" height="114" width="218"/></media>
+      </figure>
+      <para id="id5105399">Hình 3.23: Op.amp với hồi tiếp</para>
+      <para id="id6186649">Zin : Tổng trở vào </para>
+      <para id="id6186659">Zf : Tổng trở hồi tiếp.</para>
+      <para id="id6186669">Hai hình, hình 3.24 và hình 3.25 biểu diễn lọc hạ thông tác động và lọc dãy thông tác động dùng op.amp.</para>
+      <figure id="id6186681">
+        <media id="id1167143358864" alt=""><image src="../../media/graphics68.png" mime-type="image/png" height="655" width="668"/></media>
+      </figure>
+      <para id="id6186704">Hình 3.24: Lọc hạ thông tác động </para>
+      <figure id="id6186713">
+        <media id="id1167143193919" alt=""><image src="graphics69.png" mime-type="image/png" height="712" width="668"/></media>
+      </figure>
+      <para id="id6186737">Hình 3.25: Lọc dãy thông tác động </para>
+    </section>
+    <section id="id-782191001924">
+      <title>Tích của thời gian và khổ băng .</title>
+      <para id="id5953463">Vấn đề cần lưu tâm trong việc thiết kế một hệ thông tin là khổ băng (band width, độ rộng băng ) của hệ thống. Khổ băng là khoảng tần số của hệ có khả năng hoạt động.</para>
+      <para id="id5953475">Khổ băng có liên quan đến biến đổi f của hàm thời gian. Nó không thể xác định trực tiếp từ các số hạng của hàm, trừ khi ta dùng các biểu thức trực quan về sự thay đổi trị giá của hàm nhanh đến mức nào.</para>
+      <para id="id5953488">Những đại lượng vật lý quan trọng trong việc thiết kế hệ thông tin bao gồm thể tối thiểu của một xung và thời gian tối thiểu mà trong đó output của hệ có thể nhảy từ một mức này đến một mức khác. Ta sẽ chứng tỏ 2 đại lượng này có liên quan đến khổ băng.</para>
+      <para id="id5953503">Bắt đầu từ một ví dụ và rồi tổng quát hóa kết quả. </para>
+      <para id="id5953510">Đáp ứng xung lực của một lọc hạ thông lý tưởng:</para>
+      <para id="id5953515"><media id="id1167143323892" alt=""><image src="graphics70.wmf" mime-type="image/wmf" height="47" width="153"/></media>(3.35)</para>
+      <para id="id5959122"><figure id="id5959133"><media id="id1167145734200" alt=""><image src=".png" mime-type="image/png" height="226" width="451"/></media></figure>h(t)</para>
+      <para id="id5959179">Hình 3.26: Đặc tính của lọc hạ thông lý tưởng.</para>
+      <para id="id5959185">Có hai nhận xét:</para>
+      <para id="id5959190">1- Bề rộng của vành lớn nhất của h(t) là 1/fm. Vậy nó tỉ lệ nghịch với khổ băng của tín hiệu. Thực vậy, vì khổ băng (Hiệu của tần số cao nhất và thấp nhất ) là fm , nên tích của độ rộng xung với khổ băng là 1.</para>
+      <para id="id5959214">2 - Vì hàm nấc là tích phân của xung lực, nên đáp ứng của hàm nấc là tích phân của đáp ứng xung lực. Đáp ứng hàm nấc vẽ ở hình 3.27.</para>
+      <para id="id5584972">Ta thấy rằng thời gian tăng (rise time) của đáp ứng này thì tỷ lệ nghịch với khổ băng của lọc. Thời gian tăng được định nghĩa là thời gian cần cho một tín hiệu đi từ trị giá đầu đến trị giá cuối dọc theo một đường dốc với hệ số góc không đổi bằng với độ dốc tối đa của hàm.</para>
+      <figure id="id5584990">
+        <media id="id1167144974707" alt=""><image src="graphics71.png" mime-type="image/png" height="151" width="236"/></media>
+      </figure>
+      <para id="id5585013">Hình 3.27 : Đáp ứng nấc của lọc hạ thông.</para>
+      <para id="id5585020">Độ dốc tối đa của a(t) là trị tối đa của h(t) đạo hàm của nó. Trị này được cho là 2fm. Vậy thời gian tăng của đáp ứng nấc :</para>
+      <para id="id5585033"><media id="id1167144783632" alt=""><image src="graphics72.wmf" mime-type="image/wmf" height="47" width="63"/></media> (3.36).</para>
+      <para id="id5364598">Vì khổ băng của lọc là fm , ta thấy tr và khổ băng tỉ lệ ngược và tích của chúng là 0.5.</para>
+      <para id="id5364616">Mặc dù ta chỉ quan sát sự quan hệ ngược giữa thời gian tăng và khổ băng (hay độ rộng xung và khổ băng) đối với lọc hạ thông lý tưởng, nhưng điều này có thể áp dụng một cách tổng quát. Đó là, thời gian thì tỉ lệ ngược với khổ băng trong bất kỳ hệ thống nào. Tích của chúng là một hằng.</para>
+      <para id="id5364643">Bây giờ ta áp dụng nhận xét ấy vào trường hợp đặc biệt của khổ băng và độ rộng xung (Khổ xung - Pucse Width). Giả sử rằng một hàm thời gian và biến đổi F của nó vẽ ở hình 3.28.</para>
+      <para id="id5364667">Ta định nghĩa khổ xung T là chiều rộng của một hình chữ nhật mà chiều cao của nó định tại s(0), và diện tích bằng với diện tích nằm dưới đường biểu diễn xung. Nhớ rằng nó không phải là một định nghĩa đầy đủ trừ khi s(0) là cực đại của dạng sóng.</para>
+      <figure id="id5364684">
+        <media id="id1167148345171" alt=""><image src="graphics73.png" mime-type="image/png" height="196" width="433"/></media>
+      </figure>
+      <para id="id5961045">Hình 3.28: Khổ xung và khổ băng.</para>
+      <para id="id5961051">Tương tự, ta định nghĩa khổ băng BW, bằng cách dùng một xung trong phạm vi tần số (biến đổi F ) như hình 3.28b. Ta có :</para>
+      <para id="id5961066">T <media id="id1167145961249" alt=""><image src="../../media/graphics74.png" mime-type="image/png" height="18" width="12"/></media><media id="id1167152496195" alt=""><image src="graphics75.wmf" mime-type="image/wmf" height="67" width="73"/></media></para>
+      <para id="id5961126">BW <media id="id1167154850216" alt=""><image src="../../media/graphics76-a3f9.png" mime-type="image/png" height="18" width="12"/></media><media id="id1167145012938" alt=""><image src="graphics77.wmf" mime-type="image/wmf" height="68" width="78"/></media>(3.37)</para>
+      <para id="id6255110">Tích của chúng :</para>
+      <para id="id6255115"><media id="id1167147115998" alt=""><image src="graphics78.wmf" mime-type="image/wmf" height="67" width="200"/></media>(3.38)</para>
+      <para id="id6255148">Dùng tích phân biến đổi F để tìm:</para>
+      <para id="id6255161"><media id="id1167147141456" alt=""><image src="graphics79.wmf" mime-type="image/wmf" height="36" width="229"/></media>(3.39)</para>
+      <para id="id6263635">Biến đổi ngược để tìm:</para>
+      <para id="id6263641"><media id="id1167152499756" alt=""><image src="graphics80.wmf" mime-type="image/wmf" height="36" width="238"/></media>(3.40)</para>
+      <para id="id6263673">Thay thế (3.39), (3.40) vào (3.38) :</para>
+      <para id="id6263679">TBW = 1(3.41)</para>
+      <para id="id6263686">Tích của khổ xung và khổ băng bằng 1. Hai thông số này thì tỉ lệ ngược. Điều này rất có ý nghĩa trong hệ thông tin số, ở đó nhịp truyền bit bị giới hạn bởi khổ băng của kênh.</para>
+    </section>
+    <section id="id-850691037793">
+      <title>Công suất và năng lượng.</title>
+      <para id="id6263708">Chủ đích đầu tiên của nhiều hệ thông tin là làm tăng tín hiệu đồng thời nén nhiễu. Đặc biệt hơn, ta muốn làm giảm công suất nhiễu ở ngỏ ra của hệ mà không làm giảm công suất tín hiệu: Hệ làm tăng tỷ số S/N.</para>
+      <para id="id6263721">Gọi Er là năng lượng của r(t):</para>
+      <para id="id6263732"><media id="id1167146834916" alt=""><image src="graphics81.wmf" mime-type="image/wmf" height="36" width="108"/></media>(3.42)</para>
+      <para id="id6263765">Nếu r(t) là điện thế hoặc dòng điện ngang qua điện trở 1, Er sẽ là năng lượng tiêu tán nhiệt (W/sec).</para>
+      <para id="id6021254">Đối với những tín hiệu không bị giới hạn thời gian, Er thường là vô hạn. Thí dụ, r(t) là một hằng khác zero. Trong trường hợp này, ta phân chia năng lượng với thời gian trung bình, gọi là công suất trung bình Pr . </para>
+      <para id="id6021283">Pr <media id="id1167148134781" alt=""><image src="../../media/graphics82-6252.png" mime-type="image/png" height="18" width="12"/></media><media id="id1167143572196" alt=""><image src="graphics83.wmf" mime-type="image/wmf" height="51" width="178"/></media>(3.43)</para>
+      <para id="id6021349">Ta đã chủ tâm chuyển bình phương ra ngoài dấu trị tuyệt đối để nhấn mạnh rằng cả hai vị trí điều có cùng kết quả.</para>
+      <para id="id6021359">Nếu Er hữu hạn, Pr là zero và nếu Pr khác zero, Er phải vô hạn.</para>
+      <para id="id5953552">Người ta chia tín hiệu thành 3 nhóm dựa vào tính bị giới hạn của công xuất và năng lượng.</para>
+      <para id="id5953560">- Nhóm I: Pr = 0. Nhóm này chứa những tín hiệu có năng lượng hữu hạn. Phổ biến nhất là tín hiệu bị giới hạn thời gian.</para>
+      <para id="id5953575">- Nhóm II: 0 &lt; Pr &lt;  . Nhóm này chứa những tín hiệu có công xuất hữu hạn. Phổ biến nhất là tín hiệu thời gian tuần hoàn.</para>
+      <para id="id5953595">- Nhóm III: Pr   . Nhóm này có tính hòan chỉnh. Nhưng ta không gặp những tín hiệu có công xuất vô hạn trong thực tế. Vài tín hiệu, thú vị về mặt lý thuyết, thích nghi với nhóm này, thí dụ như đoàn xung lực tuần hoàn.</para>
+    </section>
+    <section id="id-670712433001">
+      <title>Phân tích phổ</title>
+      <para id="id5953633">Biến đổi F không hiện hữu trong đời sống thực tế. Nó là một công cụ toán học để giúp phân tích hệ thống.</para>
+      <para id="id5953651">Có những giới hạn nghiêm ngặt khi ta cố gắng tìm biến đổi F của một hàm thời gian được dùng trong một hệ Analog.</para>
+      <para id="id5953667">Giả sử r(t) là input của một lọc hạ thông lý tưởng, có hàm chuyển H(f) như hình 3.29. Biến đổi F cho bởi:</para>
+      <figure id="id5953690">
+        <media id="id1167147930711" alt=""><image src="graphics84.wmf" mime-type="image/wmf" height="56" width="235"/></media>
+      </figure>
+      <para id="id6019420">s(t) được cho bởi biến đổi ngược của S(f)</para>
+      <figure id="id6019430">
+        <media id="id1167145874614" alt=""><image src="../../media/graphics85-4476.png" mime-type="image/png" height="134" width="324"/></media>
+      </figure>
+      <para id="id6019454">Hình 3.29</para>
+      <para id="id6019459"><media id="id1167144695714" alt=""><image src="graphics86.wmf" mime-type="image/wmf" height="54" width="238"/></media> (3.44)</para>
+      <para id="id6019492">Nếu fH rất gần với fL (lọc dãy hẹp - narrwband filter), ta giả sử rằng xấp xỉ không đổi trên toàn khoảng của tích phân. Như vậy, nếu fav là tần số giữa của dãy lọc, ta có:</para>
+      <para id="id6019523">s(t)  ( fH + fL )[R(fav­) e j2favt + R(-fav­) e -j2favt ](3.45)</para>
+      <para id="id5953779">Vì R(-fav) = R * (fav), ta có:</para>
+      <para id="id5953799"><figure id="id5953805"><media id="id1167153534620" alt=""><image src="graphics87.wmf" mime-type="image/wmf" height="28" width="290"/></media></figure>(3.46)</para>
+      <para id="id5953831">Suất của output thì tỉ lệ với suất của biến đổi F của input tính tại fav . Pha thì bị dời bởi pha của R(fav).</para>
+      <para id="id5953857">Trong rất nhiều mạch phân tích phổ thực tế, lọc dãy thông được quét ngang bởi một khoảng tần số, và suất của output thay đổi xấp xỉ với R(f).</para>
+      <para id="id5953878">Có 3 nguồn sai số (error ). Thứ nhất, trong khi lọc dãy thông thì hẹp, khổ băng của nó thì khác zero. Điều này ảnh hưởng đến độ phân giải output. Thứ hai, lọc thì không lý tưởng. Cuối cùng, khi tần số giữa lọc thay đổi với thời gian (khi nó bị quét), output không nhất thiết tiến đến trị đúng của nó (steady state). Thời gian tăng của lọc thì tỉ lệ nghịch với khổ băng của nó. Vậy, lọc càng hẹp, càng được quét chậm hơn. </para>
+    </section>
+  </content>
+</document>

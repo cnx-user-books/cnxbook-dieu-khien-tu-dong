@@ -1,0 +1,307 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Nhập môn</title>
+  <metadata>
+  <md:content-id>m30117</md:content-id><md:title>Nhập môn</md:title>
+  <md:abstract>•	ĐẠI CƯƠNG.
+•	CÁC ĐỊNH NGHĨA.
+•	CÁC LOẠI HỆ THỐNG ĐIỀU KHIỂN</md:abstract>
+  <md:uuid>16cc11c1-d117-4280-b528-a5c994a442ba</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-941635411632">
+      <title>ĐẠI CƯƠNG</title>
+      <para id="id22461054">Hồi tiếp (feedback) là một trong những tiến trình căn bản nhất trong tự nhiên. Nó hiện diện trong hầu hết các hệ thống động, kể cả trong bản thân sinh vật, trong máy móc, giữa con người và máy móc … Tuy nhiên, khái niệm về hồi tiếp được dùng nhiều trong kỹ thuật. Do đó, lý thuyết về các hệ thống tự điều khiển (automatic control systems) được phát triển như là một ngành học kỹ thuật cho việc phân tích, thiết kế các hệ thống có điều khiển tự động và kiểm soát tự động. Rộng hơn, lý thuyết đó cũng có thể áp dụng trực tiếp cho việc thiết lập và giải quyết các vấn đề thuộc nhiều lĩnh vực khác nhau, không những cho vật lý học, toán học mà còn cho cả các ngành khác như: sinh vật học, kinh tế học, xã hội học, …</para>
+      <para id="id22461088">Hiện nay, hệ thống tự điều khiển đã đảm đương một vai trò quan trọng trong sự phát triển và tiến bộ của công nghệ mới. Thực tế, mỗi tình huống trong sinh hoạt hằng ngày của chúng ta đều có liên quan đến một vài loại điều khiển tự động: máy nướng bánh, máy giặt, hệ thống audio-video ... Trong những cơ quan lớn hay các xưởng sản xuất, để đạt hiệu suất tối đa trong việc tiêu thụ điện năng, các lò sưỡi và các máy điều hoà không khí đều được kiểm soát bằng computer. Hệ thống tự điều khiển được thấy một cách phong phú trong tất cả các phân xưởng sản xuất : Kiểm tra chất lượng sản phẩm, dây chuyền tự động, kiểm soát máy công cụ. Lý thuyết điều khiển không thể thiếu trong các ngành đòi hỏi tính tự động cao như : kỹ thuâït không gian và vũ khí, người máy và rất nhiều thứ khác nữa.</para>
+      <para id="id22461125">Ngoài ra, có thể thấy con người là một hệ thống điều khiển rất phức tạp và thú vị. Ngay cả việc đơn giản như đưa tay lấy đúng một đồ vật, là một tiến trình tự điều khiển đã xãy ra. Quy luật cung cầu trong kinh tế học, cũng là một tiến trình tự điều khiển …</para>
+    </section>
+    <section id="id-747081457132">
+      <title>CÁC ĐỊNH NGHĨA.</title>
+      <section id="id-073593726441">
+        <title>Hệ thống điều khiển:</title>
+        <para id="id22461160">Là một sự sắp xếp các bộ phận vật lý, phối hợp, liên kết nhau, cách sao để điều khiển, kiểm soát, hiệu chỉnh và sửa sai chính bản thân nó hoặc để nó điều khiển một hệ thống khác.</para>
+        <para id="id22230200">Một hệ thống điều khiển có thể được miêu tả bởi các thành phần cơ bản (H.1_1).</para>
+        <list id="id22230211" list-type="bulleted">
+          <item>Đối tượng để điều khiển (chủ đích).</item>
+          <item>Bộ phận điều khiển. </item>
+          <item>Kết quả.</item>
+        </list>
+        <figure id="id22230245">
+          <media id="id42130141" alt=""><image src="../../media/graphics1.png" mime-type="image/png" height="94" width="348"/></media>
+        </figure>
+        <figure id="id22230272">
+          <media id="id42130169" alt=""><image src="../../media/graphics2-093e.png" mime-type="image/png" height="93" width="348"/></media>
+        </figure>
+        <para id="id22230295">H.1_1 : Các bộ phận cơ bản của hệ thống điều khiển</para>
+        <para id="id22230302"> Ba thành phần cơ bản đó có thể được nhận dạng như ở ( H.1_1).</para>
+        <para id="id22230318">Các inputs của hệ thống còn được gọi là tín hiệu tác động (actuating signals ) và các outputs được hiểu như là các biến được kiểm soát (controlled variables ).</para>
+        <para id="id22230332">Một thí dụ đơn giản, có thể mô tả như (H.1_1) là sự lái xe ôtô. Hướùng của hai bánh trước được xem như là biến được kiểm soát c, hay outputs. Góc quay của tay lái là tín hiệu tác động u, hay input. Hệ thống điều khiển trong trường hợp này bao gồm các cơ phận lái và sự chuyển dịch của toàn thể chiếc xe, kể cả sự tham gia của người lái xe.</para>
+        <para id="id22230359">Tuy nhiên, nếu đối tượng để điều khiển là vận tốc xe, thì áp suất tác động tăng lên bộ gia tốc là input và vận tốc xe là output.</para>
+        <para id="id22230374">Nói chung, có thể xem hệ thống điều khiển xe ôtô là một hệ thống điều khiển hai inputs (lái và gia tốc) và hai outputs (hướng và vận tốc). Trong trường hợp này, hai inputs và hai outputs thì độc lập nhau. Nhưng một cách tổng quát, có những hệ thống mà ở đó chúng liên quan nhau.</para>
+        <para id="id22230382">Các hệ thống có nhiều hơn một input và một output được gọi là hệ thống nhiều biến.</para>
+      </section>
+      <section id="id-693484799514">
+        <title>Hệ điều khiển vòng hở (open_loop control system).</title>
+        <para id="id21020876">Còn gọi là hệ không hồi tiếp (Nonfeedback System), là một hệ thống trong đó sự kiểm soát không tuỳ thuộc vào output.</para>
+        <para id="id21020888">Những thành phần của hệ điều khiển vòng hở thường có thể chia làm hai bộ phận: bộ điều khiển (controller) và thiết bị xử lý như (H.1_2).</para>
+        <figure id="id21020904">
+          <media id="id45130489" alt=""><image src="../../media/graphics3-673d.png" mime-type="image/png" height="64" width="591"/></media>
+        </figure>
+        <para id="id21020931">Hình H.1_2 : Các bộ phận của một hệ điều khiển vòng hở.</para>
+        <para id="id21020947">Một tín hiệu vào, hay lệnh điều khiển hay tín hiệu tham khảo (Reference) r đưa vào controller. Tín hiệu ra của nó là tín hiệu tác động u, sẽ kiểm soát tiến trình xử lý sao cho biến c sẽ hoàn tất được vài tiêu chuẩn đặt trước ở ngõ vào.</para>
+        <para id="id21020969">Trong những trường hợp đơn giản, controller có thể là một mạch khuếch đại, những cơ phận nối tiếp hoặc những thứ khác, tuỳ thuộc vào loại hệ thống. Trong các bộ điều khiển điện tử, controller có thể là một microprocessor.</para>
+        <para id="id21020988">Thí dụ : Một máy nướng bánh có gắn timer để ấn định thời gian tắt và mở máy.Với một lượng bánh nào đó, người dùng phải lượng định thời gian nướng cần thiết để bánh chín, bằng cách chọn lựa thời gian trên timer.</para>
+        <para id="id21021009">Đến thời điểm đã chọn trước, timer điều khiển tắt bộ nung.</para>
+        <para id="id21021018">
+          <media id="id47409505" alt=""><image src="../../media/graphics4.png" mime-type="image/png" height="128" width="563"/></media>
+        </para>
+        <para id="id21832915">Hình H.1_3: Thí dụ về hệ điều khiển vòng hở.</para>
+        <para id="id21832926">Dễ thấy ngay rằng một hệ thống điều khiển như vậy có độ tin cậy không cao.Tín hiệu tham khảo được đặt trước, còn đáp ứng ở ngõ ra thì có thể thay đổi theo điều kiện xung quanh, hoặc nhiễu. Muốn đưa đáp ứng c đến trị giá tham khảo r, người dùng phải qui chuẩn lại bằng cách chọn timer lại.</para>
+      </section>
+      <section id="id-477601052307">
+        <title>Hệ điều khiển vòng kín (closed – loop control system).</title>
+        <para id="id21832954">Còn gọi là hệ điều khiển hồi tiếp (feedback control system). Để điều khiển được chính xác, tín hiệu đáp ứng c(t) sẽ được hồi tiếp và so sánh với tín hiệu tham khảo r ở ngỏ vào.</para>
+        <para id="id21832969">Một tín hiệu sai số (error) tỷ lệ với sự sai biệt giữa c và r sẽ được đưa đến controller để sửa sai. Một hệ thống với một hoặc nhiều đường hồi tiếp như vậy gọi là hệ điều khiển vòng kín. (Hình H.1_4)</para>
+        <para id="id21832988">
+          <media id="id42100744" alt=""><image src="../../media/graphics5.png" mime-type="image/png" height="236" width="523"/></media>
+        </para>
+        <para id="id21833025">H.1_4 : Hệ điều khiển vòng kín.</para>
+        <para id="id21833034">Trở lại ví dụ về máy nướng bánh. Giả sử bộ nung cấp nhiệt đều các phía của bánh và chất lượng của bánh có thể xác định bằng màu sắc của nó. Một sơ đồ được đơn giản hoá áp dụng nguyên tắc hồi tiếp cho máy nướng bánh tự động trình bày như (H.1_5).</para>
+        <figure id="id21833054">
+          <media id="id42100808" alt=""><image src="../../media/graphics6-b6b9.png" mime-type="image/png" height="265" width="486"/></media>
+        </figure>
+        <para id="id21833078">Ban đầu, máy nướng được qui chuẩn với chất lượng bánh, bằng cách đặt nút chỉnh màu. Không cần phải chỉnh lại nếu như không muốn thay đổi tiêu chuẩn nướng. Khi SW đóng, bánh sẽ được nướng, cho đến khi bộ phân tích màu "thấy" được màu mong muốn. Khi đó SW tự động mở, do tác động của đường hồi tiếp (mạch điện tử điều khiển relay hay đơn giản là một bộ phận cơ khí). H.1_6. là sơ đồ khối mô tả hệ thống trên.</para>
+        <figure id="id22145752">
+          <media id="id42100860" alt=""><image src="../../media/graphics7.png" mime-type="image/png" height="213" width="607"/></media>
+        </figure>
+        <para id="id22145775">Một thí dụ khác về hệ thống điều khiển vòng kín như hình H.1_7: hệ thống điều khiển máy đánh chữ điện tử (Electronic Typewriter). </para>
+        <figure id="id22145796">
+          <media id="id41410695" alt=""><image src="../../media/graphics8-629b.png" mime-type="image/png" height="185" width="628"/></media>
+        </figure>
+        <para id="id22145819">H.1_7: Hệ thống điều khiển máy đánh chữ điện tử.</para>
+        <para id="id22145836">Bánh xe in (printwheel) có khoảng 96 hay 100 ký tự, được motor quay,đặt vị trí của ký tự mong muốn đến trước búa gõ để in. Sự chọn lựa ký tự do người sử dụng gõ lên bàn phím. Khi một phím nào đó được gõ, một lệnh cho bánh xe in quay từ vị trí hiện hành đến vị trí kế tiếp được bắt đầu. Bộ vi xử lý tính chiều và khoảng cách phải vượt qua của bánh xe, và gửi một tín hiệu điều khiển đến mạch khuếch đại công suất. Mạch này điều khiển motor quay để thúc bánh xe in. Vị trí bánh xe in được phân tích bởi một bộ cảm biến vị trí (position sensor). Tín hiệu ra được mã hóa của nó được so sánh với vị trí mong muốn trong bộ vi xử lý. Như vậy motor được điều khiển sao cho nó thúc bánh xe in quay đến đúng vị trí mong muốn. Trong thực tế, những tín hiệu điều khiển phát ra bởi vi xử lý sẽ có thể thúc bánh xe in từ một vị trí này đến vị trí khác đủ nhanh để có thể in một cách chính xác và đúng thời gian.</para>
+        <para id="id22145874">
+          <media id="id41410779" alt=""><image src="../../media/graphics9-1cc7.png" mime-type="image/png" height="244" width="423"/></media>
+        </para>
+        <para id="id22145911">H.1_8: Input và output của sự điều khiển bánh xe in.</para>
+        <para id="id22145920">Hình H.1_8 trình bày input và output tiêu biểu của hệ thống. Khi một lệnh tham khảo được đưa vào (gõ bàn phím), tín hiệu được trình bày như một hàm nấc (step function). Vì mạch điện của motor có cảm kháng và tải cơ học có quán tính, bánh xe in không thể chuyển động đến vị trí mong muốn ngay tức khắc. Nó sẽ đáp ứng như hình vẽõ và đến vị trí mới sau thời điểm t1. Từ 0 đến t1 là thời gian định vị. Từ t1 đến t2 là thời gian in. Sau thời điểm t2, hệ thống sẵn sàng nhận một lệnh mới.</para>
+      </section>
+      <section id="id-0808286858125">
+        <title>Hồi tiếp và các hiệu quả của nó :</title>
+        <para id="id22476467">Trong những thí dụ ở trên, việc sử dụng hồi tiếp chỉ với chủ đích thật đơn giản, để giảm thiểu sự sai biệt giữa tiêu chuẩn tham khảo đưa vào và tín hiệu ra của hệ thống. Nhưng, những hiệu quả có ý nghĩa của hồi tiếp trong các hệ thống điều khiển thì sâu xa hơn nhiều. Sự giảm thiểu sai số cho hệ thống chỉ là một trong các hiệu quả quan trọng mà hồi tiếp có tác động lên hệ thống.</para>
+        <para id="id22476484">Phần sau đây, ta sẽ thấy hồi tiếp còn tác động lên những tính chất của hệ thống như tính ổn định, độ nhạy, độ lợi, độ rộng băng tần, tổng trở.</para>
+        <para id="id22476498">
+          <media id="id41410911" alt=""><image src="../../media/graphics10-6093.png" mime-type="image/png" height="144" width="392"/></media>
+        </para>
+        <para id="id22476535">H.1_9: Hệ thống có hồi tiếp.</para>
+        <para id="id22476544">Xem một hệ thống có hồi tiếp tiêu biểu như (H.1_9). Trong đó r là tín hiệu vào. C là tín hiệu ra. G và H là các độ lợi.</para>
+        <para id="id22476556">(1.1) </para>
+        <para id="id22476587">
+          <m:math>
+            <m:semantics>
+              <m:mrow>
+                <m:mstyle fontsize="12pt">
+                  <m:mrow>
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mi>M</m:mi>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mfrac>
+                          <m:mi>C</m:mi>
+                          <m:mi>r</m:mi>
+                        </m:mfrac>
+                      </m:mrow>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mfrac>
+                        <m:mi>G</m:mi>
+                        <m:mrow>
+                          <m:mn>1</m:mn>
+                          <m:mo stretchy="false">+</m:mo>
+                          <m:mstyle fontstyle="italic">
+                            <m:mrow>
+                              <m:mtext>GH</m:mtext>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:mrow>
+                      </m:mfrac>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mstyle>
+                <m:mrow/>
+              </m:mrow>
+              <m:annotation encoding="StarMath 5.0"> size 12{M= {  {C}  over  {r} } = {  {G}  over  {1+ ital "GH"} } } {}</m:annotation>
+            </m:semantics>
+          </m:math>
+        </para>
+        <para id="id22230896">a) Hiệu quả của hồi tiếp đối với độ lợi toàn thể (overall Gain).</para>
+        <para id="id22230914">So với độ lợi của hệ vòng hở (G), độ lợi toàn thể của hệ vòng kín (có hồi tiếp) có thêm hệ số 1+GH. Hình H.1_9 là hệ thống hồi tiếp âm, tín hiệu hồi tiếp b có dấu (-).</para>
+        <para id="id22230932">Lượng GH tự nó có thể bao gồm dấu trừ. Do đó, hiệu quả tổng quát của hồi tiếp là làm tăng hoặc giảm độ lợi. Trong một hệ điều khiển thực tế, G và H là các hàm của tần số f. Suất 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mo stretchy="false">∣</m:mo><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:mstyle fontstyle="italic"><m:mrow><m:mtext>GH</m:mtext></m:mrow></m:mstyle></m:mrow><m:mo stretchy="false">∣</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ lline 1+ ital "GH" rline } {}</m:annotation></m:semantics></m:math> có thể lớn hơn 1 trong một khoảng tần số nào đó và nhỏ hơn 1 ở một khoảng tần số khác . Như vậy, hồi tiếp sẽ làm tăng độ lợi hệ thống trong một khoảng tần số nhưng làm giảm nó ở khoảng tần số khác.</para>
+        <para id="id21775723">b) Hiệu quả của hồi tiếp đối với tính ổn định.</para>
+        <para id="id21775741">Nói một cách khác không chặt chẽ lắm, một hệ thống gọi là bất ổn khi output của nó thoát khỏi sự kiểm soát hoặc là tăng không giới hạn.</para>
+        <para id="id21775756">Xem phương trình (1.1). nếu GH = -1, output của hệ thống sẽ tăng đến vô hạn đối với bất kỳ input hữu hạn nào. Như vậy, có thể nói rằng hồi tiếp có thể làm một hệ thống (mà lúc đầu ổn định) trở nên bất ổn. Hồi tiếp là một thanh gươm 2 lưỡi. Nếu dùng không đúng cách, nó sẽ trở nên tai hại. Nhưng cũng có thể chứng tỏ được rằng, mối lợi của hồi tiếp lại là tạo được sự ổn định cho một hệ thống bất ổn.</para>
+        <para id="id21775774">Giả sử hệ thống hồi tiếp ở (H.1_9) bất ổn vì GH = -1. Bây giờ, nếu ta đưa vào một vòng hồi tiếp âm nữa, như (H.1_10) .</para>
+        <figure id="id21775791">
+          <media id="id40334498" alt=""><image src="../../media/graphics11-66dd.png" mime-type="image/png" height="227" width="552"/></media>
+        </figure>
+      </section>
+      <section id="id-293456859996">
+        <title>H.1_10</title>
+        <para id="id21775822">Độ lợi toàn thể của hệ thống bây giờ sẽ là : </para>
+        <para id="id21775834"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mfrac><m:mi>c</m:mi><m:mi>r</m:mi></m:mfrac><m:mo stretchy="false">=</m:mo><m:mfrac><m:mi>G</m:mi><m:mrow><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:mstyle fontstyle="italic"><m:mrow><m:mtext>GH</m:mtext></m:mrow></m:mstyle></m:mrow><m:mo stretchy="false">+</m:mo><m:mstyle fontstyle="italic"><m:mrow><m:mtext>GF</m:mtext></m:mrow></m:mstyle></m:mrow></m:mfrac></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {  {c}  over  {r} } = {  {G}  over  {1+ ital "GH"+ ital "GF"} } } {}</m:annotation></m:semantics></m:math> (1.2)</para>
+        <para id="id21883253">Nếu do những tín chất của G và H làm cho vòng hồi tiếp trong bất ổn, vì G.H = -1. nhưng toàn thể hệ thống có thể vẫn ổn định bằng cách chọn lựa độ lợi F của vòng hồi tiếp ngoài.</para>
+        <para id="id21883281">c) Hiệu quả của hồi tiếp đối với độ nhạy. (Sensibility)</para>
+        <para id="id21883297">Độ nhạy thường giữ một vai trò quan trọng trong việc thiết kế các hệ thống điều khiển. Vì các thành phần vật lý có những tín chất thay đổi đối với môi trường xung quanh và với từng thời kỳ , ta không thể luôn luôn xem các thông số của hệ thống hoàn toàn không đổi trong suốt toàn bộ đời sống hoạt động của hệ thống. Thí dụ, điệân trở dây quấn của một động cơ điện thay đổi khi nhiệt độ tăng trong lúc vận hành.</para>
+        <para id="id21883323">Một cách tổng quát, một hệ điều khiển tốt sẽ phải rất nhạy đối với sự biến đổi của các thông số này để có thể giữ vững đáp ứng ra.</para>
+        <para id="id21883337">Xem lại hệ thống ở (H.1_9). Ta xem G như là một thông số có thể thay đổi. Độ nhạy toàn hệ thống được định nghĩa như sau:</para>
+        <para id="id21883349"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mstyle fontsize="24pt"><m:mrow><m:mi>S</m:mi></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>G</m:mi></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>M</m:mi></m:mrow></m:mstyle></m:msubsup><m:mo stretchy="false">=</m:mo><m:mfrac><m:mrow><m:mi fontstyle="italic">δM</m:mi><m:mo stretchy="false">/</m:mo><m:mi>M</m:mi></m:mrow><m:mrow><m:mi>δ</m:mi><m:mi/><m:mrow><m:mi>G</m:mi><m:mo stretchy="false">/</m:mo><m:mi>G</m:mi></m:mrow></m:mrow></m:mfrac></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ { size 24{S} }  rSub { size 8{G} }  rSup { size 8{M} } = {  {δM/M}  over  {δ`G/G} } } {}</m:annotation></m:semantics></m:math> (1.3)</para>
+        <para id="id21581489">M: độ lợi toàn hệ thống.</para>
+        <para id="id21581500">Trong đó: M chỉ sự thay đổi thêm của M </para>
+        <para id="id21581521">G.M/M và G/G chỉ phần trăm thay đổi của M và G. Ta có:</para>
+        <para id="id21581563"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mrow><m:msubsup><m:mstyle fontsize="24pt"><m:mrow><m:mi>S</m:mi></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>G</m:mi></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>M</m:mi></m:mrow></m:mstyle></m:msubsup><m:mo stretchy="false">=</m:mo><m:mfrac><m:mi fontstyle="italic">δM</m:mi><m:mrow><m:mi>δ</m:mi><m:mi/><m:mi>G</m:mi></m:mrow></m:mfrac></m:mrow><m:mrow><m:mfrac><m:mi>G</m:mi><m:mi>M</m:mi></m:mfrac><m:mo stretchy="false">=</m:mo><m:mfrac><m:mn>1</m:mn><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:mstyle fontstyle="italic"><m:mrow><m:mtext>GH</m:mtext></m:mrow></m:mstyle></m:mrow></m:mfrac></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ { size 24{S} }  rSub { size 8{G} }  rSup { size 8{M} } = {  {δM}  over  {δ`G} }  {  {G}  over  {M} } = {  {1}  over  {1+ ital "GH"} } } {}</m:annotation></m:semantics></m:math> (1.4)</para>
+        <para id="id22276803">Hệ thức này chứng tỏ hàm độ nhạy có thể làm nhỏ tuỳ ý bằng cách tăng GH, miễn sao hệ thống vẫn giữ được sự ổn định.</para>
+        <para id="id22276818">Trong một hệ vòng hở, độ lợi của nó sẽ đáp ứng kiểu một - đối - một đối với sự biến thiên của G.</para>
+        <para id="id22276830">Một cách tổng quát, độ nhạy toàn hệ thống của một hệ hồi tiếp đối với những biến thiên của thông số thì tuỳ thuộc vào nơi của thông số đó. Người đọc có thể khai triển độ nhạy của hệ thống (H.1_9) theo sự biến thiên của H.</para>
+        <para id="id22276848">d) Hiệu quả hồi tiếp đối với nhiễu phá rối từ bên ngoài.</para>
+        <para id="id22276864">Trong suốt thời gian hoạt động, các hệ thống điều khiển vật lý chịu sự phá rối của vài loại nhiễu từ bên ngoài. Thí dụ, nhiễu nhiệt (thermal noise) trong các mạch khuếch đại điện tử, nhiễu do tia lửa điện sinh từ chổi và cổ góp trong các động cơ điện …</para>
+        <para id="id22276881">Hiệu quả của hồi tiếp đối với nhiễu thì tuỳ thuộc nhiều vào nơi mà nhiễu tác động vào hệ thống. Không có kết luận tổng quát nào. Tuy nhiên, trong nhiều vị trí, hồi tiếp có thể giảm thiểu hậu quả của nhiễu.</para>
+        <para id="id22276898">Xem hệ thống ở (H.1_11)</para>
+        <figure id="id22276909">
+          <media id="id41370980" alt=""><image src="../../media/graphics12-341c.png" mime-type="image/png" height="209" width="494"/></media>
+        </figure>
+        <para id="id22439553">Ouput của hệ có thể được xác định bằng nguyên lý chồng chất (super position)</para>
+        <para id="id22439567"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mrow><m:mi>C</m:mi><m:mo stretchy="false">=</m:mo><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:mtext>.</m:mtext><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mtext>.</m:mtext><m:mrow><m:mi>e</m:mi><m:mo stretchy="false">+</m:mo><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:mtext>.</m:mtext><m:mi>n</m:mi></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{C=G rSub { size 8{1} }  "." G rSub { size 8{2} }  "." e+G rSub { size 8{2} }  "." n} {}</m:annotation></m:semantics></m:math>(1 - 5)- Nếu không có hồi tiếp, H = 0 thì output</para>
+        <section id="id-416492055294">
+          <title>Ở đó e = r</title>
+          <para id="id22439710">Tỷ số tín hiệu trên nhiễu (signal to noise ratio) được định nghĩa:</para>
+          <para id="id22439720"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mrow><m:mrow><m:mrow><m:mfrac><m:mi>S</m:mi><m:mi>N</m:mi></m:mfrac><m:mo stretchy="false">=</m:mo><m:mfrac><m:mrow><m:mstyle fontstyle="italic"><m:mrow><m:mtext>output</m:mtext></m:mrow></m:mstyle><m:mi/><m:mstyle fontstyle="italic"><m:mrow><m:mtext>do</m:mtext></m:mrow></m:mstyle><m:mi/><m:mstyle fontstyle="italic"><m:mrow><m:mtext>tín</m:mtext></m:mrow></m:mstyle><m:mi/><m:mstyle fontstyle="italic"><m:mrow><m:mtext>hi</m:mtext></m:mrow></m:mstyle><m:mi fontstyle="italic">eu</m:mi></m:mrow><m:mrow><m:mstyle fontstyle="italic"><m:mrow><m:mtext>output</m:mtext></m:mrow></m:mstyle><m:mi/><m:mstyle fontstyle="italic"><m:mrow><m:mtext>do</m:mtext></m:mrow></m:mstyle><m:mi/><m:mstyle fontstyle="italic"><m:mrow><m:mtext>nhieu</m:mtext></m:mrow></m:mstyle></m:mrow></m:mfrac></m:mrow><m:mo stretchy="false">=</m:mo><m:mfrac><m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mi>e</m:mi></m:mrow><m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mi>n</m:mi></m:mrow></m:mfrac></m:mrow><m:mo stretchy="false">=</m:mo><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:mtext>.</m:mtext><m:mfrac><m:mi>e</m:mi><m:mi>n</m:mi></m:mfrac></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {  {S}  over  {N} } = {  { ital "output"` ital "do"` ital "tín"` ital "hi"eu}  over  { ital "output"` ital "do"` ital "nhieu"} } = {  {G rSub { size 8{1} } G rSub { size 8{2}  } e}  over  {G rSub { size 8{2} } n} } =G rSub { size 8{1} }  "."  {  {e}  over  {n} } } {}</m:annotation></m:semantics></m:math> (1.6)</para>
+          <para id="id22303629">Để tăng tỷ số S/N hiển nhiên là phải tăng G1 hoặc e/n. Sự thay đổi G2 không ảnh hưởng đến tỷ số.</para>
+          <para id="id22473719">- Nếu có hồi tiếp, output của hệ thống khi r và n tác động đồng thời sẽ là :</para>
+          <para id="id22473730"><m:math><m:semantics><m:mtable><m:mtr><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub></m:mtr><m:mtr><m:mrow><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mi>H</m:mi><m:mrow/></m:mrow></m:mtr><m:mtr><m:mrow/></m:mtr><m:mtr><m:mrow><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mrow><m:mi>C</m:mi><m:mo stretchy="false">=</m:mo><m:mfrac><m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:mrow><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mi>H</m:mi></m:mrow></m:mfrac></m:mrow><m:mrow><m:mi>r</m:mi><m:mo stretchy="false">+</m:mo><m:mrow/></m:mrow><m:mtable><m:mtr><m:mfrac><m:mrow/><m:mrow/></m:mfrac></m:mtr></m:mtable></m:mrow></m:mrow></m:mstyle><m:mi>n</m:mi></m:mrow><m:mrow><m:mrow/><m:mrow/></m:mrow></m:mrow></m:mtr></m:mtable><m:annotation encoding="StarMath 5.0"> size 12{C= {  {G rSub { size 8{1} } G rSub { size 8{2} } }  over  {1+G rSub { size 8{1} } G rSub { size 8{2} } H} } r+ {  {G rSub { size 8{2} } } alignl { stack {
+ {  {1+G rSub { size 8{1} } G rSub { size 8{2} } H {} # 
+}  over  { {} # 
+} } } n} {}</m:annotation></m:semantics></m:math> (1.7)</para>
+          <para id="id22438194">So sánh (1.5) và (1.7), ta thấy thành phần do nhiễu của (1.7) bị giảm bởi hệ số 1+ G­1G2 H. Nhưng thành phần do tín hiệu vào cũng bị giảm cùng một lượng.</para>
+          <para id="id22438224">Tỷ số S/N bây giờ là:</para>
+          <para id="id22438233"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mrow><m:mrow><m:mrow><m:mi>S</m:mi><m:mo stretchy="false">/</m:mo><m:mi>N</m:mi></m:mrow><m:mo stretchy="false">=</m:mo><m:mfrac><m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mtext> r /</m:mtext><m:mo stretchy="false">(</m:mo><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mtext> H</m:mtext><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mtext>n / </m:mtext><m:mo stretchy="false">(</m:mo><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mtext> H</m:mtext><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac></m:mrow><m:mo stretchy="false">=</m:mo><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:mfrac><m:mi>r</m:mi><m:mi>n</m:mi></m:mfrac></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{S/N= {  {G rSub { size 8{1} } G rSub { size 8{2} } " r /" \( 1+G rSub { size 8{1} } G rSub { size 8{2} } " H" \)  }  over  {G rSub { size 8{2} } "n / " \( 1+G rSub { size 8{1} } G rSub { size 8{2} } " H" \) } } =G rSub { size 8{1} }  {  {r}  over  {n} } } {}</m:annotation></m:semantics></m:math> (1.8)</para>
+          <para id="id21992351">Và cũng bằng như khi không có hồi tiếp. Trong trường hợp này, hồi tiếp không có hiệu quả trực tiếp đối với tỷ số S/N của hệ thống. Tuy nhiên , sự áp dụng hồi tiếp làm nảy ra khả năng làm tăng tỷ số S/N dưới vài điều kiện. Giả sử rằng suất G­1 tăng đến G1’và r đến r’, các thông số khác không thay đổi , output do tín hiệu vào tác độïng riêng (một mình) thì cũng bằng như khi không có hồi tiếp. Nói cách khác ta có :</para>
+          <para id="id21992401"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>C</m:mi><m:mrow><m:mrow><m:msub><m:mo stretchy="false">∣</m:mo><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>n</m:mi><m:mo stretchy="false">=</m:mo><m:mn>0</m:mn></m:mrow></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">=</m:mo><m:mfrac><m:mrow><m:mi>G</m:mi><m:msub><m:mi>'</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mi>r</m:mi><m:mi>'</m:mi></m:mrow><m:mrow><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:mi>G</m:mi></m:mrow><m:msub><m:mi>'</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mi>H</m:mi></m:mrow></m:mfrac></m:mrow><m:mo stretchy="false">=</m:mo><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mi>r</m:mi></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{C \rline  rSub { size 8{n=0} } = {  {G' rSub { size 8{1} } G rSub { size 8{2} } r'}  over  {1+G' rSub { size 8{1} } G rSub { size 8{2} } H} } =G rSub { size 8{1} } G rSub { size 8{2} } r} {}</m:annotation></m:semantics></m:math>  (1.9)</para>
+          <para id="id22320202">Với sự tăng G1, G1’ output do nhiễu tác đôïng riêng một mình sẽ là: </para>
+          <para id="id22320227"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>C</m:mi><m:mrow><m:msub><m:mo stretchy="false">∣</m:mo><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>r</m:mi><m:mo stretchy="false">=</m:mo><m:mn>0</m:mn></m:mrow></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">=</m:mo><m:mfrac><m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mi>n</m:mi></m:mrow><m:mrow><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:mi>G</m:mi></m:mrow><m:msub><m:mi>'</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mi>H</m:mi></m:mrow></m:mfrac></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{C \rline  rSub { size 8{r=0} } = {  {G rSub { size 8{2} } n}  over  {1+G' rSub { size 8{1} } G rSub { size 8{2} } H} } } {}</m:annotation></m:semantics></m:math> (1.10)</para>
+          <para id="id22454855">Nhỏ hơn so với khi G1 không tăng. Bây giờ tỷ số S/N sẽ la:ø</para>
+          <para id="id22454873"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mrow><m:mfrac><m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mtext> r  </m:mtext></m:mrow><m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mtext>n / </m:mtext><m:mo stretchy="false">(</m:mo><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:msub><m:mtext>G'</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mtext> H</m:mtext><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac><m:mo stretchy="false">=</m:mo><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:mfrac><m:mi>r</m:mi><m:mi>n</m:mi></m:mfrac><m:mo stretchy="false">(</m:mo><m:mrow><m:mn>1</m:mn><m:mo stretchy="false">+</m:mo><m:msub><m:mtext>G'</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:msub><m:mi>G</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>2</m:mn></m:mrow></m:mstyle></m:msub><m:mtext> H</m:mtext><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {  {G rSub { size 8{1} } G rSub { size 8{2} } " r  "}  over  {G rSub { size 8{2} } "n / " \( 1+"G'" rSub { size 8{1} } G rSub { size 8{2} } " H" \) } } =G rSub { size 8{1} }  {  {r}  over  {n} }  \( 1+"G'" rSub { size 8{1} } G rSub { size 8{2} } " H" \) } {}</m:annotation></m:semantics></m:math> (1.11).</para>
+          <para id="id21858810">Nhận thấy nó lớn hơn hệ thống không hồi tiếp bởi hệ số (1+ G1’G2H) </para>
+          <para id="id21858837">Một cách tổng quát, hồi tiếp cũng gây hiệu quả trên các tính chất của hệ thống, như độ rộng dãy tần, tổng trơ,û đáp ứng quá độ ( Transient Response) và đáp ứng tần số.</para>
+        </section>
+      </section>
+    </section>
+    <section id="id-43983540564">
+      <title>CÁC LOẠI HỆ THỐNG ĐIỀU KHIỂN TỰ ĐỘNG.</title>
+      <para id="id21858868">Có nhiều cách phân loại hệ thống điều khiển.</para>
+      <list id="id21858881" list-type="bulleted">
+        <item>Nếu dựa vào phương pháp phân tích , thiết kế thì chúùng gồm các loại tuyến tính, phi tuyến thay đổi theo thời gian (time varying ), không thay đổi theo thời gian (time invariant).</item>
+      </list>
+      <list id="id21858902" list-type="bulleted">
+        <item>Nếu dựa vào loại tín hiệu trong hệ thống thì chúng gồm các loại dữ liệu liên tục( continous – data), dữ liệu gián đoạn (discrete data), biến điệu và không biến điệu.</item>
+      </list>
+      <list id="id21589748" list-type="bulleted">
+        <item>Nếu dựa vào loại của các thành phần của hệ thống , thì chúng gồm có các loại điện cơ , thủy lực, khí đôïng .Tùy vào mục đích chính của hệ mà người ta xếp loại chúng như kiểu nào .</item>
+      </list>
+      <section id="id-725465734272">
+        <title>Hệ tự điều khiển tuyến tính và phi tuyến.</title>
+        <para id="id21589781">Nói một cách chặt chẽ, các hệ thống tuyến tính đều không có trong thực tế . Vì mọi hệ thống vật lý đều phi tuyến. Hệ điều khiển hồi tiếp tuyến tính chỉ là mô hình lý tưởng hóa để làm đơn giản việc phân tích và thiết kế.</para>
+        <para id="id21589798">Khi độ lớn của tín hiệu của hệ được giới hạn trong một vùng mà ở đó các thành phần biểu lộ tính thẳng ( nghĩa là nguyên lý chồng chất áp dụng được ) thì hệ thống được xem là tuyến tính . Nhưng khi tín hiệu vượt quá vùng hoạt động tuyến tính, tùy vào sự nghiêm ngặt của tính phi tuyến, hệ thống sẽ không được xem là tuyến tính nữa. Thí dụ : các mạch khuếch đại được dùng trong hệ điều khiển thường bảo hòa khi tín hiệu đưa vào chúng trở nên quá lớn.</para>
+        <para id="id21589823">Từ trường của một motor thường có tính bảo hòa. Hiệu ứng phi tuyến thường gặp trong các hệ điều khiển là vùng chết (dead zone ) giữa các bánh răng ; tính phi tuyến của lò xo ; lực ma sát phi tuyến ….</para>
+        <para id="id21589839">Với các hệ tuyến tính, có một sự phong phú về các kỹ thuật giải tích và đồ họa giúp cho việc thiết kế được dễ dàng. Còn trong các hệ phi tuyến , một “liệu pháp”(treat ) toán học thường là rất khó. Và không có phương pháp tổng quát đểû có thể giải quyết một số lớn các hệ phi tuyến.</para>
+      </section>
+      <section id="id-876596512546">
+        <title>Hệ thống có thông số thay đôûi và không thay đôûi theo thời gian.</title>
+        <para id="id21589873">Khi các thông số của một hệ điều khiển được giữ nguyên không thay đôûi trong suốt thời gian hoạt động của nó, thì hệ được gọi là hệ không thay đôûi theo thời gian ( time invariant). Trong thực tế , hầu hết các hệ thống vật lý đều chứa những thành phần có thông số bị trôi, hay thay đôûi theo thời gian. Thí dụ : điện trở dây quấn của một động cơ điện sẽ thay đổi khi t­­­0 gia tăng. </para>
+        <para id="id21589906">Thí dụ khác, hệ thống điều khiển đường đi của hỏa tiển, trong đó khối lượng của hỏa tiển giảm do sự tiêu thụ trên đường bay.</para>
+        <para id="id21589919">Mặc dù một hệ có thông số thay đổi theo thời gian không phi tuyến thì vẫn là một hệ tuyến tính, nhưng sự phân tích và thiết kế loại hệ này thường là rất phức tạp so với các hệ tuyến tính có thông số không thay đổi .</para>
+      </section>
+      <section id="id-970037087261">
+        <title>Hệ điều khiển dữ liệu liên tục .</title>
+        <para id="id22325625">Một hệ điều khiển số liệu liên tục là một hệ trong đó các tín hiệu ở những thành phần khác của hệ là các hàm liên tục của biến số thời gian t.</para>
+        <para id="id22325640">Trong các hệ điều khiển số liệu liên tục, các tín hiệu có thể là AC hoặc DC. Không giống trong định nghĩa tổng quát của AC và DC dùng trong kỹ thuật điện, AC và DC của hệ điều khiển mang ý nghĩa chuyên biệt. Khi nói một hệ điều khiển AC, có nghĩa là các tín hiệu trong đó được biến điệu bởi một kiểu biến điệu nào đó, và khi nói một hệ điều khiển DC, có nghĩa là tín hiệu của nó không biến điệu nhưng chúng vẫn là tín hiệu AC.</para>
+      </section>
+      <section id="id-710245829903">
+        <title>Hệ điều khiển dữ liệu gián đoạn. </title>
+        <para id="id22325684">Là hệ có tín hiệu không liên tục .</para>
+        <para id="id22325694">a) Nếu tín hiệu có dạng một loạt chuỗi xung (pulse train ), thì hệ được gọi là hệ dữ liệu mẫu hóa ( sample data system ).</para>
+        <para id="id22325717">b) Nếu tín hiệu là xung được mã hóa số thích hợp cho việc sử dụng digital computer thì gọi là hệ điều khiển digital.</para>
+        <para id="id22325740">Thí dụ: Hệ điều khiển máy đánh chữ điện tử là một hệ điều khiển digital, vì bộ xử lý nhận và cho ra các số liệu digital.</para>
+        <para id="id22325757">Một cách tổng quát, một hệ dữ liệu mẫu hóa chỉ nhận số liệu và thông tin một cách ngắt quãng tại những thời điểm riêng. Thí dụ: tín hiệu sai số trong hệ có thể được cung cấp ngắt quãng dưới dạng xung. Như vậy hệ sẽ không nhận thông tin về sai số suốt trong giai đoạn giữa hai xung liên tiếp. </para>
+        <figure id="id22325784">
+          <media id="id41448638" alt=""><image src="../../media/graphics13.png" mime-type="image/png" height="128" width="466"/></media>
+        </figure>
+        <para id="id22325808">H.1_12 : Sơ đồ khối một hệ điều khiển dữ liệu mẫu hóa.</para>
+        <para id="id21847191">Một tín hiệu vào liên tục r(t) được đưa vào hệ thống. Tín hiệu sai số e(t) được lấy mẫu ( sampling). Ngõ ra của bộ phận lấy mẫu ( sampler) là một loạt xung. Tần số lấy mẫu có thể đều hay là không. </para>
+        <para id="id21847209">Hình H.1_13 là sơ đồ khối cơ bản của hệ thống điều khiển digital để hướng dẫn quỹ đạo tên lửa autopilot tự tìm mục tiêu.</para>
+        <figure id="id21847225">
+          <media id="id41448717" alt=""><image src="../../media/graphics14.png" mime-type="image/png" height="215" width="555"/></media>
+        </figure>
+        <para id="id21847249">H.1_13 : Sơ đồ khối cơ bản của hệ thống điều khiển quỹ đạo tên lửa tự tìm mục tiêu.</para>
+      </section>
+      <section id="id-143082662654">
+        <title>Chỉnh cơ tự động ( servomechanism).</title>
+        <para id="id21847282">Một loại hệ thống điều khiển đáng được đặc biệt lưu tâm do tính thịnh hành của nó trong kỹ nghệ và ngôn ngữ điều khiển học. Đó là servomechanism.</para>
+        <para id="id21847296">Một servomechanism là một hệ điều khiển tự động, trong đó biến số kiểm soát C là vị trí cơ học, hoặc đạo hàm theo thời gian của vị trí( vận tốc hay gia tốc).</para>
+        <para id="id21847310">Thí dụ : Xem một bộ điều khiển tự đôïng đóng mở van nước. </para>
+        <figure id="id21847328">
+          <media id="id42096990" alt=""><image src="../../media/graphics15-baee.png" mime-type="image/png" height="176" width="495"/></media>
+        </figure>
+        <para id="id21847352">H.1_14: Servo mechanism điều khiển van.</para>
+        <para id="id21847360">Ngõ vào của hệ thống là một biến trở loại quay P1, được đấu với nguồn điện. Chân thứ 3( con chạy) được quy chuẩn theo vị trí góc ( radians) và đấu vào một ngõ vào của mạch khuếch đại servo. Mạch khuếch đại này cung cấp đủ điện thế cho một động cơ điện gọi là servo motor. Trục của motor được truyền ( cơ khí ) đến một van để mở hay khóa nước. Nếu trục motor quay 3600 thì van mở hoàn toàn.</para>
+        <para id="id20978937">P2 gọi là biến trở hồi tiếp. Chân thứ 3 được nối ( cơ khí ) với trục motor nhờ một bánh răng và đấùu ( điện ) với ngõ vào thứ hai của mạch khuếch đại servo.</para>
+        <para id="id20978951">Tùy vị trí con chạy của hai biến trở, mà điện thế sai biệt e có thêû dương, âm hay bằng zero. Điện thế này được khuếch đại, sau đó đặt vào motor đêû điều khiển motor quay theo chiều mở van, đóng van hay vẩn giữ van ở vị trí củ ( e= 0; khi đo ùmotor không quay). Giã sử van đang đóng, ta quay P1 một góc (để đặt một tiêu chuẩn tham khảo ở ngõ vào ). Điện thế e mất cân bằng ( khác 0), làm cho motor quay một góc ( thích ứng với góc quay của con chạy P1 ) làm van mở. Đồng thời, qua bộ bánh răng truyền động , con chạy P2 cũng quay một góc sao cho điện thế sai biệt e trở về 0 (motor không quay ). Van được giữ ở độ mở ấy.</para>
+        <para id="id20978987">Hệ thống trên được trình bày bằng sơ đồ khối như sau :</para>
+        <para id="id20978997">
+          <media id="id42097122" alt=""><image src="../../media/graphics16-4664.png" mime-type="image/png" height="197" width="619"/></media>
+        </para>
+        <para id="id20979037">H.1_15 : Sơ đồ khối servomechamism điều khiển van.</para>
+        <para id="id20979047">Một số thí dụ :</para>
+        <list id="id20979059" list-type="enumerated">
+          <item>Xem một cầu phân thế như hình vẽ. Output là v2 và input là v1. Mạch thụ động này có thể mô hình hóa như là một hệ vòng hở hoặc như một hệ vòng kín.</item>
+        </list>
+        <para id="id20979094"><figure id="id20979104"><media id="id41999038" alt=""><image src=".wmf" mime-type="image/wmf" height="138" width="336"/></media></figure>i</para>
+        <para id="id21066346">H.1_16</para>
+        <para id="id21066376">a. Từ các định luật Kirchhoff, ta có :</para>
+        <para id="id21066390">v2 = R2. i</para>
+        <para id="id21066417">i= v1/ (R1 + R2 )</para>
+        <para id="id21066453">Vậy v2 =( R2 / (R1 + R2 )).v1= f(v1,R1,R2) </para>
+        <figure id="id21827986">
+          <media id="id42097294" alt=""><image src="graphics17.wmf" mime-type="image/wmf" height="113" width="275"/></media>
+        </figure>
+        <para id="id21828010">b. Nếu biết dòng i dưới dạng khác hơn: </para>
+        <para id="id21828025"> i = ( v1-v2 ) / R1 thì: </para>
+        <para id="id21828065"> v2 = R2 ( v1 – v2 ) / R1 = v1 . R2 / R1 –v2 .R2 /R1</para>
+        <para id="id22257306"> = f (v1, v2, R1, R2 )  </para>
+        <figure id="id22257359">
+          <media id="id42097372" alt=""><image src="graphics18.wmf" mime-type="image/wmf" height="146" width="365"/></media>
+        </figure>
+        <para id="id22257383">2. Hệ thống tự điều khiển để tay người chạm đến một đồ vật, có thể nhận dạng như sau : các bộ phận chính của hệ là óc, cánh tay, bàn tay và mắt.</para>
+        <para id="id22257407">
+        ***SORRY, THIS MEDIA TYPE IS NOT SUPPORTED.***
+      </para>
+        <para id="id22257437">Hình 1.19</para>
+        <para id="id22257442">Bộ óc gởi tín hiệu thần kinh đến cánh tay. Tín hiệu này được khuếch đại trong các bắp thịt của cánh tay và bàn tay, và xem như các tín hiệu tác động của hệ thống. Mắt dùng như bộ cảm biến, hồi tiếp liên tục vị trí của cánh tay và vị trí vật đến óc.</para>
+        <para id="id22257466">Vị trí tay là output của hệ, vị trí vật là input. Mục đích của hệ điều khiển là thu nhỏ khoảng cách của vị trí tay và vị trí vật đến zero.</para>
+        <figure id="id21665630">
+          <media id="id40955936" alt=""><image src="graphics19.png" mime-type="image/png" height="144" width="556"/></media>
+        </figure>
+        <para id="id21665653"> H.1_20</para>
+        <para id="id21665673">3. Định luật cung cầu của kinh tế học có thể được xem như một hệ điều khiển tự động. Giá bán ( giá thị trường ) của một hàng hóa nào đó là output của hệ. Mục tiêu của hệ là giữ cho giá ổn định. </para>
+        <para id="id21665701">Định luật cung cầu cho rằng giá thị trường ổn định nếu và chỉ nếu cung bằng cầu.</para>
+        <para id="id21665710">Ta chọn 4 bộ phận chính của hệ thống là người cung, người cầu, người định giá thị trường, ở đó hàng hóa được mua và bán.</para>
+        <para id="id21665725">Input là sự ổn định của vật giá, hay tiện lợi hơn, là sự nhiễu loạn giá bằng zero. Output là giá thực tế của thị trường.</para>
+        <para id="id21665742">Sự hoạt đôïng của hệ thống được giải thích như sau :</para>
+        <para id="id21665756">Người định giá nhận một tín hiệu (zero) khi vật giá ổn định. Ông ta định một giá bán với sự giúp đỡ của những thông tin từ trí nhớ hay giá biểu của sự giao dịch trước đó. Giá này làm người cung sản xuất đưa vào thị trường một lượng hàng hóa nào đó, và người cầu mua một số trong số đó. Sự chênh lệch (sai số ) giữa cung và cầu được điều chỉnh bởi hệ thống này. Nếu cung không bằng cầu, người định giá sẽ thay đổi giá thị trường theo hướng sau cho cung bằng với cầu. Vậy cả cung và cầu đều có thêû xem là hồi tiếp vì chúng xác định tác động kiểm soát . Hệ thống được biểu diễn như H.1_21. </para>
+        <figure id="id21665808">
+          <media id="id40956101" alt=""><image src="../../media/graphics20-f1a3.png" mime-type="image/png" height="316" width="613"/></media>
+        </figure>
+        <para id="id21665832">H.1_21</para>
+      </section>
+    </section>
+  </content>
+</document>

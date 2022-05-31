@@ -1,0 +1,447 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Biến điệu góc</title>
+  <metadata>
+  <md:content-id>m30230</md:content-id><md:title>Biến điệu góc</md:title>
+  <md:abstract>+ TẦN SỐ TỨC THỜI.
++ BIẾN ĐIỆU TẦN SỐ (FREQUENCY MODULATION).
++ BIẾN ĐIỆU PHA.
++ FM BĂNG HẸP (NARROW BAND FM).
++ PM BĂNG HẸP.
++ FM BĂNG RỘNG (WIDE BAND FM).
++ HÀM BESSEL.
++ KHỐI BIẾN ĐIỆU.
++ KHỐI HOÀN ĐIỆU.
++ FM STEREO.
++ SO SÁNH CÁC HỆ.</md:abstract>
+  <md:uuid>68df3ab3-e78c-4dcb-8544-9455f517bf88</md:uuid>
+</metadata>
+
+<content>
+    <para id="id3186402">TẦN SỐ TỨC THỜI.</para>
+    <para id="id3186407">Xem một sóng mang chưa bị biến điệu </para>
+    <para id="id3186413">sC(t) = A cos(2fCt + )(5.1)</para>
+    <para id="id3186442">Nếu fC bị thay đổi tùy theo thông tin mà ta muốn truyền, sóng mang được nói là được biến điệu tần số. Còn nếu  bị làm thay đổi, sóng mang bị biến điệu pha. Nhưng nếu khi fC hay  bị thay đổi theo thời gian, thì sC(t) không còn là Sinusoide nữa. Vậy định nghĩa về tần số mà ta dùng trước đây cần được cải biến cho phù hợp.</para>
+    <para id="id3186490">Xem 3 hàm thời gian:</para>
+    <para id="id3186495">s1(t) = A cos 6t(5.2a)</para>
+    <para id="id3186512">s2(t) = A cos (6t +5)(5.2b)</para>
+    <para id="id3186530">s3(t) = A cos (2t e-t )(5.2c)</para>
+    <para id="id3186553">Tần số của s1(t) và s2(t) rõ ràng là 3Hz. Tần số của s3(t) hiện tại chưa xác định. Định nghĩa truyền thống của ta về tần số không áp dụng được cho loại sóng này. Vậy cần mở rộng khái niệm về tần số để áp dụng cho những trường hợp mà ở đó tần số không là hằng.</para>
+    <para id="id3186576">Ta định nghĩa tần số tức thời theo cách có thể áp dụng được cho các sóng tổng quát. Tần số tức thời được định nghĩa như là nhịp thay đổi của pha.</para>
+    <para id="id6071680">Đặt s(t) = A cos (t)  <figure id="id6071698"><media id="id3150172" alt=""><image src="graphics1.wmf" mime-type="image/wmf" height="43" width="89"/></media></figure>(5.3)</para>
+    <para id="id6071724">fi : tần số tức thời, Hz. Nhớ là cả 2 vế của phương trình (5.3) có đơn vị là rad/sec.</para>
+    <para id="id6071737">Như vậy trong thí dụ trên, tần số tức thời của các tín hiệu đã cho lần lượt là 3Hz; 3Hz và e-t (1 - t) Hz.</para>
+    <para id="id6071751">Thí dụ 1: Tìm tần số tức thời của các sóng sau:</para>
+    <figure id="id6071769">
+      <media id="id6215914" alt=""><image src="graphics2.wmf" mime-type="image/wmf" height="78" width="161"/></media>
+    </figure>
+    <para id="id6071793">Giải:</para>
+    <para id="id6071797">Sóng có dạng: </para>
+    <para id="id6071802">s(t) = cos[2t g(t)](5.4)</para>
+    <para id="id6071815">Trong đó g(t) được biểu thị như hình 5.1.</para>
+    <figure id="id6071824">
+      <media id="id1166167286340" alt=""><image src="graphics3.wmf" mime-type="image/wmf" height="158" width="258"/></media>
+    </figure>
+    <para id="id6071848">Hình 5.1</para>
+    <para id="id6071852">Tần số tức thời cho bởi:</para>
+    <figure id="id6071861">
+      <media id="id1166175121947" alt=""><image src="graphics4.wmf" mime-type="image/wmf" height="43" width="200"/></media>
+    </figure>
+    <para id="id6071885">fi (t) được vẽ ở hình 5.2.</para>
+    <para id="id6071895">
+        ***SORRY, THIS MEDIA TYPE IS NOT SUPPORTED.***
+      Hình 5.2</para>
+    <para id="id6071928">Thí dụ 2. Tìm tần số tức thời của hàm sau đây:</para>
+    <para id="id6071939">s(t) = 10 cos2[1000t + sin 10t ]</para>
+    <para id="id6071955">Giải:</para>
+    <para id="id6071959">Ap dụng định nghĩa để tìm:</para>
+    <figure id="id6071968">
+      <media id="id1166165603774" alt=""><image src="graphics5.wmf" mime-type="image/wmf" height="43" width="239"/></media>
+    </figure>
+    <para id="id6071992">fi được vẽ ở hình 5.3.</para>
+    <para id="id6072002">
+        ***SORRY, THIS MEDIA TYPE IS NOT SUPPORTED.***
+      Hình 5.3</para>
+    <section id="id-934020295541">
+      <title>BIẾN ĐIỆU TẦN SỐ (FREQUENCY MODULATION).</title>
+      <para id="id6072043">Biến điệu FM được phát minh bởi Edwin Armstrong năm 1933 [cũng là người phát minh máy thu kiểu đổi tần (superheterodyne - siêu phách)]. Trong biến điệu FM, ta biến điệu tần số tức thời fi (t) bởi tín hiệu s(t). Và cũng vì để có thể tách biệt các đài với nhau, ta phải dời tần s(t) lên đến tần số sóng mang fC.</para>
+      <para id="id6072070">Ta định nghĩa biến điệu FM như là một sóng với tần số tức thời như sau:</para>
+      <para id="id6072078">fi (t) = fC + Kf s(t)(5.5)</para>
+      <para id="id6072101">Trong đó: fC là tần số sóng mang (hằng số) và Kf là hằng số tỷ lệ, thay đổi theo biên độ của s(t). Nếu s(t) tính bằng volt, Kf có đơn vị là Hz/v hoặc 1/v.sec .</para>
+      <para id="id6072128">Vì tần số là đạo hàm của pha, nên</para>
+      <para id="id6072134">(t) = 2<figure id="id6072147"><media id="id1166171090516" alt=""><image src="graphics6.wmf" mime-type="image/wmf" height="46" width="24"/></media></figure>fi ()d = 2 [fCt + Kf <media id="id4163507" alt=""><image src="graphics7.wmf" mime-type="image/wmf" height="46" width="22"/></media>s()d](5.6)</para>
+      <para id="id6072244">Giả sử điều kiện đầu bằng zero, sóng biến điệu có dạng:</para>
+      <para id="id6072251">fm(t) = A cos  (t).</para>
+      <para id="id6072270"><figure id="id6072273"><media id="id5382143" alt=""><image src="graphics8.wmf" mime-type="image/wmf" height="56" width="240"/></media></figure>(5.7)</para>
+      <para id="id6072300">Nhớ là, nếu đặt s(t) = 0, phương (5.7) sẽ thành một sóng mang thuần túy. </para>
+      <para id="id6072307">Td . Vẽ sóng AMSC và FM cho các tín hiệu thông tin như hình 5.4.</para>
+      <para id="id6072318">Giải:</para>
+      <para id="id6072322">ts1(t)<figure id="id6074762"><media id="id1166167478423" alt=""><image src=".png" mime-type="image/png" height="125" width="325"/></media></figure>sm1(t) </para>
+      <para id="id6074848"><figure id="id6074858"><media id="id1166166250918" alt=""><image src=".png" mime-type="image/png" height="139" width="320"/></media></figure>m1(t)</para>
+      <para id="id6074940">Hình 5.4</para>
+      <para id="id6074945">ts2(t)</para>
+      <para id="id6075105"><figure id="id6075115"><media id="id3744376" alt=""><image src=".png" mime-type="image/png" height="163" width="257"/></media></figure>sm2(t)</para>
+      <para id="id6075183"><figure id="id6075193"><media id="id1166166199101" alt=""><image src=".png" mime-type="image/png" height="160" width="297"/></media></figure>m2(t)</para>
+      <para id="id6075275">Hình 5.4</para>
+      <para id="id6075280">Tần số của fm(t) thay đổi từ fC + Kf[min . s(t)] đến fC + Kf[max . s(t)].</para>
+      <para id="id6075318">Bằng cách làm cho Kf nhỏ một cách tùy ý, thì tần số của fm(t) có thể được giữ một cách tùy ý xung quanh fC. Điều đó làm tiết giảm được khổ băng.</para>
+      <para id="id6075349">Nhớ là sự biến điệu thì không tuyến tính cho s(t). Nếu thay s(t) trong phương trình (5.7) bằng một tổng gồm nhiều tín hiệu thì sóng FM kết quả không là tổng của các sóng FM thành phần. Điều đó đúng, vì:</para>
+      <para id="id6075362">Cos (A + B)  cosA + cosB.</para>
+      <para id="id6075372">Ta chia biến điệu FM làm 2 nhóm; tùy thuộc vào cở của Kf. Với Kf rất nhỏ ta có FM băng hẹp; và Kf lớn ta có FM băng rộng.</para>
+    </section>
+    <section id="id-781109644801">
+      <title>BIẾN ĐIỆU PHA.</title>
+      <para id="id6075406">Không có sự khác biệt cơ bản giữa biến điệu pha và biến điệu tần số. Hai từ ấy thường được dùng thay đổi cho nhau. Biến điệu một pha bằng một sóng thì cũng như biến điệu đạo hàm của nó (tần số) với sóng ấy.</para>
+      <para id="id6075420">Sóng biến điệu pha cũng có dạng:</para>
+      <para id="id6075425">pm(t) = A cos (t).</para>
+      <para id="id6075445">Trong đó (t) được biến điệu bởi s(t). Vậy:</para>
+      <para id="id6075457">(t) =2 [fCt + Kp s(t)](5.8)</para>
+      <para id="id6109023">Hằng số tỷ lệ Kp có đơn vị V-1. Sóng PM có dạng:</para>
+      <para id="id6109035">pm(t) = A cos 2 [fCt + Kp s(t)] (5.9)</para>
+      <para id="id6109084">Khi s(t) = 0, sóng PM trở thành sóng mang thuần túy.</para>
+      <para id="id6109090">Ta có thể liên hệ PM với FM bằng cách dùng định nghĩa của tần số tức thời:</para>
+      <para id="id6109098">fi (t) = fC + Kp <figure id="id6109113"><media id="id5360049" alt=""><image src="graphics9.wmf" mime-type="image/wmf" height="43" width="22"/></media></figure>(5.10)</para>
+      <para id="id6109139">Trông rất giống với (5.5), trường hợp của FM. </para>
+      <para id="id6109146">Thực vậy, không có sự khác biệt giữa việc biến điệu tần số một sóng mang bằng s(t) và việc biến điệu pha của cùng sóng mang đó bằng tích phân của s(t). Ngược lại không có gì khác nhau giữa việc biến điệu pha của một sóng mang bằng s(t) và biến điệu tần số cùng sóng mang ấy bằng đạo hàm của s(t).</para>
+      <para id="id6109160">Vì vậy, tất cả các kết quả sau đây thì chuyển dễ dàng giữa 2 loại biến điệu.</para>
+    </section>
+    <section id="id-770935188146">
+      <title>FM BĂNG HẸP (NARROW BAND FM).</title>
+      <para id="id6109178">Nếu Kf rất bé, ta có thể dùng phép tính xấp xỉ để đơn giản phương trình của sóng FM.</para>
+      <para id="id6109191"><figure id="id6109194"><media id="id1166165938598" alt=""><image src="graphics10.wmf" mime-type="image/wmf" height="42" width="244"/></media></figure>(5.11)</para>
+      <para id="id6109221">Để tránh việc lập lại nhiều lần, ta đặt g(t) là tích phân của tín hiệu chứa tin.</para>
+      <para id="id6109227"><figure id="id6109230"><media id="id1166167331640" alt=""><image src="graphics11.wmf" mime-type="image/wmf" height="53" width="96"/></media></figure>(5.12)</para>
+      <para id="id6109256">Phương trình (5.11) trở nên:</para>
+      <para id="id6109261">fm(t) = A cos 2<figure id="id6109279"><media id="id8013822" alt=""><image src="graphics12.wmf" mime-type="image/wmf" height="26" width="103"/></media></figure>(5.13)</para>
+      <para id="id6109305">Dùng lượng giác, khai triển hàm cosine:</para>
+      <para id="id6109311">fm(t) = Acos2fCt . cos2Kf g(t) - A sin2fCt . sin2Kf g(t)(5.14)</para>
+      <para id="id6109370">Cosine của một góc bé  1. Trong khi sin của nó gần bằng chính nó. </para>
+      <para id="id6109383">Vậy, nếu Kf đủ nhỏ sao cho 2Kf g(t) biểu diễn cho một góc rất nhỏ, ta có thể tính xấp xỉ phương trình (5.14):</para>
+      <para id="id6109408">fm(t)  Acos2fCt - 2A g(t) Kf sin2fCt(5.15)</para>
+      <para id="id6109467">Phép tính này tuyến tính với g(t) và như vậy tuyến tính với s(t). Ta có thể tính biến đổi F của nó (với một ít khó khăn) như sau:</para>
+      <para id="id6109479">Biến đổi F của g(t) liên hệ với s(t) bởi:</para>
+      <para id="id6109485">G(f) = <figure id="id6109490"><media id="id1166164799640" alt=""><image src="graphics13.wmf" mime-type="image/wmf" height="44" width="38"/></media></figure></para>
+      <para id="id6109513">Lấy biến đổi F của (5.15):</para>
+      <para id="id6109519"><figure id="id6109522"><media id="id3070196" alt=""><image src="graphics14.wmf" mime-type="image/wmf" height="47" width="436"/></media></figure>(5.16)</para>
+      <para id="id6109548">
+        ***SORRY, THIS MEDIA TYPE IS NOT SUPPORTED.***
+      Hình 5.5: Biến đổi F của sóng FM.</para>
+      <para id="id6109584">FM băng hẹp có 3 vấn đề:</para>
+      <para id="id6109589">- Tần số có thể tăng cao đến mức cần thiết để truyền đi có hiệu qủa, bằng cách điều chỉnh fC đến trị mong muốn.</para>
+      <para id="id6109604">- Nếu tần số sóng mang của nguồn tin lân cận cách nó ít nhất 2fm, thì các tín hiệu chứa những nguồn tin khác nhau có thể truyền cùng lúc trên cùng một kênh.</para>
+      <para id="id6109620">- s(t) có thể hồi phục từ sóng biến điệu. Và phần sau ta sẽ thấy, cùng một khối hoàn điệu có thể tách sóng cho FM trong cả 2 trường hợp Kf nhỏ và Kf lớn.</para>
+      <para id="id6109642">Khổ băng của sóng FM là 2fm, đúng như trường hợp AM hai cạnh. Thí dụ dùng tiếng huýt sáo (tối đa 5000Hz) để biến điệu một sóng mang. Giả sử sự dời tần tối đa là 1Hz. Như vậy, tần số tức thời thay đổi từ (fC - 1)Hz đến (fC + 1)Hz. Biến đổi F của sóng FM chiếm một băng giữa (fC - 5000)Hz và (fC + 5000)Hz. </para>
+      <para id="id6109688">Rõ ràng, tần số tức thời và cách thức mà nó thay đổi đã góp phần (cả 2) vào khổ băng của FM.</para>
+      <para id="id6109696">Gọi là “Băng hẹp” khi Kf nhỏ, là vì khi Kf tăng, khổ băng sẽ tăng từ trị tối thiểu 2fm.</para>
+    </section>
+    <section id="id-17042665524">
+      <title>PM BĂNG HẸP.</title>
+      <para id="id6109739">Biến điệu pha bằng s(t) thì giống như biến điệu tần số bằng đạo hàm của s(t). Vì đạo hàm của s(t) chứa cùng khoảng tần số như s(t), nên khổ băng của PM băng hẹp cũng chiếm vùng tần số từ giữa fC - fm và fC + fm. Tức là khổ băng rộng 2fm.</para>
+      <para id="id6109780">Với FM băng hẹp, trị max của 2kf g(t) là một góc rất nhỏ (Trong đó g(t) là tích phân của s(t)).</para>
+      <para id="id6109799">Với PM băng hẹp, 2Kp s(t) phải là một góc rất nhỏ. Điều này cho phép tính xấp xỉ cosine và sine (số hạng thứ nhất trong chuổi khai triển).</para>
+    </section>
+    <section id="id-0493781287936">
+      <title>FM BĂNG RỘNG (WIDE BAND FM).</title>
+      <para id="id6109824">Nếu Kf nhỏ không đủ để cho phép tính xấp xỉ như ở phần trên, ta có FM băng rộng. Tín hiệu được truyền </para>
+      <para id="id6109838">fm(t) = A cos 2<figure id="id6109855"><media id="id3394526" alt=""><image src="graphics15.wmf" mime-type="image/wmf" height="26" width="107"/></media></figure>(5.17)</para>
+      <para id="id6109882">Trong đó g(t) là tích phân của tín hiệu chứa tin s(t). Nếu g(t) là một hàm đã biết, biến đổi F của sóng FM sẽ tính được. Nhưng trong những trường hợp tổng quát, không thể tìm biến đổi F cho sóng FM, vì sự liên hệ phi tuyến giữa s(t) và sóng biến điệu. Những phân giải thực hiện trong phạm vi thời gian.</para>
+      <para id="id6109896">Ta giới hạn trong một trường hợp riêng, dùng tín hiệu mang tin là một Sinusoide thuần túy. Điều này cho phép dùng lượng giác trong phân giải.</para>
+      <para id="id6109906">S(t) = a cos 2fmt</para>
+      <para id="id6109922">a: hằng số biên độ.</para>
+      <para id="id6109927">Tần số tức thời của sóng FM được cho bởi:</para>
+      <para id="id6109933">fi (t) = fC + aKf cos 2fmt(5.18)</para>
+      <para id="id5400269">Sóng FM có dạng:</para>
+      <para id="id5400274">fm(t) = A cos <figure id="id5400287"><media id="id2295264" alt=""><image src="graphics16.wmf" mime-type="image/wmf" height="53" width="176"/></media></figure>(5.19)</para>
+      <para id="id5400313">Ta định nghĩa chỉ số biến điệu :</para>
+      <para id="id5400324"><figure id="id5400332"><media id="id1166167466766" alt=""><image src="graphics17.png" mime-type="image/png" height="26" width="17"/></media></figure><figure id="id5400356"><media id="id5031979" alt=""><image src="graphics18.wmf" mime-type="image/wmf" height="58" width="39"/></media></figure> , : không đơn vị(5.20)</para>
+      <para id="id5400397"> fm(t) = A cos (2fCt + sin2fmt)</para>
+      <para id="id5400446">fm(t) = Re {A exp (j2fCt +j sin 2fmt)}(5.21)</para>
+      <para id="id5400489">Hàm expo trong (5.21) phân thành một tích, trong đó thừa số thứ 2 có chứa tin. Đó là: expo (j sin 2fmt).</para>
+      <para id="id5400514">Đó là một hàm tuần hoàn, chu kỳ 1/fm.</para>
+      <para id="id5400524">Khai triển chuỗi F phức, tần số fm.</para>
+      <para id="id5400535"><figure id="id5400538"><media id="id1166176122155" alt=""><image src="graphics19.wmf" mime-type="image/wmf" height="47" width="174"/></media></figure>(5.22)</para>
+      <para id="id5400564">Hệ số F cho bởi:</para>
+      <para id="id5400575"><figure id="id5400578"><media id="id8463859" alt=""><image src="graphics20.wmf" mime-type="image/wmf" height="69" width="197"/></media></figure>(5.23)</para>
+      <para id="id5400604">Tích phân của (5.23) không tính được, nó hội tụ tại một trị giá thực. Trị giá thực là một hàm của n và . Nó không phải là một hàm của fm. Tích phân được gọi là hàm Bessel loại một, ký hiệu Jn().</para>
+    </section>
+    <section id="id-00693911776497">
+      <title>HÀM BESSEL.</title>
+      <para id="id5400647">Hàm Bessel loại 1 là giải đáp của phương trình vi phân:</para>
+      <para id="id5400653">x2<media id="id3912467" alt=""><image src="graphics21.wmf" mime-type="image/wmf" height="46" width="82"/></media> + ( x2 - n2 ) y( x ) = 0</para>
+      <para id="id5400705">Mặc dù hàm Bessel được định nghĩa cho tất cả trị giá của n, ta chỉ quan tâm đến các số nguyên thực dương và âm.</para>
+      <para id="id5400714">Với những trị nguyên của n,</para>
+      <para id="id5400720">J-n(x) = (-1)n Jn(x).</para>
+      <para id="id5400740">Hình 5.6, vẽ Jn cho những trị của n = 0, 1 và 2. Nhớ là với x rất nhỏ, J0(x) tiến đến 1 trong lúc J1(x) và J2(x) tiến đến zero. ( Xem hình trang sau ).</para>
+      <para id="id5400772">Ta hãy xem hàm Bessel khi n trở nên lớn. Ta khảo sát một điểm đặc biệt trên các đường cong. Hình 5.7, vẽ Jn (10) là một hàm của n.</para>
+      <para id="id5400787">- Khi n âm, hàm trở nên dao động không tắt ( under damped oscillator ).</para>
+      <para id="id5400794">- Với những trị n dương, ta lưu ý đến tính đối xứng của phương trinh (5.23).</para>
+      <para id="id5400806">- Một quan sát quan trọng là, với n &gt; 9, hàm Bessel tiến đến tiệm cận với zero. Thật vậy, với n cố định và  lớn, hàm Bessel có thể tính xấp xỉ bởi:</para>
+      <para id="id5400826">Jn ()  <figure id="id5400846"><media id="id1166170793543" alt=""><image src="graphics22.wmf" mime-type="image/wmf" height="68" width="61"/></media></figure> (5.24)</para>
+      <para id="id5400874">Trong đó  (n+1) là hàm Gamma.</para>
+      <figure id="id5400888">
+        <media id="id2480894" alt=""><image src="graphics23.png" mime-type="image/png" height="451" width="647"/></media>
+      </figure>
+      <para id="id5400912">Hình 5.6: Hàm Bessel cho n = 0, 1 và 2.</para>
+      <para id="id5400917">Hàm Gamma tiến đến  với các suất lớn hơn 2. Thí dụ, trị giá của hàm Gamma ứng với các suất 2, 3, 4, 5 và 6 là 1, 2 , 6, 24 và 120. Vì hàm Gamma nằm ở mẫu số, có thể thấy rằng hàm Bessel giảm rất nhanh khi n tăng. Đó là một tính chất chính tắc để tim khổ băng của sóng FM.</para>
+      <figure id="id5400946">
+        <media id="id5519888" alt=""><image src="graphics24.png" mime-type="image/png" height="327" width="648"/></media>
+      </figure>
+      <para id="id5400970">Hình 5.7: Jn (10) là một hàm của n.</para>
+      <para id="id5400981">Trở lại phương trình (5.23), ta thấy các hệ số Fourier được cho bởi: Cn = Jn ().</para>
+      <para id="id5401009">Và sóng FM trở nên:</para>
+      <para id="id5401014">fm (t) = Re <figure id="id5401027"><media id="id1166170150100" alt=""><image src="graphics25.wmf" mime-type="image/wmf" height="61" width="236"/></media></figure>(5.25)</para>
+      <para id="id5401053">Vì ej2fct khônglà một hàm của n, ta đem vào dấu tổng:</para>
+      <para id="id5401074">fm (t) = Re <figure id="id5401087"><media id="id1166163705856" alt=""><image src="graphics26.wmf" mime-type="image/wmf" height="61" width="215"/></media></figure></para>
+      <para id="id5401111">Và lấy phần thực:</para>
+      <para id="id5401116">fm (t) = A<figure id="id5401129"><media id="id3474435" alt=""><image src="graphics27.wmf" mime-type="image/wmf" height="58" width="197"/></media></figure>(5.26)</para>
+      <para id="id5401155">Ta đã rút gọn sóng FM thành tổng của các Sinusoids. Biến đổi F của tổng này là một chuỗi xung lực.</para>
+      <figure id="id5401166">
+        <media id="id1166170638273" alt=""><image src="../../media/graphics28-482d.png" mime-type="image/png" height="279" width="542"/></media>
+      </figure>
+      <para id="id5401190">Hình 5.8: Biến đổi F của FM, đối với tin tức là Sinusoids.</para>
+      <para id="id5401204">Ta đang gặp phải một rắc rối lớn ! Biến đổi này mở rộng theo cả 2 chiều từ tần số sóng mang. Nó có một khổ băng rộng vô hạn. Dù Jn() tiến đến zero tại vài trị giá, nhưng khổ băng rộng thì không bị giới hạn. Như vậy, ta không thể truyền có hiệu quả và cũng không thể phối hợp nhiều nguồn tin riêng lẻ vào chung một kênh ( Multiplexing ) ( vì trùng f ).</para>
+      <para id="id6113111">Với  không đổi, các hàm Jn() tiến đến zero khi n tăng. Với sự chọn lựa , số hạng J0() tiến đến zero và sóng mang bị loại. Trong trường hợp AM, sự loại bỏ sóng mang làm tăng hiệu suất. Nhưng đối với FM, sự loại sóng mang không được lợi gì cả vì công suất toàn phần giữ không đổi.</para>
+      <para id="id6113186">a * Để tính xấp xỉ khổ băng của sóng FM, ta xem các xung hình 5.8. Trước hết, ta chọn một trị  nhỏ. Từ hình 5.6, ta thấy rằng, nếu  &lt; 0,5 thì J2() &lt; 0,03. Các hàm Bessel bậc cao hơn (n &gt; 2) thì nhỏ hơn. Tại =0,5, J1 là 0,24. Với những trị nhỏ nầy của , biến đổi F ở hình 5.8 chỉ bao gồm 5 xung lực gần sóng mang. Đó là, thành phần tại sóng mang và 2 thành phần cách  fm kể từ sóng mang. Điều đó, cho một khổ băng là 2 fm. Ta đã biết điều đó vì những trị rất nhỏ của (aKf/fm) tương ứng với điều kiện băng hẹp.</para>
+      <para id="id6113310">b * Bây giờ, giả sử  không nhỏ, thí dụ  = 10. Những tính chất mà ta nói ở trên chỉ rằng Jn(10) sẽ giảm nhanh chóng, khi n &gt; 10. Xem hình 5.8, ta thấy những thành phần có ý nghĩa là sóng mang và 10 họa tần mỗi bên của sóng mang. Một cách tổng quát: Với  lớn,số số hạng (thành phần) ở mỗi bên của sóng mang là  ( được làm tròn số nguyên ). Điều đó cho một khổ băng là 2fm.</para>
+      <para id="id6113390">Gần đây, Jonh Carson đưa ra định luật: Khổ băng của sóng FM thì xấp xỉ bằng hàm của tần số tín hiệu chứa tin và chỉ số biến điệu:</para>
+      <para id="id6113400">BW  2(fm + fm) (5.27)</para>
+      <para id="id6113434">Điều đó thừa nhận 2 trường hợp giới hạn. Với  rất nhỏ, khổ băng  2fm và ngược lại với  lớn, khổ băng  2fm.</para>
+      <para id="id6113480">Thay  = aKf/fm vào (5.27):</para>
+      <para id="id6113501">BW  2(aKf+fm) (5.28)</para>
+      <para id="id6113528">* Ta nhớ lại tần số tức thời được cho bởi phương trình (5.18):</para>
+      <para id="id6113536">fi (t)=fC + aKf cos2fmt </para>
+      <para id="id6113568">Ta thấy rằng fm là nhịp thay đổi của fi (t) ,trong lúc aKf là trị tối đa mà nó dời tần từ sóng mang - cả 2 đại lượng ấy điều tham gia vào khổ băng của sóng FM.</para>
+      <para id="id6113595">Thí dụ: Tìm băng xấp xỉ của các tần số bị chiếm bởi sóng FM với sóng mang có tần số 5khz, Kf = 10Hz/V và:</para>
+      <para id="id6113614">a) s(t) = 10 cos10t.</para>
+      <para id="id6113628">b) s(t) = 5 cos20t.</para>
+      <para id="id6113642">c) s(t) = 100 cos2000t.</para>
+      <para id="id6113656">Giải:</para>
+      <para id="id6113660">a) BW  2(aKf+fm) = 2[10(10)+5] = 210Hz.</para>
+      <para id="id6113685">b) BW  2(aKf+fm) = 2[5(10)+10] = 120Hz.</para>
+      <para id="id6113709">c) BW  2(aKf+fm) = 2[100(10)+1.000] = 4khz.</para>
+      <para id="id6113734">Băng của những tần số bị chiếm:</para>
+      <para id="id6113739">a) 4895 đến 5105 Hz.</para>
+      <para id="id6113749">b) 4940 đến 5060 Hz.</para>
+      <para id="id6113758">c) 3 đến 7 Khz.</para>
+      <para id="id6113767">Phương trình (5.28) được khai triển cho trường hợp đặc biệt của một tín hiệu chứa tin hình Sinusoide. Nếu sự biến điệu là tuyến tính, thì ta có thể áp dụng công thức này cho thành phần tần số cao nhất của s(t) để tìm khổ băng. Nhưng, FM thì không tuyến tính nên cách ấy không đúng.</para>
+      <para id="id6113781">Ta sẽ tìm một công thức tương tự cho trường hợp tổng quát. Hình 5.9, chỉ tần số tức thời của trường hợp đặc biệt mà tín hiệu chứa tin Sinusoide và trường hợp tổng quát.</para>
+      <para id="id6113793"><figure id="id6113803"><media id="id2908643" alt=""><image src=".png" mime-type="image/png" height="184" width="520"/></media></figure>akfHình 5.9: Tần số tức thời</para>
+      <para id="id6113884">Trong trường hợp s(t) hình sin, aKf là độ dời tần tối đa của tần số so với fc. Và trong trường hợp tổng quát độ dời tần tối đa tương tự ký hiệu là f. Công thức tổng quát cho (5.28) là:</para>
+      <para id="id6113914">BW  2( f + fm )(5.29)</para>
+      <list id="id6113958" list-type="bulleted">
+        <item>Nếu f rất lớn so với fm, ta có FM băng rộng, và tần số của sóng mang thay đổi một khoảng rộng, nhưng với nhịp độ chậm. Tần số tức thời của sóng mang thay đổi chậm từ fC-f đến fC+f. Như vậy sóng FM xấp xỉ với một Sinusoide thuần trong một thời gian dài. Ta có thể nghĩ là nó là tổng của nhiều Sinusoide với các tần số nằm giữa 2 giới hạn. Nên biến đổi F thì gần bằng với sự chồng ( Superposition ) các biến đổi F của những sinusoide ấy tất cả nằm trong giới hạn tần số. Vậy thực hợp lý để giả sử rằng khổ băng thì xấp xỉ với bề rộng của khoảng tần số này, hoặc 2f.</item>
+        <item>Nếu f rất nhỏ, ta có một sóng mang thay đổi trong một khoảng rất nhỏ của tần số, nhưng với nhịp độ nhanh. Ta có thể tính gần đúng bằng 2 mạch giao động tại những giới hạn tần số. Mỗi giao động được “ Cổng hóa “ trong nửa thời gian toàn thể. Băng của các tần số bị chiếm bởi output của H 5.10 là từ fC - f - fm đến fC + f + fm. </item>
+      </list>
+      <para id="id5375358">Với f nhỏ,  khổ băng là 2fm .</para>
+      <para id="id5375380">Ta thấy khổ băng của sóng FM tăng với sự tăng trị giá của Kf. Về điểm nầy, sự dùng FM băng hẹp ( với khổ băng tối thiểu 2fm ) là hợp lý. Nhưng, FM băng rộng lại có ưu điểm về triệt nhiễu hơn cả FM băng hẹp và AM.</para>
+      <figure id="id5375408">
+        <media id="id1166166189263" alt=""><image src="graphics29.png" mime-type="image/png" height="249" width="447"/></media>
+      </figure>
+      <para id="id5375432">Hình 5.10: Xấp xỉ của FM băng hẹp </para>
+      <para id="id5375438">Ví dụ: Một sóng mang 10MHz được biến điệu FM bởi một tín hiệu Sinusoide có tần số 5KHz, sao cho độ dời tần tối đa của sóng FM là 500KHz - Tìm băng xấp xỉ của các tần số bị chiếm bới sóng FM.</para>
+      <para id="id5375455">Giải:</para>
+      <para id="id5375459">Khổ băng xấp xỉ</para>
+      <para id="id5375464">BW  2(f + fm).</para>
+      <para id="id5375490">BW  2(500KHz + 5KHz) = 1.010 KHz .</para>
+      <para id="id5375505">Vậy băng của tần số bị chiếm thì tập trung quanh tần số sóng mang, và trong khoảng từ 9.495 đến 10.505KHz. Tín hiệu FM ở thí dụ nầy là băng rộng. Nếu nó là băng hẹp, khổ băng sẽ chỉ là 10KHz.</para>
+      <para id="id5375520">Thí dụ: Một sóng mang 100KHz bị biến điệu FM bởi một tín hiệu sinusoide có biên độ 1V. Kf có trị 100Hz/V.</para>
+      <para id="id5375540">Tìm khổ băng xấp xỉ của sóng FM nếu tín hiệu biến điệu có một tần số 10KHz.</para>
+      <para id="id5375550">Giải:</para>
+      <para id="id5375555">Ta lại dùng phép tính xấp xỉ của Carson:</para>
+      <para id="id5375561">BW  2(f + fm)</para>
+      <para id="id5375586">Vì tín hiệu chứa tin s(t) có biên độ đơn vị, độ dời tần tối đa f được cho bởi kf , hoặc 100Hz .</para>
+      <para id="id5375606">fm là 10 Khz, tần số của tín hiệu biến điệu. Vậy : </para>
+      <para id="id5375618">BW  2(100Hz + 10 Khz) = 20.200Hz .</para>
+      <para id="id5375638">Vì fm rất lớn so với f , đây là tín hiệu FM băng hẹp. Khổ băng cần thiết để truyền cùng tin tức khi dùng DSB AM sẽ là 20KHz, xấp xỉ với khổ băng của sóng FM nầy.</para>
+      <para id="id5375660">Ví du: Một sóng biến điệu góc được mô tả bởi:</para>
+      <para id="id5375671">(t) = 10 cos[2 x 107t + 20cos1000t]</para>
+      <para id="id5375696">Tìm khổ băng xấp xỉ của sóng nầy.</para>
+      <para id="id5375702">Giải: </para>
+      <para id="id5375706">fm là 500Hz. Để tính f, trước hết ta tìm tần số tức thời:</para>
+      <para id="id5375726">fi (t) = <figure id="id5375736"><media id="id3460251" alt=""><image src="graphics30.wmf" mime-type="image/wmf" height="43" width="46"/></media></figure>( 2 x 107t + 20cos1000t ).</para>
+      <para id="id5375777">= 107-10.000 sin 1000t .</para>
+      <para id="id5375795">Độ dời tần tối đa của 10.000 sin1000t, hoặc 10KHz. Vậy khổ băng xấp xỉ được cho bởi:</para>
+      <para id="id5375808">BW  2( 10.000 + 500 ) = 21khz .</para>
+      <para id="id5375823">Rõ ràng đây là một sóng FM băng rộng vì f rất lớn so với fm. Nhớ là ta không biết đây là biến điệu tần số hoặc pha khi tìm khổ băng.</para>
+    </section>
+    <section id="id-0993493606769">
+      <title>KHỐI BIẾN ĐIỆU.</title>
+      <para id="id5375852">Ta đã thấy sóng FM có khổ băng giới hạn chung quanh sóng mang fC. Như vậy tiêu chuẩn thứ nhất của một hệ thống biến điệu đã được thỏa. Ta có thể truyền tin một cách hiệu quả bằng cánh chọn fC trong một khoảng riêng. Và ta cũng có thể Multiplexing nhiều tín hiệu đồng trong cùng một kênh bằng cánh làm các tần số sóng mang lân cận cách biệt nhau sao cho biến đổi F của của các sóng FM không phủ nhau về tần số.</para>
+      <para id="id5375891">Tiêu chuẩn thứ 2, đó là chứng tỏ được s(t) có thể được hồi phục từ sóng biến điệu góc. Và các khối biến điệu, hoàn điệu có thể thực hiện được trong thực tế.</para>
+      <list id="id5375903" list-type="bulleted">
+        <item>Ta bắt đầu xem lại FM băng hẹp - dạng sóng được diễn tả bởi phương trình (5.15).</item>
+      </list>
+      <para id="id5375915">fm(t) = A cos2[fct - Kf g(t)]</para>
+      <para id="id5375951">fm(t) = A cos2fct - 2A g(t) Kf sin 2fct (5.30)</para>
+      <para id="id5376007">Phương trình này tức khắc đưa đến sơ đồ khối như hình 5.11.</para>
+      <para id="id5376014">- Biểu thức tương đương cho PM băng hẹp:</para>
+      <para id="id5376020">pm(t) = A cos2fCt - 2AKP s(t) sin2fCt (5.31)</para>
+      <para id="id5376069">Hình 5.11 Phải được cải biến bằng cách thay 2Kf s(t) bằng 2Kp s(t) và bỏ tích phân.</para>
+      <para id="id5376098">
+        ***SORRY, THIS MEDIA TYPE IS NOT SUPPORTED.***
+      Hình 5.11: Khối biến điệu cho FM băng hẹp.</para>
+      <para id="id5376132">Tần số tức thời của output của hệ là:</para>
+      <para id="id5376140">fi (t) = fC + Kf s(t)</para>
+      <para id="id5376160">Đây là FM băng hẹp vì trị lớn nhất của Kf s(t) ( độ dời tần ) thì nhỏ so với những tần số hiện diện trong s(t).</para>
+      <list id="id5376174" list-type="bulleted">
+        <item>Giả sử ta đặt output của sóng FM băng hẹp ngang qua một linh kiện phi tuyến mà nó nhân tất cả tần số bởi một hằng số C. Kết quả tần số tức thời là:</item>
+      </list>
+      <para id="id5376189">fi (t) = CfC+ Ckf s(t)(5.32)</para>
+      <para id="id5376212">Độ dời tần của sóng mới nầy bằng C lần sóng cũ, trong lúc nhịp độ thay đổi của fi (t) vẫn không đổi. Điều này, vẽ ở hình 5.12. Như vậy, với trị C đủ lớn, sự nhân tần làm thay đổi FM băng hẹp thành FM băng rộng. Nó cũng làm di chuyển sóng mang, nhưng điều này không gây hiệu quả trên một sóng FM dù là băng hẹp hay băng rộng.</para>
+      <para id="id5376242"><figure id="id5376252"><media id="id5551734" alt=""><image src=".png" mime-type="image/png" height="175" width="514"/></media></figure>2CfmCfc-CfmCfc+CfmHình 5.12: Sự nhân tần</para>
+      <para id="id5404377">Xem một cách khác, nếu khổ băng sóng FM lớn đáng kể so với 2fm, tín hiệu là băng rộng. Nếu sóng mang mới có tần số cao hơn nầy không mong muốn, ta có thể dời ( đổi tần ) đến bất kỳ trị nào mà không làm ảnh hưởng đến khổ băng.</para>
+      <para id="id5404399">Khối biến điệu FM kết quả vẽ ở hình 5.13.</para>
+      <figure id="id5404408">
+        <media id="id1166171332496" alt=""><image src="graphics31.png" mime-type="image/png" height="188" width="546"/></media>
+      </figure>
+      <para id="id5404432">Hình 5.13: Khối biến điệu cho FM băng rộng </para>
+      <para id="id5404438">* Có một cánh trực tiếp tạo nên FM băng rộng, như hình 5.14.</para>
+      <figure id="id5404448">
+        <media id="id2521548" alt=""><image src="../../media/graphics32.png" mime-type="image/png" height="249" width="461"/></media>
+      </figure>
+      <para id="id5404472">Hình 5.14: Mạch phát FM</para>
+      <para id="id5404477">Một mạch dao động cao tần tạo sóng mang, có tần số quyết định bởi mạch điều hợp ( hoặc thạch anh ) đấu song song với một doide biến dung (Varicap). Điện dung của varicap có thể thay đổi bằng cánh làm thay đổi dòng chạy ngang qua nó (nếu phân cực thuận) hoặc điện thế đặt lên 2 đầu nó (nếu phân cực ngược). Sự thay đổi điện dung của varicap sẽ làm thay đổi tần số của mạch giao động. Nếu dòng hay thế đi ngang qua varicap thay đổi tỷ lệ với tín hiệu chứa tin thì tần số của mạch giao động thay đổi tỷ lệ với tín hiệu nầy. Và sóng FM sẽ được tạo ra.</para>
+      <para id="id5404506">Trong hình 5.14. Bên phải D là mạch giao động mà tần số được làm thay đổi. Bên trái D là mạch phân cực và ghép tín hiệu s(t) vào doide D. Tụ C2 có trị rất lớn so với trị của điện dung Varicap, nên chỉ có tác dụng cách ly DC. RFC, cuộn chặn cao tần, ngừa tín hiệu dao động ghép ngược lại nguồn phân cực. C1: tụ phân dòng.</para>
+    </section>
+    <section id="id-767842121048">
+      <title>KHỐI HOÀN ĐIỆU.</title>
+      <para id="id5404543">Xem dạng sóng biến điệu FM như sau:</para>
+      <para id="id5404549">fm(t) = A cos2( fct + Kf <figure id="id5404582"><media id="id2401666" alt=""><image src="graphics33.wmf" mime-type="image/wmf" height="36" width="24"/></media></figure>s()d ) .</para>
+      <para id="id5404618">Sư hoàn điệu để hồi phục lại s(t) gồm 2 loại:</para>
+      <para id="id5404627">- Tách sóng phân biệt ( Discriminator ), tách một thành phần tần số ra khỏi các thành phần khác và chuyển sự thay đổi tần số thành thay đổi biên độ rồi tách sóng giống như AM. </para>
+      <para id="id5404644">- Vòng khóa pha ( Phase - Lockloop ) để phối hợp một dao động nội với sóng mang được biến điệu.</para>
+      <section id="id-644116319974">
+        <title>Tách sóng phân biệt. (discriminator)</title>
+        <list id="id5404661" list-type="bulleted">
+          <item>Lấy đạo hàm một Sinusoide là tiến trình nhân Sinusoide với tần số tức thời của nó:</item>
+        </list>
+        <para id="id5404671"><figure id="id5404674"><media id="id1166168376624" alt=""><image src="graphics34.wmf" mime-type="image/wmf" height="43" width="26"/></media></figure>= -2A [ fc + Kf s(t) ] sin2(fct + Kf<figure id="id5404731"><media id="id8753910" alt=""><image src="graphics35.wmf" mime-type="image/wmf" height="36" width="24"/></media></figure>s()d ) .</para>
+        <figure id="id5404770">
+          <media id="id1166176079779" alt=""><image src="../../media/graphics36-bd99.png" mime-type="image/png" height="166" width="334"/></media>
+        </figure>
+        <para id="id5404794">Hình 5.15: Đạo hàm của sóng FM</para>
+        <para id="id5404800">Giả sử tần số tức thời thì lớn hơn nhiều so với fm (hợp lý với thực tế). Thành phần sóng mang lấp đầy vùng giữa biên độ và ảnh qua gương của nó. Thực tế, vùng diện tích giữa đường biên trên và đường biên dưới bị che kín do tần số quá cao của sóng mang. Như vậy, ngay cả khi tần số sóng mang không là hằng, bao hình của sóng vẫn được định nghĩa:</para>
+        <para id="id5404824">2 A[fC + Kf s(t)] (5.34)</para>
+        <para id="id5404858">Sự thay đổi chút ít của tần số sóng mang sẽ không đáng kể bởi một tách sóng bao hình.</para>
+        <para id="id5404866">Trong các hệ thông tin thực tế, fC &gt;&gt; Kf s(t). Vậy lượng nằm trong ngoặc của (5.34) thì dương, và ta có thể bỏ đấu trị tuyệt đối. </para>
+        <para id="id5404886">Tóm lại: Một mạch vi phân và sau đó là một tách sóng bao hình sẽ có thể dùng để hồi phục lại s(t) từ sóng FM.</para>
+        <figure id="id5404903">
+          <media id="id1166176262019" alt=""><image src="../../media/graphics37-0b62.png" mime-type="image/png" height="90" width="413"/></media>
+        </figure>
+        <para id="id5404927">Hình 5.16: Hoàn điệu FM. </para>
+        <para id="id5404933">Nếu sự biến điệu là PM, thì output của hệ hình 5.16 là đạo hàm của s(t). Khi đó cần thêm một mạch tích phân ở ngỏ ra của hệ.</para>
+        <para id="id5404942">Hàm hệ thống của mạch vi phân:</para>
+        <para id="id5404948">H(f) = 2jf(5.35)</para>
+        <figure id="id5404963">
+          <media id="id1166172428338" alt=""><image src="../../media/graphics38-de0b.png" mime-type="image/png" height="178" width="232"/></media>
+        </figure>
+        <para id="id5404987">Hình 5.17: Đặc tuyến Suất của mạch vi phân.</para>
+        <para id="id5404993">Đặc tuyến Suất được vẽ ở hình 5.17. Suất của output của mạch vi phân thì tỉ lệ tuyến tính với tần số của input. Như vậy mạch vi phân đổi FM thành AM. Khi một mạch vi phân dùng như thế, ta gọi nó là một discriminator.</para>
+        <list id="id5405002" list-type="bulleted">
+          <item>Có một loại Discriminator khác. Bất kỳ hệ thống nào có một suất hàm hệ thống gần - Tuyến tính với tần số trong khoảng dãy tần của sóng FM sẽ điều đổi FM thành AM. </item>
+        </list>
+        <para id="id5405018">Thí dụ: Một BPF sẽ làm việc như một Discriminator nếu cho nó hoạt động trên một khoảng giới hạn của khổ băng, như hình 5.18.</para>
+        <para id="id5405033"><figure id="id5405044"><media id="id1166167696723" alt=""><image src=".png" mime-type="image/png" height="145" width="136"/></media></figure><figure id="id5405068"><media id="id5634242" alt=""><image src=".png" mime-type="image/png" height="145" width="136"/></media></figure><figure id="id5405106"><media id="id1166174119031" alt=""><image src=".wmf" mime-type="image/wmf" height="28" width="42"/></media></figure><figure id="id5405130"><media id="id1166165753361" alt=""><image src=".wmf" mime-type="image/wmf" height="18" width="12"/></media></figure><figure id="id5405230"><media id="id8279366" alt=""><image src=".png" mime-type="image/png" height="145" width="136"/></media></figure>Gần tuyến tínhHình 5.18</para>
+        <para id="id5405474">Ta có thể chứng minh sự tuyến tính của BPF Discriminator theo cách thức tương tự như khối biến điệu cân bằng.</para>
+        <para id="id5405482">Xem mạch điện hình 5.19. Nửa trên của máy biến thế L1 và C1 điều hợp tại fa . Nửa dưới máy biến thế và C2 điều hợp tại fb.</para>
+        <para id="id5405519"><figure id="id5405529"><media id="id1166169083097" alt=""><image src=".png" mime-type="image/png" height="155" width="337"/></media></figure><figure id="id5405553"><media id="id1166166171394" alt=""><image src=".wmf" mime-type="image/wmf" height="24" width="23"/></media></figure><figure id="id5405577"><media id="id1166165346917" alt=""><image src=".wmf" mime-type="image/wmf" height="24" width="24"/></media></figure>Hình 5.19: Tách sóng độ dốc</para>
+        <figure id="id5405606">
+          <media id="id2360114" alt=""><image src="graphics39.png" mime-type="image/png" height="160" width="221"/></media>
+        </figure>
+        <para id="id5405630">Hình 5.20: Discriminator</para>
+        <para id="id5405635">Mạch điện trên đây gọi là tách sóng độ dốc ( Slope Detector ) vì nó dùng đoạn dốc của đặc tuyến mạch lọc để tách sóng.</para>
+        <list id="id5405645" list-type="bulleted">
+          <item>Bây giờ ta trở lại khối vi phân gốc. Ta sẽ thấy một cách tiếp cận khác. Ta có thể tinch đạo hàm một cách gần đúng bằng với tín hiệu của hai trị mẫu của sóng:</item>
+        </list>
+        <para id="id5405660">(t) - ( t - to )  to <figure id="id5405692"><media id="id7453845" alt=""><image src="graphics40.wmf" mime-type="image/wmf" height="43" width="26"/></media></figure>.</para>
+        <para id="id5405717">Điều này dẫn đến khối hoàn điệu như hình 5.21.</para>
+        <para id="id5405723">Vì một sự dời thời gian thì tương đương với một sự dời pha, nên khối nầy gọi là hoàn điệu dời pha ( Phase Shif Demodulator ).</para>
+        <para id="id5405732"><figure id="id5405743"><media id="id1166171392690" alt=""><image src=".png" mime-type="image/png" height="136" width="332"/></media></figure><figure id="id5405767"><media id="id2900487" alt=""><image src=".wmf" mime-type="image/wmf" height="30" width="49"/></media></figure><figure id="id5405791"><media id="id1166173037688" alt=""><image src=".wmf" mime-type="image/wmf" height="23" width="30"/></media></figure>Hình 5.21: Hoàn điệu dời pha. </para>
+      </section>
+      <section id="id-113913849259">
+        <title>Vòng khóa pha (phase - lockloop).</title>
+        <para id="id5405826">Vòng khóa pha PLL là một mạch hồi tiếp, có thể được dùng để hoàn điệu sóng biến điệu góc. Mạch hồi tiếp thường được dùng để giảm thiểu error (về zero). Trong trường hợp PLL, error là một hiệu pha giữ tín hiệu ở ngỏ vào sóng FM và một tín hiệu chuẩn hình sin. (VCO) .</para>
+        <para id="id5405840"><figure id="id5405851"><media id="id1166167196747" alt=""><image src=".png" mime-type="image/png" height="131" width="258"/></media></figure><figure id="id5479120"><media id="id2006969" alt=""><image src=".wmf" mime-type="image/wmf" height="44" width="97"/></media></figure><figure id="id5479144"><media id="id1166165609280" alt=""><image src=".wmf" mime-type="image/wmf" height="19" width="40"/></media></figure>PLL để tách sóng FM:</para>
+        <list id="id5479170" list-type="bulleted">
+          <item>Trước hết, xem mạch so pha; gồm 1 mạch nhân và một lọc LPF.</item>
+        </list>
+        <para id="id5479181">Cho hai tín hiệu vào cùng tần số và pha lần lượt là 1 và 2</para>
+        <para id="id5479206">
+          <figure id="id5479210">
+            <media id="id1166165430658" alt=""><image src="graphics41.wmf" mime-type="image/wmf" height="43" width="258"/></media>
+          </figure>
+        </para>
+        <para id="id5479234">Thành phần cos(a+b) có tần số 2fc nên bị lọai bỏ bởi LPF. Ngỏ ra là <figure id="id5479248"><media id="id1166175168642" alt=""><image src="graphics42.wmf" mime-type="image/wmf" height="43" width="99"/></media></figure>. Đây là Error của mạch so pha. Error sẽ tiến đến 0 khi 1-2 tiến đến 90o.</para>
+        <para id="id5479300">LPFVCO<figure id="id5479560"><media id="id1166165945412" alt=""><image src=".wmf" mime-type="image/wmf" height="30" width="15"/></media></figure><figure id="id5479584"><media id="id7746061" alt=""><image src=".wmf" mime-type="image/wmf" height="24" width="44"/></media></figure><figure id="id5479608"><media id="id1166171164547" alt=""><image src=".wmf" mime-type="image/wmf" height="32" width="43"/></media></figure><figure id="id5479632"><media id="id1166165405666" alt=""><image src=".wmf" mime-type="image/wmf" height="30" width="17"/></media></figure>Mạch PLL gồm 1 mạch so pha và 1 VCO, nằm trên đường hồi tiếp. Mạch tạo nên một vòng điều chỉnh tự động.</para>
+        <para id="id5479662">Hình 5.22: Vòng khóa pha (PLL)</para>
+        <para id="id5479668">VCO tạo ra một sóng sin. Một phần tín hiệu ra Vo(t) được hồi tiếp về để làm Error sửa sai pha cho VCO. Mạch có tác dụng tự điều chỉnh sao cho Error tiến đến 0. Nghĩa là có khuynh hướng làm hiệu pha tiến đến 90o. Khi đó, ta nói vòng bị khóa (locked).</para>
+        <para id="id5479693">Bây giờ, ta áp dụng PLL để tách sóng FM</para>
+        <para id="id5479699">LPFVCO<figure id="id5479959"><media id="id1166171987618" alt=""><image src=".wmf" mime-type="image/wmf" height="31" width="42"/></media></figure><figure id="id5479983"><media id="id1166173680143" alt=""><image src=".wmf" mime-type="image/wmf" height="25" width="48"/></media></figure><figure id="id5480006"><media id="id1166168687867" alt=""><image src=".wmf" mime-type="image/wmf" height="33" width="47"/></media></figure><figure id="id5480030"><media id="id3660378" alt=""><image src=".wmf" mime-type="image/wmf" height="31" width="44"/></media></figure>Sóng FM đến<figure id="id5480076"><media id="id6642428" alt=""><image src=".wmf" mime-type="image/wmf" height="33" width="175"/></media></figure>.</para>
+        <para id="id5480101">Hình 5.23: Tách sóng FM</para>
+        <para id="id5480106">VCO tạo 1 sóng sin, biên độ B, tần số fc và lệch pha với sóng FM đến 1 góc /2. Sóng hình sin này được Error biến điệu FM nên có dạng:</para>
+        <figure id="id5480130">
+          <media id="id1166167267511" alt=""><image src="graphics43.wmf" mime-type="image/wmf" height="53" width="229"/></media>
+        </figure>
+        <para id="id5480154">s2(t) là ngỏ ra mạch nhân nên:</para>
+        <para id="id5480165">
+          <figure id="id5480169">
+            <media id="id1166171083020" alt=""><image src="graphics44.wmf" mime-type="image/wmf" height="53" width="382"/></media>
+          </figure>
+        </para>
+        <para id="id5480193"> <figure id="id5480204"><media id="id1166164009092" alt=""><image src="graphics45.wmf" mime-type="image/wmf" height="56" width="283"/></media></figure>+Bậc cao</para>
+        <para id="id5480230">Đaịt hai heô soâ pha: <figure id="id5480234"><media id="id8430448" alt=""><image src="graphics46.wmf" mime-type="image/wmf" height="64" width="168"/></media></figure><figure id="id5480258"><media id="id6561341" alt=""><image src="graphics47.wmf" mime-type="image/wmf" height="24" width="13"/></media></figure></para>
+        <list id="id5480282" list-type="bulleted">
+          <item>ngo ra cụa LPF: <figure id="id5480291"><media id="id1166165835132" alt=""><image src="graphics48.wmf" mime-type="image/wmf" height="46" width="193"/></media></figure></item>
+        </list>
+        <para id="id5480315">Neâu heô so pha nho: <figure id="id5480322"><media id="id1166173770737" alt=""><image src="graphics49.wmf" mime-type="image/wmf" height="46" width="171"/></media></figure></para>
+        <para id="id5480346">Tm ap ng transient, laây áo ham hai veâ:</para>
+        <para id="id5480353">
+          <figure id="id5480357">
+            <media id="id1166167658980" alt=""><image src="graphics50.wmf" mime-type="image/wmf" height="53" width="386"/></media>
+          </figure>
+        </para>
+        <para id="id5480381">Cuoâi cung, phng trnh vi phađn c cho bi:</para>
+        <para id="id5480388">
+          <figure id="id5480392">
+            <media id="id1166164004990" alt=""><image src="graphics51.wmf" mime-type="image/wmf" height="44" width="236"/></media>
+          </figure>
+        </para>
+        <para id="id5480416">ap ng thng trc la nghieôm cụa phng trnh nay. Cho áo ham tieân ti zero.</para>
+        <para id="id5480424">=&gt; <figure id="id5480430"><media id="id1166169082069" alt=""><image src="graphics52.wmf" mime-type="image/wmf" height="50" width="106"/></media></figure></para>
+      </section>
+    </section>
+    <section id="id-411336313546">
+      <title>FM STEREO. </title>
+      <para id="id5480463">FM Stereo là tiến trình gửi đi 2 tín hiệu Audio đồng thời trong cùng một kênh FM. Nhớ rằng ta chỉ có khổ băng 30KHz để gửi theo kiểu FM băng hẹp.</para>
+      <para id="id5480473"><figure id="id5480484"><media id="id1166168920662" alt=""><image src=".png" mime-type="image/png" height="253" width="566"/></media></figure><figure id="id5480538"><media id="id3399418" alt=""><image src=".wmf" mime-type="image/wmf" height="19" width="35"/></media></figure>Hình 5.24: Tín hiệu Stereo Multiplex</para>
+      <para id="id5480564">Hình 5.24 là một hệ thống Multiplex 2 kênh Audio. S1(f) và s2(f) là biến đổi f của 2 tín hiệu âm tần tổng quát, có khổ băng giới hạn.</para>
+      <para id="id5480590">Trước hết ta biến điệu AM một sóng mang 38KHz với S2(t). Điều nầy làm dời tần tín hiệu đến khoảng giữa 23 và 53 KHz như vậy nó không phủ với tín hiệu của S1(t).</para>
+      <para id="id5480612">Sau đó ta cộng chúng lại và rồi cộng với sóng cao tần 19KHz. Biến đổi f của output vẽ ở bên phải của hình 5.24.</para>
+      <para id="id5480626">Tín hiệu tổng hợp:</para>
+      <para id="id5480631">s1(t) + s2(t) cos 2 x 38 x 103 t + cos2 . 19 . 103t .</para>
+      <para id="id5480673">Biểu diễn bởi một hàm thời gian với tần số trên là 53KHz. Ta có thể biến điệu FM sóng mang bằng hàm này. Như vậy, nếu dùng kiểu FM băng hẹp, ta chỉ sử dụng 106KHz ( trong khoảng 200KHz được phép ).</para>
+      <para id="id5480688">Tại máy thu, ta hoàn điệu sóng FM để hồi phục tín hiệu tổng hợp (Hình 5.25). LPF1 hồi phục s1(t) .</para>
+      <para id="id5480707"><figure id="id5480718"><media id="id9025251" alt=""><image src=".png" mime-type="image/png" height="298" width="440"/></media></figure><figure id="id5480757"><media id="id5387680" alt=""><image src=".wmf" mime-type="image/wmf" height="73" width="44"/></media></figure>FM Stereo DemuxBPF sẽ tách số hạng thứ 3 ra khỏi tín hiệu tổng hợp, và rồi ta phải hồi phục s2(t) từ sóng biến điệu (AM). Nếu ta chọn cánh cộng thêm một sóng mang vào cho TCAM nầy, ta không phải dùng một mạch tách sóng bao hình để nhận lại s­2(t). Điều nầy đúng, vi tần số sóng mang là 38KHz, vào khoảng 2,5 lần lớn hơn tần số cao nhất của s2(t). Mà sự hoạt động của tách sóng bao hình đòi hỏi tần số sóng mang phải rất cao so với tần số lớn nhất của tín hiệu chứa tin. Vậy ta phải dùng tách sóng đồng bộ. Điều này, ta thấy ở hình 5.25, tín hiệu tổng hợp được nhân với sóng mang 38KHz và rồi LPF2 sẽ hồi phục lại s2(t).</para>
+      <para id="id5480878">Bằng cánh nào ta bảo đảm rằng Sinusoide 38KHz ở máy thu sẽ đồng bộ hóa tốt cho sóng mang nhận được ?. Ta vẫn có thể truyền đi sóng mang và dùng vòng khóa pha để hồi phục nó ở máy thu. Nhưng ở đây, có một cánh đơn giản hơn. Xem lại hình 5.24. Nhớ là, sóng mang 38KHz là do nhân đôi tần số từ mạch dao động 19KHz. Tín hiệu nầy (19KHz) được cộng vào tín hiệu tổng hợp.</para>
+      <para id="id5480899">Hình 5.25: Hoàn điệu FM Stereo.</para>
+      <para id="id5480904">Như vậy, Tín hiệu tổng hợp hiện tại là:</para>
+      <para id="id5480910">s1(t) + s2(t) cos2 x 3.8 x 104t + A cos2 x 1,9 x 104t </para>
+      <para id="id5480952">Biến đổi F của nó vẽ ở bên phải hình 5.24. Ta thấy có một xung lực xuất hiện tại 19KHz ( là do sinusoide cộng vào ).</para>
+      <para id="id5480966">Tại máy thu, output của khối tách sóng bao hình (hình 5.25) có chứa thành phần nầy. Nó được tách ra nhờ BPF - và chính nó được phân đôi để dùng đồng bộ hóa cho việc tách sóng AM. Như vậy, ta thấy 2 tín hiệu Sinusoide 38KHz ( ở đài phát và máy thu ) đều có nguồn gốc từ một nguồn chung 19KHz.</para>
+      <para id="id5480981">Vẫn còn tồn tại một vấn đề. Đó là vấn đề tương hợp giữa máy thu Mono và Stereo. Một máy Mono không thuần nhận kênh trái ( hoặc phải ). Ở hình 5.25, out put của LPF1, s1(t) biểu diễn cho tín hiệu một máy thu mono - nhưng ta không muốn s1(t) và s2(t) biểu diễn cho tín hiệu riêng của mỗi kênh. Thay vào đó, ta đặt s1(t) là tổng của tín hiệu trái và phải và s2(t) là hiệu.</para>
+      <para id="id6334437">Như vậy, máy thu mono sẽ nhận tổng của tín hiệu trái và phải. Máy thu Stereo phải làm một thuật toán cộng tuyến tính. Thuật toán nầy là cộng s1(t) + s2(t) để đặt vào một kênh, và lấy hiệu để đặt vào kênh kia. Đó là thuật toán Matrix.</para>
+    </section>
+    <section id="id-963819490067">
+      <title>SO SÁNH CÁC HỆ.</title>
+      <para id="id6334470">* FM băng hẹp: Có thể được phát ra với một hệ thống gồm một mạch nhân, một mạch tích phân và một mạch dời pha. Nó được hoàn điệu với một Discriminator theo sau là tách sóng bao hình hoặc vòng khóa pha. </para>
+      <para id="id6334488">Khổ băng của FM băng hẹp là 2fm (fm là tần số cao nhất của tín hiệu chứa tin). Mặc dù sự biến điệu nhìn rất giống như một biến đổi AM, nhưng nó có một sự khác biệt. Sóng biến điệu có biên độ không đổi, cho phép ta đưa thêm mạch hạn biên vào máy thu. Nhờ đó, cắt được nhiễu, vậy nó có ưu điểm hơn AM về mặt nầy.</para>
+      <para id="id6334522">* PM băng hẹp: Rất giống với FM băng hẹp - Mạch tích phân trong khối biến điệu và hoàn điệu được thêm vào. Khổ băng là 2fm. Biên độ của PM thì không đổi, nên cũng tương tự FM băng hẹp, máy thu có mạch hạn biên ( limiter ) để loại nhiễu. Mạch tích phân cuối cùng trong khối hoàn điệu làm giảm tần số cao. Điều nầy có lợi, nếu tín hiệu chứa tin chỉ ở tần số cao hoặc nhiễu chen vào có tần số cao.</para>
+      <para id="id6334551">* FM băng rộng: Được phát ra hoặc gián tiếp từ FM băng hẹp ( ngang qua mạch nhân tần ) hoặc bằng VCO. Nó được hoàn điệu cùng một cánh thức như FM băng hẹp. Khổ băng khoảng 2fm, lớn hơn khổ băng AM hay khổ băng biến điệu góc băng hẹp. Ưu điểm lớn nhất của FM băng rộng là khả năng giảm nhiễu của nó. Tỷ số tín hiệu trên nhiễu khoảng 2 .</para>
+      <para id="id6334595">* PM băng rộng: Tương tự với FM băng rộng. Tuy nhiên có điểm khá, đó là chỉ số biến điệu không thể tăng vô hạn. Độ dời pha tối đa bị hạn đến 1800. Do đấy, có một sự không xác định về pha, nên tín hiệu gốc không thể được hồi phục duy nhất.</para>
+      <para id="id6334620">* DSBSCAM: Có khổ băng 2fm.. Hiệu suất 100%, vì không phải tốn năng lượng cho sóng mang thuần túy. Sự hoàn điệu cần các mạch kết hợp. Đó là vấn đề khó trong việc tạo lại sóng mang ở máy thu.</para>
+      <para id="id6334650">* DSBTCAM: Có khổ băng 2fm. Hiệu suất nhỏ hơn 50% vì phải tốn năng lượng trong việc truyền đi một sóng mang thuần túy. Bộ phận hoàn điệu dễ thực hiện nhất ( tách sóng bao hình ). Nó không dùng cho một tín hiệu có mức DC khác zero vì thông tin nầy sẽ bị mất tại khối hoàn điệu.</para>
+      <para id="id6334686">* SSBAM: Có khổ băng nhỏ nhất fm. Hiệu suất 100% vì không tốn năng lượng cho sóng mang thuần túy. Khối biến điệu hoặc hoàn điệu phức tạp, sự phức tạp cao là do sự lọc cần thiết ở đài phát và sự hồi phục sóng mang với các mạch tách sóng kết hợp ở máy thu.</para>
+      <para id="id6334713">* VSBSCAM: Có khổ băng lớn hơn fm nhưng nhỏ hơn 2fm. Khối biến điệu dễ thực hiện hơn với SSB. Nhưng khối hoàn điệu cần hồi phục sóng mang và cũng cần một mạch lọc được điều chỉnh cẩn thận để kết hợp đúng với các băng cạnh.</para>
+      <para id="id6334742">* VSBTCAM: Có khổ băng lớn hơn fm nhưng nhỏ hơn 2fm, khối biến điệu để thực hiện hơn là SSB và nếu sóng mang đủ lớn có thể dùng tách sóng bao hình. Vì vậy, sự hoàn điệu rất đơn giản.</para>
+    </section>
+  </content>
+</document>

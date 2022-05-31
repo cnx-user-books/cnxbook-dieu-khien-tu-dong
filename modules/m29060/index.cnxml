@@ -1,0 +1,549 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Biến điệu biên độ</title>
+  <metadata>
+  <md:content-id>m29060</md:content-id><md:title>Biến điệu biên độ</md:title>
+  <md:abstract>+ ĐẠI CƯƠNG.
++ SỰ BIẾN ĐIỆU ( MODULATION).
++ BIẾN ĐIỆU BIÊN ĐỘ SÓNG MANG BỊ NÉN 2 BĂNG CẠNH: (DSB SCAM).
+( DOUBLE - SIDE BAND  SUPPRESSED CARRIED AMPLITUDE MODULATION ).
++ BIẾN ĐIỆU BIÊN ĐỘ SÓNG MANG ĐƯỢC TRUYỀN 2 BĂNG CẠNH.
++ HIỆU SUẤT.
++ CÁC KHỐI BIẾN ĐIỆU.
++ CÁC KHỐI HOÀN ĐIỆU ( DEMODULATORS).
++ TRUYỀN MỘT BĂNG CẠNH (SINGLE SIDEBAND) SSB.
++ BIẾN ĐIỆU AM TRỰC PHA.
++ BIẾN ĐIỆU BĂNG CẠNH SÓT ( VESTIGIAL SIDEBAND ) VSB.
++ AM STEREO.</md:abstract>
+  <md:uuid>18ad62a7-af5f-4b3b-865c-7fd776cea8f0</md:uuid>
+</metadata>
+
+<content>
+    <para id="id6079678">Đại cương</para>
+    <para id="id6079683">Hình 4.1 trình bày một mẫu dạng sóng của tiếng nói mà ta muốn truyền đi. Nó không có một đặc trưng riêng biệt nào và tùy thuộc rất nhiều vào âm thanh được tạo ra. Vì dạng sóng chính xác không được biết, nên ta có thể nói như thế nào về hệ thống cần thiết để truyền nó ?</para>
+    <para id="id6079697">Trong trường hợp tiếng nói ( hay bất kỳ một tín hiệu Audio nào ), câu trả lời dựa vào sinh lý học. Tai người ta chỉ có thể đáp ứng với những tín hiệu có tần số khoảng dưới 15kHz ( số này giảm theo tuổi tác ). Vậy nếu mục đích cuối cùng của ta là nhận những tín hiệu audio, phải giả sử rằng ảnh F của tín hiệu là zero khi<media id="id1171823720190" alt=""><image src="graphics1.wmf" mime-type="image/wmf" height="25" width="22"/></media>&gt;15kHz.</para>
+    <para id="id6079744">S(f) = 0 , <media id="id5116631" alt=""><image src="graphics2.wmf" mime-type="image/wmf" height="25" width="22"/></media> &gt; fm; Với fm = 15kHz .</para>
+    <figure id="id6079787">
+      <media id="id1171815581869" alt=""><image src="../../media/graphics3-1c79.png" mime-type="image/png" height="147" width="374"/></media>
+    </figure>
+    <para id="id6079811">Hình 4.1: Dạng sóng của tiếng nói</para>
+    <para id="id6079817">Những hòa âm hoặc những dụng cụ phát âm khác, có thể tạo ra những thành phần tần số cao hơn 15kHz, dù tai người không thể nghe được. Tuy nhiên, nếu một trong những tín hiệu nay đi qua một lọc hạ thông có tần số cắt 15kHz, thì ngỏ ra của lọc ( nếu đưa đến loa ) sẽ tạo lại giống như tín hiệu vào. Như vậy, ta đã giả sữ rằng tín hiệu đã bị giới hạn bởi một tần số trên ( upper frequency ) vào khoảng 15kHz.</para>
+    <para id="id6079838">Bây giờ ta giả sử lấy một tín hiệu audio và cố truyền qua không khí - Bước sóng của tín hiệu 3KHz trong không khí khoảng 100km. Một anten 1/4 sóng sẽ dài 25km! Điều ấy không thể thực hiện. Và nếu giả sử ta có thể dựng được anten thì ta còn gặp phải 2 vấn đề. Thứ nhất, liên quan đến những tính chất của không khí và tần số audio. Những tần số này truyền không hiệu quả trong không khí. Thứ hai, sự giao thoa do các dãy tần các đài phát phủ lên nhau.</para>
+    <para id="id6079853">Vì những lý do đó, ta phải cải biến tín hiệu tần số thấp trước khi gửi nó đi từ nơi này đến nơi khác. Tín hiệu đã cải biến ít nhạy cảm với nhiễu so với tín hiệu gốc.</para>
+    <para id="id6079865">Phương pháp chung nhất để thực hiện sự cải biến là dùng tín hiệu tần số thấp để biến điệu ( cải biến những thông số của ) một tín hiệu tần số cao hơn. Tín hiệu nầy thường là hình sin.</para>
+    <section id="id-101343847083">
+      <title>Sự biến điệu ( modulation )</title>
+      <para id="id6079891">SC(t) là tín hiệu hình sin cao tần, được gọi là sóng mang (carrier). Gọi như thế vì nó được dùng để chuyển tải tín hiệu tín tức từ đài phát đến máy thu.</para>
+      <para id="id6079907">SC(t) = Acos (2fet+) (4.1)</para>
+      <para id="id6079931">Nếu fC(t) được chọn thích hợp, sóng mang có thể được truyền đi có hiệu quả. Thí dụ, có thể chọn những tần số trong khoảng giữa 0.5 và 3MHz để truyền xa đến 250 km. Bước sóng của các tần số tương ứng cỡ 100MHz, và chiều dài hợp lý của anten có thể chấp nhận được:</para>
+      <figure id="id6079954">
+        <media id="id1171823776411" alt=""><image src="graphics4.wmf" mime-type="image/wmf" height="50" width="139"/></media>
+      </figure>
+      <para id="id6079978">Biểu thức (4.1) chứa 3 thông số có thể thay đổi: biên độ A; tần số fC; và pha . Như vậy, hậu quả là có 3 kiểu biến điệu: biến điệu biên độ, biến điệu tần số hoặc biến điệu pha.</para>
+    </section>
+    <section id="id-496780055997">
+      <title>BIẾN ĐIỆU BIÊN ĐỘ SÓNG MANG BỊ NÉN 2 BĂNG CẠNH: (DSB SCAM)</title>
+      <para id="id6080011">( double - side band suppressed carried amplitude modulation ). </para>
+      <para id="id6080018">Nếu ta biến điệu biên độ của sóng mang ở phương trình (4.1), ta có kết quả:</para>
+      <para id="id6080027">Sm(t) = A(t) cos ( 2fCt+ ) (4.2) </para>
+      <para id="id6080056">Tần số fC và pha  không đổi</para>
+      <para id="id6080072">Biên độ A(t) thay đổi cách này hay cách khác theo s(t).</para>
+      <para id="id6080079">Để đơn giản, ta giả sử  = 0. Điều này không ảnh hưởng đến kết quả căn bản vì góc thực tế tương ứng với một độ dời thời gian <media id="id1171821449032" alt=""><image src="graphics5.wmf" mime-type="image/wmf" height="36" width="47"/></media>. ( Một sự dời thời gian không được xem là sự méo dạng trong một hệ thông tin ).</para>
+      <para id="id6080125">A(t) thay đổi như thế nào với s(t)? Câu trả lời đơn giản nhất là chọn A(t) bằng với s(t). Điều đó sẽ đưa đến dạng sóng biến điệu AM.</para>
+      <para id="id6080135">sm(t) = s(t) cos 2fCt (4.3)</para>
+      <para id="id6080158">Tín hiệu loại nay gọi là biến điệu AM sóng mang bị nén 2 băng cạnh vì những lý do mà ta sẽ thấy ngay sau đây:</para>
+      <para id="id6080167">Đặt S(f) là biến đổi F của s(t). Nhớ là ta không cần gì hơn là S(f) phải bằng zero đối với những tần số cao hơn tần số cắt fm. Hình 4.2 chỉ một S(f) biểu diễn cho yêu cầu đó.</para>
+      <para id="id6080181">Đừng nghĩ rằng S(f) luôn phải là như vậy, mà nó chỉ là biến đổi F của một tín hiệu tần số thấp tổng quát, có dãy tần bị giới hạn.</para>
+      <para id="id6080188">
+        <media id="id1171821062189" alt=""><image src="../../media/graphics6-b5a1.png" mime-type="image/png" height="127" width="208"/></media>
+      </para>
+      <para id="id6080220">Hình 4.2</para>
+      <para id="id6080224">Định lý về sự biến điệu ( chương II ) được dùng để tìm Sm(f):</para>
+      <para id="id6080235">Sm(f) = F [s(t)Cos2fCt] = <media id="id1171818046577" alt=""><image src="graphics7.wmf" mime-type="image/wmf" height="43" width="17"/></media>[S (f + fC) + S (f - fC)] (4.4)</para>
+      <para id="id6080297">Nhớ là biến điệu một sóng mang bằng s(t) sẽ làm dời tần số của s(t) ( cả chiều lên và chiều xuống ) bởi tần số của sóng mang. </para>
+      <para id="id6080307"><figure id="id6080318"><media id="id1171815823306" alt=""><image src=".png" mime-type="image/png" height="144" width="415"/></media></figure>11/2</para>
+      <para id="id6080442">Hình 4.3</para>
+      <para id="id6080446">Điều này tương tự với kết quả lượng giác của một phép nhân một hàm sin với một hàm sin khác.</para>
+      <para id="id6080453">CosA CosB = <media id="id1171823947211" alt=""><image src="graphics8.wmf" mime-type="image/wmf" height="43" width="17"/></media> Cos(A+B) + <media id="id8150485" alt=""><image src="graphics9.wmf" mime-type="image/wmf" height="43" width="17"/></media>cos (A-B)(4.5)</para>
+      <para id="id6080516">Nếu cosA thay bằng s(t), trong đó s(t) chứa những tần số liên tục từ giữa 0 và fm.</para>
+      <para id="id6080529">Hình 4.3 cho thấy, sóng biến điệu sm(t) chứa những tần số trong khoảng fC - fm và fC + fm.</para>
+      <para id="id6080564">Nếu gán những trị tiêu biểu vào cho fm = 15kHz và fC = 1MHz, ta sẽ thấy khoảng tần số bị chiếm bởi sóng biến điệu là từ 985.000 đến 1.015.000Hz.</para>
+      <para id="id6080585">- Thứ nhất: Với khoảng tần số này, thì thì anten có chiều dài hợp lý có thể xây dựng được. Đó là một trong 2 vấn đề cần giải quyết. </para>
+      <para id="id6080595">- Vấn đề thứ hai, là khả năng tách kênh trong một hệ đa hợp (Multiplexing). Ta thấy, nếu một tin tức biến điệu một sóng hình sin tần số fC1 và một tin tức khác biến điệu một sóng hình sin tần số fC2 thì các ảnh F của 2 sóng mang bị biến điệu sẽ không phủ lên nhau. Và fC1, fC2 tách biệt nhau ít nhất là 2fm.</para>
+      <para id="id6080638"><figure id="id6080649"><media id="id1171819932370" alt=""><image src=".png" mime-type="image/png" height="150" width="463"/></media></figure>f &gt; 2fm</para>
+      <para id="id6080745">Hình 4.4: Biến đổi F của 2 sóng AM.</para>
+      <para id="id6080751">Nếu các tần số của 2 sóng biến điệu không cách nhau xa lắm, cả 2 có thể dùng 1 anten, mặc dù chiều dài tối ưu của anten không như nhau cho cả 2 kênh [trong thực tế, một anten được dùng cho cả 1 khoảng tần số.</para>
+      <para id="id6080764">Ta nhấn mạnh lại rằng, các tín hiệu có thể được tách ra nếu chúng không bị phủ lên nhau ( hoặc về thời gian, hoặc về tần số ). Nếu chúng không phủ nhau về thời gian, có thể dùng các cổng hay các Switchs để tách. Nếu chúng không phủ về tần số, các tín hiệu có thể tách ra bởi các lọc dãy thông. Vậy, một hệ thống như hình 4.5 có thể dùng để tách sóng mang bị biến điệu.</para>
+      <para id="id6080779">s1(t).cos2fc1t+s2(t).cos2fc2tBPFH1(f)H2(f)s1(t). Cos2fC1ts2(t). Cos2fC2tH1(f)H2(f)fc1-fc1-fc2fc211</para>
+      <para id="id6081668">Hình 4.5: Sự tách 2 kênh.</para>
+      <para id="id6081673">Nếu nhiều tín hiệu được truyền trên cùng một kênh, chú ý có thể được tách ra tại máy thu bằng các lọc dãy thông. Các lọc này chỉ tiếp nhận, một trong các tín hiệu hiện diện trong tín hiệu biến điệu mong muốn.</para>
+      <para id="id6081687">TD: Một tín hiệu chứa thông tin có dạng:</para>
+      <para id="id6081697">s(t) = <media id="id1171816772797" alt=""><image src="graphics10.wmf" mime-type="image/wmf" height="43" width="50"/></media></para>
+      <para id="id6081728">Tín hiệu này biến điệu biên độ một sóng mang có tần số 10Hz. Hãy vẽ dạng sóng AM và biến đổi F của nó.</para>
+      <para id="id6081737">Giải: Sóng AM được cho bởi phương trình:</para>
+      <para id="id6081747">sm(t) = <media id="id1171815143314" alt=""><image src="graphics11.wmf" mime-type="image/wmf" height="43" width="50"/></media> cos 20t</para>
+      <para id="id6081790">
+        ***SORRY, THIS MEDIA TYPE IS NOT SUPPORTED.***
+      Hàm này được vẽ như hình 4.6:</para>
+      <para id="id6081824">Hình 4.6: Dạng sóng AM</para>
+      <para id="id6081829">cos 20t là sóng mang. </para>
+      <para id="id6081840">- Khi sóng mang bằng 1 ( t = <media id="id1171818048371" alt=""><image src="graphics12.wmf" mime-type="image/wmf" height="43" width="22"/></media> ), sm (t) = s(t).</para>
+      <para id="id6081879">- Khi sóng mang bằng -1, t = <media id="id1171824163002" alt=""><image src="graphics13.wmf" mime-type="image/wmf" height="43" width="60"/></media>, sm(t) = -s(t).</para>
+      <para id="id6081918">Để vẽ dạng sóng AM. Ta bắt đầu vẽ s(t) và ảnh qua gương của nó -s(t). Sóng AM chạm một cách tuần hoàn vào mỗi đường cong này và thay đổi biên đô giữa những điểm tuần hoàn đó.</para>
+      <para id="id6081926">Trong hầu hết trường hợp thực tế, tần số sóng mang cao hơn rất nhiều so với thí dụ trên.</para>
+      <para id="id6081934">Biến đổi F của s(t) được vẽ ở hình 4.7 ( Xem phụ lục chương II )</para>
+      <figure id="id6081947">
+        <media id="id1171815725358" alt=""><image src="graphics14.png" mime-type="image/png" height="127" width="218"/></media>
+      </figure>
+      <para id="id6081971">Hình 4.7: Ảnh Fourier của s(t) </para>
+      <para id="id6081976">Biến đổi F của sóng biến điệu được tính nhờ định lý biến điệu.</para>
+      <para id="id6081984">Sm(f) = <media id="id1171817553396" alt=""><image src="graphics15.wmf" mime-type="image/wmf" height="43" width="140"/></media> (4.7)</para>
+      <figure id="id6082027">
+        <media id="id8186679" alt=""><image src="../../media/graphics16-1999.png" mime-type="image/png" height="142" width="298"/></media>
+      </figure>
+      <para id="id6082051">Hình 4.8: Tần phổ của sóng biến điệu</para>
+      <para id="id6082056">Vì Sm (f) được suy từ S(f) bằng cách dời tất cả các thành phần tần số của s(t) một khoảng là fC, ta sẽ có thể hồi phục lại s(t) từ sm­(t) bằng cách dời các tần số bởi cùng một trị theo chiều ngược lại.</para>
+      <para id="id6082086">Định lý biến điệu chứng tỏ rằng phép nhân một hàm thời gian với một hàm Sinusoide sẽ dời ảnh F của hàm thời gian đi ( cả chiều lên và xuống ) trong miền tần số. Vậy nếu ta lại nhân Sm(t) với một hàm sin ( tần số sóng mang ), thì ảnh F sẽ dời lui xuống đến tần số thấp của nó. Phép nhân này cũng dời ảnh F lên đến 1 vị trí giữa khoảng 2fC, những thành phần này dễ dàng bị loại bởi một lọc hạ thông. Tiến trình này vẽ ở hình 4.9.</para>
+      <para id="id6082124">Sự hồi phục của s(t) được mô tả bởi phương trình (4.8)</para>
+      <para id="id6082131">sm(t). cos 2fCt = [ s(t) cos 2fCt ] cos 2fCt</para>
+      <para id="id6082174">= s(t) cos2 2fCt</para>
+      <para id="id6082194">=<media id="id1171818704367" alt=""><image src="graphics17.wmf" mime-type="image/wmf" height="44" width="138"/></media> (4.8)</para>
+      <para id="id6082227">Ngỏ ra lọc hạ thông là <media id="id1171816557756" alt=""><image src="graphics18.wmf" mime-type="image/wmf" height="21" width="29"/></media>/2</para>
+      <para id="id6082261">sm(f)<figure id="id6082292"><media id="id1171818439833" alt=""><image src="graphics19.png" mime-type="image/png" height="179" width="471"/></media></figure></para>
+      <para id="id6082316">Hình 4.9: Sự hồi phục tín hiệu từ sóng biến điệu.</para>
+      <para id="id6082322">Tiến trình này gọi là hoàn điệu ( Demodulation ).</para>
+    </section>
+    <section id="id-824437792837">
+      <title>BIẾN ĐIỆU BIÊN ĐỘ SÓNG MANG ĐƯỢC TRUYỀN 2 BĂNG CẠNH ( Double - Side Band Transmitted Carrier AM ). DSBTCAM.</title>
+      <para id="id6082340">Bây giờ ta cải biến thêm sự biến điệu AM, bằng cách cộng vào sóng biến điệu một phần của sóng mang.</para>
+      <para id="id6082349"><figure id="id6082360"><media id="id1171815600208" alt=""><image src=".png" mime-type="image/png" height="147" width="377"/></media></figure>s(t)</para>
+      <para id="id6082405">Hình 4.10.</para>
+      <para id="id6082410">Hình 4.10 chỉ sự cộng một sóng mang hình sin thuần túy vào sóng biến điệu DSBSCAM. Kết quả cho bởi phương trình (4.8)</para>
+      <para id="id6082419">sm(t) = s(t) cos 2fCt + A cos 2fCt(4.9)</para>
+      <para id="id6082455">Đây là kiểu biến điệu AM sóng mang được truyền 2 băng cạnh. ( DSBTC AM). Khác với kiểu AM sóng mang bị nén 2 kiểu AM sóng mang được truyền có chứa một thành phần rỏ ràng của sóng mang ( A cos 2fCt ).</para>
+      <para id="id6082474">Ảnh F của TCAM là tổng của biến đổi F của SCAM và biến đổi F sóng mang thuần túy. Biến đổi sóng mang là một cặp xung lực  fC.</para>
+      <figure id="id6082495">
+        <media id="id1171814742832" alt=""><image src="graphics20.png" mime-type="image/png" height="145" width="249"/></media>
+      </figure>
+      <para id="id6082519">Hình 4.11: Biến đổi F của TCAM</para>
+      <para id="id6082524">Dạng sóng có thể viết lại ( Từ phương trình 4.9 )</para>
+      <para id="id6082531">sm(t) [A+s(t)] cos 2fCt(4.10)</para>
+      <para id="id6082554">Hàm này có thể vẽ theo cách vẽ dạng sóng SCA­M. Trước hết, ta vẽ đường biên [A+s(t)] và ảnh qua gương -[ A + s(t)]. Sóng AM chạm tuần hoàn vào 2 đuờng biên và thay đổi biên độ điều giữa những điểm tuần hoàn đó. Hình vẽ 4.12, cho một s(t) hình sin ( thí dụ tiếng huýt sáo vào một microphone ).</para>
+      <para id="id6082576">- Hình 4.12a Tín hiệu s(t) hình sin</para>
+      <para id="id6082581">- Hình 4.12b Dạng sóng DSBTCAM với giá trị của A nhỏ hơn biên độ a của s(t); A&lt;a; A0.</para>
+      <para id="id6082594">- Hình 4.12c Dạng sóng DSBTCAM khi A lớn hơn biên độ của s(t); A&gt;a; A0.</para>
+      <para id="id6082606">- Hình 4.12d Dạng sóng DSBTCAM khi A=0.</para>
+      <para id="id6082616"><figure id="id6082627"><media id="id7925744" alt=""><image src=".png" mime-type="image/png" height="884" width="460"/></media></figure>Hình 4.12</para>
+      <figure id="id6082699">
+        <media id="id1171815023062" alt=""><image src="graphics21.wmf" mime-type="image/wmf" height="496" width="670"/></media>
+      </figure>
+      <para id="id6082723">Hình 4.12 </para>
+    </section>
+    <section id="id-928023735563">
+      <title>HIỆU SUẤT</title>
+      <para id="id6082736">Sự cộng thêm sóng mang vào sóng biến điệu sẽ làm cho sự hoàn điệu dễ dàng hơn. Cái giá mà ta phải trả là hiệu suất. Một phần của năng lượng được truyền dùng để gửi sóng mang và như vậy không mang một thông tin hữu ích nào.</para>
+      <para id="id6082750">Ta thấy từ phương trình (4.9) : Công suất sóng mang là công suất của A cos2fCt, hay <media id="id1171817730859" alt=""><image src="graphics22.wmf" mime-type="image/wmf" height="36" width="43"/></media>watts. Công suất của tín hiệu là công suất của s(t) cos2fCt, là trị trung bình của s2(t) chia 2. Công suất trung bình của s2(t) thì đơn giản là của s(t), hay PS. Vậy công suất của tín hiệu là <media id="id1171815064244" alt=""><image src="graphics23.wmf" mime-type="image/wmf" height="36" width="38"/></media>.</para>
+      <para id="id6082861">Công suất truyền toàn phần là tổng của 2 số hạng này. </para>
+      <para id="id6082868">Ta định nghĩa hiệu suất là tỷ số của công suất tín hiệu công suất toàn phần:</para>
+      <para id="id6082875"> = <media id="id7522107" alt=""><image src="graphics24.wmf" mime-type="image/wmf" height="51" width="67"/></media>(4.10)</para>
+      <para id="id6082913">TD: Giả sử ta xem dạng sóng hình 12c, và đặt A bằng với biên độ của hình sin. Vậy hiệu suất là 33%.</para>
+    </section>
+    <section id="id-455561244632">
+      <title>CÁC KHỐI BIẾN ĐIỆU:</title>
+      <para id="id6082935">Hình 4.13 Sơ đồ của các khối biến điệu AM.</para>
+      <para id="id6082941">- Hình 4.13a: Hệ thống tạo nên DSBSC AM.</para>
+      <para id="id6082947"><figure id="id6082950"><media id="id1171821134571" alt=""><image src="graphics25.png" mime-type="image/png" height="388" width="379"/></media></figure>- Hình 4.13b,c: Hệ thống tạo nên DSBTC AM.</para>
+      <para id="id6082981">Hình 4.13: Khối biến điệu AM </para>
+      <para id="id6082987">Tại sao sự biến điệu thì không tuyến tính ?</para>
+      <para id="id6082993">Ta đã biết, bất kỳ một hệ tuyến tính và không đổi theo thời gian nào điều có một output mà biến đổi F của nó là tích của ảnh F của input với H(f). Nếu biến đổi của tín hiệu vào bằng zero trong một khoảng tần số nào đó, thì ảnh F của output phải cũng bằng zero trong khoảng ấy. Nghĩa là, tính chất tổng quát của hệ tuyến tính không đổi theo thời gian là nó không thể cho ra bất kỳ một output nào nếu không có input ở ngỏ vào.</para>
+      <para id="id6083007">Vậy có một hệ tuyến tính không theo t nào có thể cho sm(t) ở ngỏ ra khi nhận s(t) ở ngỏ vào ? Nói các khác, ta có thể tìm được hay không một H(f) nào để cho: </para>
+      <para id="id6083023">Sm(f) = S(f) . H(f)</para>
+      <figure id="id6083036">
+        <media id="id1171820008694" alt=""><image src="graphics26.png" mime-type="image/png" height="166" width="441"/></media>
+      </figure>
+      <para id="id6083060">Hình 4.14</para>
+      <para id="id6083065">Rõ ràng, câu trả lời là không.</para>
+      <para id="id6083070">Sự biến điệu là một tiến trình dời tần. Và không có một hệ tuyến tinh nào thực hiện được điều đó.</para>
+      <para id="id6083085">Một hệ phi tuyến và thay đổi theo t, nói chung, là rất phức tạp. Tuy nhiên, trong trường hợp biến điệu, người ta có thể thực hiện được bằng 2 kiểu gián tiếp: Biến điệu cổng (Gated mudolator) và biến điệu theo luật bình phương (Square - Law Mudolator ).</para>
+      <section id="id-680211853162">
+        <title>Biến Điệu Cổng:</title>
+        <para id="id6083107">Dựa vào sự kiện: Phép nhân s(t) với một hàm tuần hoàn bất kỳ sẽ tạo ra một chuổi sóng AM với những sóng mang là bội số của tần số cơ bản của hàm tuần hoàn. Hình_4.15</para>
+        <figure id="id6083121">
+          <media id="id1171815311628" alt=""><image src="graphics27.png" mime-type="image/png" height="335" width="646"/></media>
+        </figure>
+        <para id="id6083145">Hình 4.15: Tích của s(t) và hàm cổng tuần hoàn</para>
+        <para id="id6083151">Output của mạch nhân (hình 4.15)</para>
+        <para id="id6083157">s(t)P(t) = s(t) <media id="id1171821437651" alt=""><image src="graphics28.wmf" mime-type="image/wmf" height="58" width="186"/></media>(4.11)</para>
+        <para id="id6083191">fc Là tần số cơ bản của hàm tuần hoàn. an , các hệ số chuỗi F. Giả sử P(t) là hàm chẳn ( để tránh phải viết các số hạng sin trong chuỗi )</para>
+        <para id="id6083212">Lọc BPF sẽ chận tất cả, chỉ trừ thành phần nào đó trong chuỗi mà ta sẽ chọn. Kết quả là ở ngỏ ra có một sóng AM. Mạch lọc điều hợp với tần số cơ bản, nhưng nó sẽ có thể điều hợp với một trong những họa tần của sóng AM, có tần số sóng mang cao hơn. Trong thực tế, ta chọn những họa tần thấp (Vì các hệ số F làm giảm biên độ tín hiệu khi n tăng).</para>
+        <para id="id6083234">P(t) là một hàm cổng gồm một đoàn xung tuần hoàn. (Hình 4.16)</para>
+        <figure id="id6083244">
+          <media id="id1171816562266" alt=""><image src="../../media/graphics29-d0b6.png" mime-type="image/png" height="112" width="344"/></media>
+        </figure>
+        <para id="id6083272">Hình 4.16: Hàm cổng</para>
+        <para id="id6083277">* Vì P(t) luôn bằng 0 hay bằng 1, mạch nhân có thể xem như có cơ chế hoạt động on/off ( hoặc switch ).</para>
+        <para id="id6083286">Output của BPF tìm được bằng cách khai triển P (t) thành chuỗi F và tìm a1.</para>
+        <para id="id6083304">­<media id="id1171814139566" alt=""><image src="graphics30.wmf" mime-type="image/wmf" height="43" width="50"/></media></para>
+        <figure id="id6083338">
+          <media id="id1171816724582" alt=""><image src="graphics31.wmf" mime-type="image/wmf" height="25" width="113"/></media>
+        </figure>
+        <para id="id6083362">sm(t) = <media id="id1171817545874" alt=""><image src="graphics32.wmf" mime-type="image/wmf" height="43" width="17"/></media>s(t) cos2fCt(4.12)</para>
+        <para id="id6083413">Phương trình (4.12) được viết cho hàm cổng có nửa thời gian cao và nửa thời gian zero. Nhưng sóng AM vẫn được tạo ra với bất kỳ trị giá nào của chu kỳ thao tác của xung.</para>
+        <para id="id6083425"><figure id="id6083436"><media id="id1171818667216" alt=""><image src=".png" mime-type="image/png" height="104" width="214"/></media></figure>Bộ phận tạo hàm cổngBộ phận tạo hàm cổng có thể là thụ động hoặc tác động hình 4.17 chỉ bộ phận biến điệu gồm 2 thành phần thụ động.</para>
+        <para id="id6083568">Hình 4.17a: Mạch tạo xung cổng thụ động dùng Switch.</para>
+        <para id="id6083575"><figure id="id6083586"><media id="id1171814372772" alt=""><image src=".wmf" mime-type="image/wmf" height="254" width="402"/></media></figure>cos2fctHình 4.17b: Mạch tạo xung cổng thụ động dùng diode.</para>
+        <para id="id6083667">- Hình 4.17a, SW đóng ngắt tuần hoàn. Khi SW hỡ, tín hiệu ra bằng tín hiệu vào. Khi SW đóng, tín hiệu ra bằng zero. R là điện trở nguồn. Bất lợi của SW cơ học là đóng ngắt chậm. Tần số đóng ngắt của SW phải bằng tần số sóng mang ( hoặc ước số, nếu ta chọn 1 họa tần ). Với tần số sóng mang cở MHz, SW cơ học không thể đáp ứng kịp.</para>
+        <para id="id6083681">- Hình 4.17b: Sự đóng ngắt thực hiện nhờ cầu diode. Khi cos2fCt dương ( điểm B có điện thế dương hơn điểm A ), cả 4 doide bị khóa: Mạch tương tự như hình 4.17a khi SW hỡ, tín hiệu ra là s(t). Ngược lại khi cos2fCt âm ( điểm B có điện thế âm hơn điểm A ). Cả 4 diode dẫn: mạch giống như hình 4.17a khi SW đóng. Giới hạn duy nhất cho mạch đóng ngắt nầy là tần số đóng ngắt của loại Diode được dùng. ( Tính không lý tưởng của các diode, thường là thời gian hồi phục ( recovery time ) của điện dung mối nối khá lớn so với chu kỳ sóng mang ).</para>
+        <para id="id6083732">- Hàm cổng còn có thể tạo được bằng cách dùng các linh kiện tác động, như transistor hoạt động giữa vùng khóa và vùng bảo hòa. Một transistor khóa, tương đương với một SW hỡ. Một transistor bảo hòa, xem như một SW đóng.</para>
+        <para id="id6083746">- Hình 4.18, trình bày một kiểu mạch biến điệu dọi là biến điệu vòng (ring modulator). Sóng mang là một sóng vuông, được đưa vào mối giữa của 2 biến thế. Output là một phiên bản bị “ cổng hóa “ của input, chỉ cần lọc là có được sóng AM .</para>
+      </section>
+      <section id="id-994297228133">
+        <title>Biến Điệu Theo Luật Bình Phương.</title>
+        <para id="id6083769">Loại nầy dựa vào định luật: “ Bình phương của một tổng 2 hàm có chứa một số hạng là tích của 2 hàm đó “:</para>
+        <para id="id6083779">[s1(t)+s2(t)]2= s1 2 (t) + s2 2 (t)+2 s1(t).s2(t)</para>
+        <para id="id6083830">Nếu s1(t) là tín hiệu chứa tin và s2(t) là sóng mang, ta có: </para>
+        <para id="id6083847">[ s(t) + cos2fCt ]2 = s2(t) + cos2 2fCt + 2s(t) cos2fCt(4.13)</para>
+        <para id="id6083903">Số hạng thứ 2 chính là sóng AM mong muốn. Ta phải tìm cách tách nó ra khỏi 2 thành phần kia. Ta đã biết, sự tách sẽ đơn giãn, khi chúng không phủ nhau ( trong phạm vi thời gian hoặc phạm vi tần số ). Rỏ ràng, chúng phủ nhau về thời gian. Vậy, ta hãy xem phạm vi tần số.</para>
+        <para id="id6083917">Các xung lực tại gốc và 2fC kết quả của sự khai triển lượng giác</para>
+        <para id="id6083930">Cos2 = <media id="id7494605" alt=""><image src="graphics33.wmf" mime-type="image/wmf" height="43" width="68"/></media></para>
+        <para id="id6083970">Đường cong liên tục ở giữa ( tần số thấp ) chỉ biến đổi F của s2(t). Ta không biết dạng chính xác của s(t). Nhưng chỉ biết rằng ảnh F của nó bị giới hạn ở những tần số nhỏ hơn fm. Biến đổi F của s2(t) bị giới hạn ở những tần số dưới 2fm. Một cách để thấy điều đó là xem biến đổi F của s2(t) là phép chồng của S(f) lên chính nó. Phép chồng đồ hình cho thấy biến đổi nầy đi từ zero đến 2fm. Cách khác, là xem s(t) như là tổng của các hình sin có tần số (riêng) dưới fm. Khi bình phương tổng nầy, ta có kết quả là tất cả các tích của các số hạng. Điều nầy sẽ đưa đến tổng và hiệu của các tần số khác nhau ( dùng lượng giác). Không có tổng hay hiệu nào vượt quá 2fm nên tần số gốc không vượt quá fm.</para>
+        <figure id="id6084060">
+          <media id="id3524849" alt=""><image src="graphics34.png" mime-type="image/png" height="340" width="649"/></media>
+        </figure>
+        <para id="id6084083">
+          <figure id="id6084090">
+            <media id="id1171818301955" alt=""><image src="graphics35.png" mime-type="image/png" height="453" width="419"/></media>
+          </figure>
+        </para>
+        <figure id="id6084117">
+          <media id="id1171816194713" alt=""><image src="graphics36.png" mime-type="image/png" height="279" width="451"/></media>
+        </figure>
+        <para id="id6084141">Hình 4.18: Biến điệu vòng</para>
+        <figure id="id6084149">
+          <media id="id1171817551727" alt=""><image src="../../media/graphics37-24fe.png" mime-type="image/png" height="157" width="547"/></media>
+        </figure>
+        <para id="id6084173">Hình 4.19: Biến đổi F của (4.13)</para>
+        <para id="id6084178">Hình 4.19 cho thấy khi fC &gt;&gt; 3fm thì các số hạng không phủ nhau ( về tần số ). Vậy có thể tách chúng bằng một lọc BPF để có sóng AM. Trong hầu hết các trường hợp thực tế, fC&gt;&gt;fm, nên điều kiện nầy dễ thỏa.</para>
+        <para id="id6084213"><figure id="id6084224"><media id="id1171814925730" alt=""><image src=".png" mime-type="image/png" height="124" width="388"/></media></figure>SQRHình 4.20: Mạch biến điệu bình phương.</para>
+        <para id="id6003005">Hình 4.20 chỉ toàn thể một khối biến điệu theo luật bình phương. Các bộ phận tổng có thể là tác động, thụ động hay op.amp.</para>
+        <para id="id6003014">- Bộ phận bình phương thì không đơn giãn. Bất kỳ một linh kiện phi tuyến nào cũng đều cho một tín hiệu ra tương ứng với một tín hiệu vào bởi một hệ thức mà ta có thể khai triển thành chuỗi lủy thừa. Giả sữ không có sự tích trữ năng lượng, nghĩa là output tại bất kỳ thời điểm nào chỉ phụ thuộc vào input tại cùng thời điểm đó, chứ không kể đến những trị giá trước đó.</para>
+        <para id="id6003037">Với y(t) là output và x(t) là input:</para>
+        <para id="id6003049">y(t) = a0 + a1x(t) + a2x2(t) + a3x3(t) + ....(4.14)</para>
+        <para id="id6003088">Số hạng mà ta lưu ý là a2x2(t). Và ta tìm cách ta tìm cách tách nó khỏi các thành phần khác. Linh kiện phi tuyến được chọn dùng phải cơ bản là một linh kiện có đặc tính bình phương. Thí dụ diode</para>
+        <para id="id6003123">an trong phương trình (4.14) phải có tính chất:</para>
+        <para id="id6003134">an &lt;&lt; a2 , Với n &gt; 2</para>
+        <para id="id6003149">Có vài điều cần nói thêm về sự phi tuyến. Nếu các số hạng ứng với n = 1 và n = 2 trong chuỗi chiếm ưu thế (biên độ lớn) thì kết quả là sóng TCAM. Hơn nữa, Nếu an nhỏ quá ( với n &gt; 2 ), sóng AM vẫn có nếu làm cho s(t) thật nhỏ. Vậy sn(t) &lt;&lt; s(t) với n &gt; 1, và TCAM vẫn còn chiếm ưu thế. Đây là một trường hợp không mong muốn, vì biên độ của sóng quá nhỏ.</para>
+        <para id="id6003203">* Các diode bán dẫn có đặc tuyến rất giống với luật bình phương ( trong vùng hoạt động của nó ).</para>
+        <para id="id6003212">Sơ đồ khối của một mạch biến điệu cân bằng (balance modulator) vẽ ở hình 4.21. Hệ nầy cộng sóng mang cos2fCt với tín hiệu chứa tin s(t), sau đó đưa chúng vào linh kiện phi tuyến ( bình phương ). Sự vận hành cũng được lặp lại với -s(t) . Mạch tổng sẽ lấy hiệu sô của 2 tín hiệu ra, làm loại bỏ số hạng của lủy thừa lẻ trong khai triển (4.14). Ví dụ, xem số hạng lủy thừa 3. Khi khai triển [s(t)+cos2fCt]3, Số hạng phủ lên băng tần của sóng AM là s2(t)cos2fCt. Số hạng nầy không đổi dấu khi -s(t) được thay vào s(t). Như vậy tại mạch tổng (thực ra là trừ ) chúng sẽ triệt nhau. Số hạng mà ta muốn lấy, s(t).cos2fCt , sẽ đổi dấu khi -s(t) được thay cho s(t). Vậy mạch sẽ làm tăng đôi biên độ tín hiệu.</para>
+        <para id="id6003361">Ta cũng nhớ rằng, khi số hạng bậc một bị triệt, nên tín hiệu ra của khối biến điệu cân bằng là SC AM. ( Biến điệu AM sóng mang bị nén ).</para>
+        <para id="id6003382">Mạch điện thực tế của biến điệu bình phương vẽ ở hình 4.22. Đây là mạch transistor kiểu E chung. Mạch dùng sự phi tuyến của transistor để tạo nên tích của tín hệu với sóng mang. Mạch được điều hợp ở chân C, lọc bỏ những họa tần không mong muốn.</para>
+        <para id="id6003397"><figure id="id6003407"><media id="id1171817755447" alt=""><image src=".png" mime-type="image/png" height="218" width="349"/></media></figure>s(t)<figure id="id6003460"><media id="id1171816438589" alt=""><image src=".png" mime-type="image/png" height="252" width="455"/></media></figure>SQRSQRSQRSQRHình 4.21: Khối biến điệu AM cân bằng</para>
+        <para id="id6003572">Hình 4.22: Mạch biến điệu bình phương</para>
+        <para id="id6003598">Các mạch biến điệu bình phương thực tế dễ thiết kế đến độ ngạc nhiên! Thực vậy, Chúng thường hiện hữu ngoài ý muốn. Các sản phẩm của sự biến điệu xuất hiện trong mạch điện một khi các linh kiện điện tử bị đưa vào vùng hoạt động phi tuyến. Vì vậy, người ta thường cố ngăn ngừa một mạch hoạt động như một mạch biến điệu không mong muốn.</para>
+        <para id="id6003612">Hình 4.23 là mạch của một máy phát AM biến điệu ở chân C. Chỉ cần thay đổi điện thế tức thời đặt vào chân B của Transistor do sự biến đổi biên độ của tín hiệu trong tin s(t). Sóng xuất hiện tại đỉnh của mạch điều hợp ở chân C là tổng của VCC và tín hiệu s(t). Như vậy, cơ bản ta đã làm thay đổi điện thế tức thời do biên độ của s(t) thay đổi.</para>
+        <para id="id6003636">Ngõ ra của mạch lạ một lọc BPF, nhằm giảm thiểu các họa tần sinh ra do sự họat động phi tuyến của transistor.</para>
+        <figure id="id6003648">
+          <media id="id1171817483767" alt=""><image src="graphics38.png" mime-type="image/png" height="247" width="316"/></media>
+        </figure>
+        <para id="id6003672">Hình 4.23: Mạch phát AM biến điệu ở chân C</para>
+      </section>
+    </section>
+    <section id="id-418382501663">
+      <title>Các khối hoàn điệu ( Demodulators)</title>
+      <para id="id6003689">Ta đã nói từ trước rằng s(t) sẽ được hồi phục từ sm(t), bằng cách hoàn điệu cho sm(t) và sau đó cho tín hiệu qua một lọc LPF. ( loai sóng mang ).</para>
+      <para id="id6003710">Hình 4.24 là sơ đồ khối của một mạch hoàn điện đồng bộ (Synchronous Demodulator) hay hoàn điệu kết hợp. Gọi như vậy vì mạch dao động tạo sC(t) được đồng bộ hóa về cả tần số và pha với sóng mang được thu.</para>
+      <para id="id6003734"><figure id="id6003745"><media id="id1171816064445" alt=""><image src=".png" mime-type="image/png" height="153" width="326"/></media></figure>S(f)fm-fm1G(f)fm-fm1/21/41/4-2fc2fcffHình 4.24: Hoàn điệu AM</para>
+      <para id="id6004399">Vì mạch nhân của hình vẽ nhìn không khác với mạch nhân dùng trong mạch biến điệu, ta có thể tiên đoán những cải biến của mạch biến điệu cổng và bình phương có thể áp dụng được ở đây.</para>
+      <para id="id6004411">Có hai loại hoàn điệu đồng bộ</para>
+      <section id="id-507576942217">
+        <title>Hoàn Điệu Cổng:</title>
+        <para id="id6004424"><figure id="id6004428"><media id="id2967642" alt=""><image src="graphics39.png" mime-type="image/png" height="148" width="388"/></media></figure>Trước hết, hãy khảo sát sự dùng mạch biến điệu cổng để hoàn điệu một sóng DSBSCAM:</para>
+        <para id="id6004461">Hình 4.25: Hoàn điệu cổng</para>
+        <para id="id6004466">P(t) là một hàm cổng gồm một chuỗi xung tuần hoàn biên độ đơn vị.</para>
+        <para id="id6004473">P(t) = a­0 + <figure id="id6004483"><media id="id1171817314626" alt=""><image src="graphics40.wmf" mime-type="image/wmf" height="47" width="33"/></media></figure>an cos2nfCt</para>
+        <para id="id6004524">Vậy tín hiệu vào của LPF là:</para>
+        <para id="id6004530">sm(t) P(t) = s(t) cos2fCt <figure id="id6004550"><media id="id1171824133577" alt=""><image src="graphics41.wmf" mime-type="image/wmf" height="50" width="153"/></media></figure></para>
+        <para id="id6004574">= a0 s(t) cos2fCt + <figure id="id6004595"><media id="id1171821428204" alt=""><image src="graphics42.wmf" mime-type="image/wmf" height="43" width="29"/></media></figure><figure id="id6004619"><media id="id2554748" alt=""><image src="graphics43.wmf" mime-type="image/wmf" height="47" width="265"/></media></figure>(4.15)</para>
+        <para id="id6004645">Quan tâm đến thành phần bậc 1:</para>
+        <para id="id6004651"> sm(t).P(t) = a0.s(t).cos2fct + a1.s(t).cos22fct</para>
+        <para id="id6004704">
+          <media id="id1171814799487" alt=""><image src="graphics44.wmf" mime-type="image/wmf" height="44" width="297"/></media>
+        </para>
+        <para id="id6004742">Vậy output của LPF cho bởi:</para>
+        <para id="id6004748">so(t) = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {  {1}  over  {2} } } {}</m:annotation></m:semantics></m:math>a1s(t)</para>
+        <para id="id6004833">Và sự hoàn điệu được hoàn tất.</para>
+        <list id="id6004841" list-type="enumerated">
+          <item>Ta đã nói về hoạt động của hoàn điệu cổng cho một sóng AM SC. Bây giờ, nếu ta thay A + s(t) cho s(t) trong phương trình (4.15) ( trường hợp TCAM). Ta sẽ thấy rằng hoàn điệu cổng sẽ tạo ra một tín hiệu ra.</item>
+        </list>
+        <para id="id6004858">so(t) = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {  {1}  over  {2} } } {}</m:annotation></m:semantics></m:math>a1[A + s(t)]</para>
+        <para id="id6004940">Biểu thức trình bày tín hiệu chứa tin gốc bị dời bởi một hằng. Nếu hệ chứa linh kiện liên lạc ac, hằng sẽ không suất hiện ở output. Nếu tất cả mạch khuếch đại trong hệ liên lạc dc, ta có thể loại bằng cách dùng một tụ nối tiếp tương đối lớn, để nó nạp đến trị trung bình của tín hiệu.</para>
+        <para id="id6004954">Ta giả sử trị trung bình của tin s(t) là zero. Nếu nó không đúng, sự loại bỏ hằng cũng sẽ loại vài tín hiệu khác. May mắn, hầu hết s(t) đều có trị dc là zero.</para>
+      </section>
+      <section id="id-376130932188">
+        <title>Hoàn Điệu Bình Phương:</title>
+        <para id="id6004974">Ta khảo sát hiệu quả của việc cộng sóng AM vào một sóng mang thuần túy, rồi sau đó bình phương tổng:</para>
+        <para id="id6004983">[sm(t) + A cos2fCt ]2(4.16)</para>
+        <para id="id6005010">Trước hết, hãy xem trường hợp sóng mang bị nén SCAM. Phương trình (4.16) trở nên: </para>
+        <para id="id6005018">sm(t) = s(t). Cos2fCt </para>
+        <para id="id6005039"><figure id="id6005042"><media id="id1171814778822" alt=""><image src="graphics45.wmf" mime-type="image/wmf" height="28" width="138"/></media></figure>= cos22fCt + [s(t) + A]2</para>
+        <para id="id6005090">= <figure id="id6005095"><media id="id1171817362226" alt=""><image src="graphics46.wmf" mime-type="image/wmf" height="46" width="219"/></media></figure> (4.17) </para>
+        <para id="id6005122">- Số hạng thứ nhì là một sóng AM xung quanh một sóng mang tần số 2fC. Vậy có thể tách nó ra dể dàng bằng một lọc LPF.</para>
+        <para id="id6005137">- Số hạng thứ nhất có thể khai triễn:</para>
+        <para id="id6005143">s2(t) + A2 + 2A s(t).</para>
+        <para id="id6005158">Nhưng tần số chứa s2(t) phủ với s(t), và chúng không thể tách ra. Tuy nhiên, giả sử rằng ta đã dùng một lọc LPF để tách tất cả số hạng <figure id="id6005173"><media id="id1171815729003" alt=""><image src="graphics47.wmf" mime-type="image/wmf" height="51" width="79"/></media></figure>ra khỏi thành phần có tần số 2fc .</para>
+        <para id="id6005205">Nhớ là lọc nầy phải cho qua những tần số lớn đến 2fm. Vậy ta đã hồi phục bình phương của tổng của A và s(t). Ta sẽ lấy căn bậc 2 của nó để có:</para>
+        <para id="id6005236"><media id="id1171824060629" alt=""><image src="graphics48.wmf" mime-type="image/wmf" height="46" width="200"/></media>.</para>
+        <para id="id6005268">A* Sự lấy suất của một tín hiệu sẽ đưa đến một dạng méo. Thí dụ, tín hiệu là một hình sin thuần, suất của nó có dạng sóng sin chỉnh lưu 2 bán kỳ với tần số cơ bản gấp đôi tần số gốc. Tín hiệu chỉnh lưu không chỉ chứa một tần số đơn, mà bao gồm nhiều họa tần. [ nếu ta nghe nó ở loa, sóng sin gốc sẽ cho một tông thuần, trong lúc sóng sin chỉnh lưu 2 bán kỳ sẽ cho một tông sè - Thành phần họa tần - cao hơn một bát độ ]. Nếu tín hiệu gốc là một hổn hợp nhiều tần số, sự méo sẽ nghiêm trọng hơn.</para>
+        <para id="id6005297">B* Nhưng giả sử A đủ lớn sao cho s(t) + A không bao giờ có trị âm, thì <figure id="id6005304"><media id="id1171815026812" alt=""><image src="graphics49.wmf" mime-type="image/wmf" height="28" width="60"/></media></figure> sẽ bằng s(t) + A. Khi đó, ta đã hoàn điệu được. Nghĩa là sóng mang được thêm vào ở máy thu để hoàn điệu phải có biên độ lớn hơn hay bằng trị âm tối đa của s(t).</para>
+        <para id="id6005346">Bây giờ ta xem việc hoàn điệu sóng TCAM. Trong việc hoàn điệu, cần thiết phải tạo lại một bản sao hoàn chỉnh của sóng mang. Điều nầy khó thực hiện, trừ khi sóng AM chứa một số hạng tuần hoàn có tần số bằng tần số sóng mang. Điều nầy tự nhiên đưa ta đến việc phải dùng TCAM. Thực vậy, phương trình (4.16) là kết quả từ việc bình phương sóng TCAM thu được mà không cần cộng thêm một sóng mang địa phương (nội local) (tại máy thu ).</para>
+        <para id="id6005380"><figure id="id6005391"><media id="id1171815465778" alt=""><image src=".png" mime-type="image/png" height="104" width="497"/></media></figure>s(t)Hình 4.26: Khối hoàn điệu bình phương cho TCAM.</para>
+        <para id="id6005517">Hình 4.26 là khối hoàn điệu cho TCAM. Biên độ sóng mang A đủ lớn để làm cho A + s(t) không âm.</para>
+        <para id="id6005530">C* Đối với sóng SCAM, cần phải thêm mạch tạo (bản sao của) sóng mang tại máy thu. Bản sao nầy cần được đồng bộ hóa với sóng mang thu được ( phù hợp về tần số và pha). Thường máy thu có một mạch dao động nội để thực hiện việc này.</para>
+        <para id="id6005544">Ta hãy xem hậu quả của sự không phù hợp về tần số và pha. Giả sử mạch dao động nội hình 4.24 bị lệch tần bởi f và lệch pha bởi . Khi đó, output của mạch nhân là:</para>
+        <para id="id6005573">sm(t) cos [ 2 (fC+f )t + A]</para>
+        <para id="id6005609">= s(t) cos2fCt cos [ 2 (fC+f )t + A]</para>
+        <para id="id6005650">= s(t) <figure id="id6005654"><media id="id1171820099753" alt=""><image src="graphics50.wmf" mime-type="image/wmf" height="47" width="325"/></media></figure>(4.18)</para>
+        <para id="id6005681">Đây cũng là input của LPF của khối tách sóng đồng bộ, output của nó là:</para>
+        <para id="id6005688">s0(t) = s(t) <figure id="id6005697"><media id="id1845050" alt=""><image src="graphics51.wmf" mime-type="image/wmf" height="43" width="121"/></media></figure> (4.19)</para>
+        <para id="id6005725">( Số hạng thứ nhì của (4.18) có thành phần tần số 2fC + f nên bị loại ) </para>
+        <para id="id6005744">Biểu thức (4.19) cho thấy một tín hiệu là s(t) nhân với một hàm Sinusoide tại tần số f Hertz. Ta giả sử f nhỏ, vì ta cố làm cho nó  0. Định lý biến điệu chỉ rằng so(t) có một biến đổi F với các tần số trong khoảng đến fm + f . Dù LPF được thiết kế để chỉ cho qua các tần số lớn đế fm , nhưng nó vẫn cho qua toàn bộ fm + f ,vì f &lt;&lt; fm</para>
+        <para id="id6005870">Giả sử ta có thể làm phù hợp về tần số chính xác rồi, chỉ còn khác pha. Phương trình (4.19) trở thành:</para>
+        <para id="id6005885">so(t) = s(t)<figure id="id6005895"><media id="id1171816906392" alt=""><image src="graphics52.wmf" mime-type="image/wmf" height="43" width="51"/></media></figure> (4.20)</para>
+        <para id="id6005922">Đó là một phiên bản không méo của s(t).</para>
+        <para id="id6005927">Khi   900, output sẽ zero.</para>
+      </section>
+      <section id="id-878008125085">
+        <title>Sự Hồi Phục Sóng Mang Trong TCAM.</title>
+        <para id="id6005959">Ta đã thấy, sự hoàn điệu đồng bộ cần phải có sự thích hợp hoàn hảo về tần số và sự sai pha không đến 900. Sự thích hợp tần số chỉ có thể nếu sóng AM có chứa một thành phần tuần hoàn tần số bằng với sóng mang. Đó là, ảnh F của sóng AM nhận được ở máy thu phải có một xung lực tại tần số của sóng mang. Đây là trường hợp của TCAM.</para>
+        <para id="id6005991">Tín hiệu thu được có dạng:</para>
+        <para id="id6005998">sm(t) = s(t) cos2fCt + A cos2fCt</para>
+        <para id="id6006025">Một cách để trích sóng mang từ sóng biến điệu là dùng một lọc dãy thông thật hẹp điều hợp với tần số sóng mang. Ở trạng thái thường trực, tất cả số hạng cũa sóng mang sẽ đi ngang qua lọc nầy, trong khi chỉ có 1 phần của sóng biến điệu qua đó mà thôi. Biến đổi F của tín hiệu ra của lọc là:</para>
+        <para id="id6006053">so(f)= <figure id="id6006062"><media id="id1171818828056" alt=""><image src="graphics53.wmf" mime-type="image/wmf" height="43" width="17"/></media></figure>[S(f - fC) + S(f + fC) + A(f + fC) + A(f - fC)].</para>
+        <para id="id6006121">Với khoảng các tần số trong dãy thông của lọc,</para>
+        <para id="id6006128">fC - <figure id="id6006137"><media id="id1171814799605" alt=""><image src="graphics54.wmf" mime-type="image/wmf" height="43" width="35"/></media></figure> &lt; <figure id="id6006163"><media id="id1171814168574" alt=""><image src="graphics55.wmf" mime-type="image/wmf" height="28" width="17"/></media></figure> &lt; FC +<figure id="id6006195"><media id="id1171822780479" alt=""><image src="graphics56.wmf" mime-type="image/wmf" height="43" width="35"/></media></figure></para>
+        <para id="id6006219">Lấy F -1:</para>
+        <para id="id6006233">so(t) = A cos2fCt + <figure id="id6006254"><media id="id1171817093995" alt=""><image src="graphics57.wmf" mime-type="image/wmf" height="64" width="89"/></media></figure>cos2fCt + df (4.21)</para>
+        <para id="id6006297">Tích phân của phương trình (4.21) giới hạn bởi:</para>
+        <para id="id6006305"><figure id="id6006308"><media id="id1171821635128" alt=""><image src="graphics58.wmf" mime-type="image/wmf" height="43" width="29"/></media></figure>Smax (f)BW.</para>
+        <para id="id6006338">Vậy:</para>
+        <list id="id6006343" list-type="bulleted">
+          <item>Một mạch lọc với khổ băng thật hẹp sẽ chỉ cho qua số hạng thứ nhất, ( thành phần sóng mang thuần túy ).</item>
+        </list>
+        <para id="id6006356"><figure id="id6006359"><media id="id1171822715982" alt=""><image src="graphics59.png" mime-type="image/png" height="185" width="360"/></media></figure>Hình 4.27: Sự hồi phục sóng mang dùng BPF trong TCAM.</para>
+        <para id="id6006391">So phaVCOv0(t)InputHồi tiếpTín hiệu chuẩn<figure id="id6006641"><media id="id1171820060961" alt=""><image src="../../media/graphics60.png" mime-type="image/png" height="218" width="377"/></media></figure>Một cách khác để hồi phục sóng mang là dùng vòng khóa pha (phase - lock loop). Vòng khóa pha sẽ khóa thành phần tuần hoàn ở input để tạo nên một sinusoide có tần số sóng mang.</para>
+        <para id="id6006684">Hình 4.28: Vòng khóa pha</para>
+        <para id="id6006689">Hình 4.29: Hồi phục sóng mang trong TCAM bằng PLL</para>
+      </section>
+      <section id="id-737607358763">
+        <title>Tách Sóng Không Kết Hợp ( Incoherent Detection ):</title>
+        <para id="id6006705">Các khối hoàn điệu đã nói ở trên cần phải tạo lại sóng mang ở máy thu. Vì tần số sóng mang phải chính xác và pha phải đúng phối hợp ( matched ) đúng tại bộ phận tách sóng, nên sóng mang từ đài phát xem như là một thông tin chính xác về thời gian (timing information) cần phải được truyền ( đến máy thu ). Vì lý do đó, các khối hoàn điệu trên gọi là tách sóng kết hợp ( Incoherent Detection ).</para>
+        <para id="id6006719">Nhưng nếu thành phần ( số hạng ) sóng mang đủ lớn trong TCAM, ta có thể dùng kiểu tách sóng không kết hợp. Trong đó, không cần phải tạo lại sóng mang.</para>
+        <para id="id6006730">Giả sử độ sóng mang đủ lớn sao cho A + s(t) &gt; 0. Hình 4.30. Ta đã biết, hoàn điệu bình phương thì hiệu quả cho trường hợp nầy.</para>
+        <figure id="id6006744">
+          <media id="id1171815126717" alt=""><image src="graphics61.png" mime-type="image/png" height="390" width="423"/></media>
+        </figure>
+        <para id="id6006768">Hình 4.30: TCAM với A + s(t) &gt; 0 </para>
+        <para id="id6006776">Ta nhắc lại, như hình 4.26, output của khối bình phương:</para>
+        <para id="id6006782">[A + s(t)]2 cos22fCt = <figure id="id6006811"><media id="id2957313" alt=""><image src="graphics62.wmf" mime-type="image/wmf" height="43" width="17"/></media></figure><figure id="id6006835"><media id="id1171815948881" alt=""><image src="graphics63.wmf" mime-type="image/wmf" height="28" width="215"/></media></figure></para>
+        <para id="id6006859">Output của LPF ( cho qua những tần số lên đến 2fm) là:</para>
+        <para id="id6006870">s(t) = <figure id="id6006875"><media id="id1171821336343" alt=""><image src="graphics64.wmf" mime-type="image/wmf" height="47" width="74"/></media></figure></para>
+        <para id="id6006899">Nếu bây giờ ta giả sử rằng A đủ lớn sao cho A + s(t) không bao giờ âm, thì output của khối căn hai là:</para>
+        <para id="id6006907">so(t) = 0,707[ A + s(t) ] </para>
+        <para id="id6006917">Và sự hoàn điệu được hoàn tất</para>
+        <para id="id6006922"><figure id="id6006933"><media id="id1171814527019" alt=""><image src=".png" mime-type="image/png" height="104" width="497"/></media></figure>s(t)Hình 4.31: Tách sóng bình phương</para>
+      </section>
+      <section id="id-3327844511">
+        <title>Tách sóng chỉnh lưu:</title>
+        <para id="id6007068">Khối bình phương có thể được thay bằng một dạng phi tyến khác. Trường hợp đặc biệt, xem mạch tách sóng chỉnh lưu ( Rectifier Detection ) như hình 4.31.</para>
+        <para id="id6007079">Chỉnh lưuLPFsm(t)s1(t)-fmfm<figure id="id6007359"><media id="id1171815586372" alt=""><image src=".wmf" mime-type="image/wmf" height="28" width="42"/></media></figure></para>
+        <para id="id6007383">Hình 4.31: Bộ tách sóng chỉnh lưu.</para>
+        <para id="id6007389">Xem một sóng DSBTCAM:</para>
+        <para id="id6007394">
+          <media id="id1171816563650" alt=""><image src="graphics65.wmf" mime-type="image/wmf" height="24" width="176"/></media>
+        </para>
+        <para id="id6007432">Mạch chỉnh lưu có thể là nữa sóng hoặc toàn sóng.</para>
+        <para id="id6007438">Ta xem loại mạch chỉnh lưu toàn sóng ( Full - Wave Rect ) Chỉnh lưu toàn sóng thì tương đương với thuật toán lấy trị tuyệt đối. Vậy tín hiệu ra của khối chỉnh lưu là:</para>
+        <para id="id6007450">s1(t) = A + s(t)cos2fCt</para>
+        <para id="id6007486">Vì đã giả sử A + s(t) không âm, ta có thể viết:</para>
+        <para id="id6007492">s1(t) = <figure id="id6007502"><media id="id1171814777290" alt=""><image src="graphics66.wmf" mime-type="image/wmf" height="24" width="64"/></media></figure>cos2fCt</para>
+        <para id="id6007547">Trị tuyệt đối của cosine là một sóng tuần hoàn, như hình 4.32.</para>
+        <para id="id6007555"><figure id="id6007566"><media id="id8219535" alt=""><image src=".png" mime-type="image/png" height="109" width="222"/></media></figure><figure id="id6007590"><media id="id6481910" alt=""><image src=".wmf" mime-type="image/wmf" height="28" width="49"/></media></figure>Hình 4.32</para>
+        <para id="id6007615">Tần số căn bản của nó là 2fC. Ta viết lại s­1(t) bằng cách khai triển F :</para>
+        <para id="id6007638">s­1(t) = [ A + s(t) ] [ ao + a1 cos4fCt + a2 cos8fCt + a3 cos12fCt +.... ]</para>
+        <para id="id6007703">Vậy output của LPF là:</para>
+        <para id="id6007709">so(t) = ao [ A + s(t) ]</para>
+        <para id="id6007724">Và sự hoàn điệu đã hoàn tất.</para>
+        <para id="id6007731">* Bây giờ, ta hãy xem cơ chế mà khối tách sóng trên đã hồi phục lại sóng mang. Hình 4.33 chỉ rằng sự chỉnh lưu toàn sóng thì tương đương với phép nhân sóng với một sóng vuông. (tại tần số fC ). Đó là tiến trình lấy trị tuyệt đối của phần âm của sóng mang. Nó tương đương với sự nhân cho -1. Vậy, mạch chỉnh lưu không cần biết tần số sóng mang chính xác, mà chỉ thực hiện một thuật toán tương đương với nhân cho một sóng vuông ( có tần số chính xác bằng fC ) và pha của sóng mang thu được.</para>
+        <para id="id6007766">Có thể xem đây như một bài tập, chứng tỏ rằng một mạch tách sóng đồng bộ có thể hoạt động bằng cách nhân sóng với một ham cosine ( tần số fC ) hoặc với một sóng vuông có tần số fC.</para>
+        <figure id="id6007792">
+          <media id="id1171821704796" alt=""><image src="graphics67.png" mime-type="image/png" height="246" width="647"/></media>
+        </figure>
+        <para id="id6007816">Hình 4.33: Chỉnh lưu toàn sóng tương đương với phép nhân 1 sóng vuông.</para>
+      </section>
+      <section id="id-357666942038">
+        <title>Tách Sóng Bao Hình. (Envelope Detection)</title>
+        <para id="id6007832">Tách sóng cuối cúng mà ta khảo sát ở đây là đơn giản nhất. Xem dạng sóng TCAM ở hình 4.34.</para>
+        <para id="id6007840">Nếu A + s(t) không bao giờ âm, đường biên trên hay bao hình của sóng AM thì chính xác bằng với A + s(t). Nếu ta thiết lập một mạch để lấy đường biên nầy, ta đã thực hiện một mạch tách sóng bao hình.</para>
+        <para id="id6007853">* Trước hết, xem một mạch tách sóng đỉnh ( peak detector ) như hình 4.35</para>
+        <figure id="id6007864">
+          <media id="id1171819120355" alt=""><image src="graphics68.png" mime-type="image/png" height="271" width="397"/></media>
+        </figure>
+        <para id="id6007888">Hình 4.34: Dạng sóng TCAM với A &lt; a</para>
+        <para id="id6007893">Sự phân tích mạch tách sóng đỉnh dựa vào 2 quan sát: (1) input không thể lớn hơn output ( với một diode lý tưởng ). Và (2) output không bao giờ giảm với t. Quan sát thứ nhất đúng, vì nếu input vượt quá output thì diode có thêm một điện thế dương phân cực thuận. Quan sát thứ 2 do sự kiện là tụ không có đường xã điện. Nên output luôn luôn bằng với trị đỉnh của input trước thời điểm đó.</para>
+        <figure id="id6007911">
+          <media id="id1171814380542" alt=""><image src="graphics69.png" mime-type="image/png" height="245" width="643"/></media>
+        </figure>
+        <para id="id6007934">Hình 4.35: Tách sóng đỉnh </para>
+        <para id="id6007940">* Bây giờ nếu ta đấu thêm một điện trở xã điện cho tụ. Mạch ở hình 4.36 là mạch tách sóng bao hình. Output sẽ có dạng expo giữa các đỉnh. Nếu chọn lựa thời hằng RC thích hợp, thì output sẽ xấp xĩ với bao hình. Và mạch tác động như một mạch tách sóng. Output có chứa sóng dư ( tần số fC) nhưng điều đó không hề gì, vì ta chỉ quan tâm đến những tần số dưới tần số fm.</para>
+        <figure id="id6007979">
+          <media id="id3422541" alt=""><image src="../../media/graphics70-36a6.png" mime-type="image/png" height="209" width="646"/></media>
+        </figure>
+        <para id="id6008003">Hình 4.36: Tách sóng bao hình</para>
+        <para id="id6008008">Thời hằng RC phải ngắn sao cho bao hình có thể vạch những thay đổi trị đỉnh của sóng AM . Các đỉnh cách nhau tại những khoảng bằng với tần số sóng mang, trong lúc chiều cao thì theo biến đổi của biên độ của s(t).</para>
+        <para id="id6008024">Ta xem trường hợp s(t) là một hàm sin thuần ( tần số fC). Nó sẽ có khả năng thay đổi trị đỉnh nhanh nhất. Tại tần số nầy, các đỉnh thay đổi từ một trị max đến min trong <figure id="id6008042"><media id="id2665741" alt=""><image src="graphics71.wmf" mime-type="image/wmf" height="43" width="17"/></media></figure>fm sec. Mạch cần 5 lần thời hằng để đạt 0,7% trị cuối cùng của nó. Vậy nếu ta đặt thời hằng RC đến 10% của <figure id="id6008077"><media id="id1171823044895" alt=""><image src="graphics72.wmf" mime-type="image/wmf" height="38" width="36"/></media></figure>, Thì mạch tách sóng bao hình có thể hoạt động ở tần số cao nhất. Ví dụ, với fm = 5kHz, thời hằng sẽ chọn là <figure id="id6008116"><media id="id6884157" alt=""><image src="graphics73.wmf" mime-type="image/wmf" height="43" width="24"/></media></figure>m sec. ( hoặc 20s).</para>
+      </section>
+      <section id="id-899244529877">
+        <title>Biến điệu và Hoàn điệu bằng IC</title>
+        <para id="id6008157">Các mạch biến điệu và hoàn điệu có thể dùng IC. Các IC nầy có chứa những mạch khuếch đại Visai để đưa vào vùng bảo hòa hoặc để mô phỏng một giao hoán điện tử. ( Electronnic Commulator ). </para>
+        <para id="id6008183">- Hình 4.37, IC MC1496 được sử dụng như một biến điệu TCAM. Mạch tương tự có thể dùng để phát ra SCAM, bằng cách chọn lại trị số các điện trở trong mạch hiệu chỉnh sóng mang.</para>
+        <para id="id6008195">- Hình 4.38, cũng dùng chip nầy để hoàn điệu cho TCAM. Sóng mang trong mạch được thúc bằng cách thúc tần khuếch đại cao tần vào vùng bảo hòa. Như vậy, output của tần nầy giống như một sóng vuông tại tần số fC. Sóng mang nầy được đưa vào một trong những ngỏ vô của MC 1496. Ngỏ ra phải là LPF, để hồi phục tín hiệu chứa thông tin.</para>
+        <figure id="id6008223">
+          <media id="id1171820232010" alt=""><image src="graphics74.wmf" mime-type="image/wmf" height="390" width="650"/></media>
+        </figure>
+        <para id="id6008247">Hình 4.37: Biến điệu AM</para>
+        <figure id="id6008256">
+          <media id="id1793875" alt=""><image src="graphics75.wmf" mime-type="image/wmf" height="327" width="649"/></media>
+        </figure>
+        <para id="id6008279">Hình 4.38: Hoàn điệu cho TCAM</para>
+      </section>
+    </section>
+    <section id="id-788974400945">
+      <title>TRUYỀN MỘT BĂNG CẠNH (SINGLE SIDEBAND) SSB:</title>
+      <para id="id6008296">Trong các hệ thống AM mà ta đã nói ở trên, khoảng tần số cần thiết để truyền tín hiệu là băng giữa fC - fm và fC + fm khổ băng tổng cộng là 2fm</para>
+      <para id="id6008334">Trong việc khai thác các đài phát AM, người ta xem tầng phổ như là “ tài nguyên thiên nhiên “. Việc bảo quản cho nó là một chỉ tiêu quan trọng. Nếu khổ băng cần thiết cho mỗi kênh rộng quá, Thì số đài phát sóng cùng một lúc sẽ ít đi. Ta tìm một phương pháp có thể gởi thông tin mà khổ băng thì nhỏ hơn 2fm.</para>
+      <para id="id6008354">Truyền một băng cạnh là kỷ thuật cho phép truyền phân nữa khổ băng cần thiết cho AM hai băng cạnh.</para>
+      <figure id="id6008371">
+        <media id="id1171815810258" alt=""><image src="../../media/graphics76-2e69.png" mime-type="image/png" height="120" width="253"/></media>
+      </figure>
+      <para id="id6008395">Hình 4.39: Định nghĩa các cạnh băng</para>
+      <para id="id6008401">Hình 4.39 định nghĩa các băng cạnh. Phần của sm(t) nằm trong băng trên sóng mang gọi là băng cạnh trên ( upper - sideband ). Và phần ở dưới sóng mang gọi là băng cạnh dưới (lower - sideband). Một sóng AM 2 băng cạnh thì bao gồm cả băng cạnh trên và băng cạnh dưới.</para>
+      <para id="id6008422">Ta có thể dùng các tín chất của biến đổi F để chứng tỏ rằng 2 băng cạnh nầy phụ thuộc lẫn nhau. Biến đổi F của sóng AM được tạo nên bằng cách dời ( shifting ) S(f) lên và xuống, như đã biết. Băng cạnh dưới tạo nên do phần f âm của S(f); và băng cạnh trên do phần f dương của S(f). Ta giã sữ rằng tín tức s(t) là một hàm thực. Vậy suất của S(f) thì chẵn và pha thì lẽ. Phần f âm có thể suy từ f dương bằng cách lấy phức liên hợp.</para>
+      <para id="id6008452">Tương tự, băng cạnh dưới của sm(t) có thể suy từ băng cạnh trên. Vì các băng cạnh không độc lập, ta có thể truyền tất cả các thông tin cơ bản bằng cách gửi đi chỉ một băng cạnh.</para>
+      <para id="id6008470"><figure id="id6008473"><media id="id8433937" alt=""><image src="graphics77.png" mime-type="image/png" height="227" width="541"/></media></figure>Hình 4.40: Biến đổi F của các băng cạnh</para>
+      <para id="id6008511">Hình 4.40 chỉ biến đổi F của băng cạnh trên và băng cạnh dưới của sóng AM, lần lượt ký hiệu là susb(t) là slsb(t). Sóng AM 2 băng cạnh là tổng của 2 băng cạnh.</para>
+      <para id="id6008547">sm(t) = susb(t) + sLsb(t) (4.22) </para>
+      <para id="id6008584">Vì sóng SSB chỉ chiếm một phần của băng tần bị chiếm bỡi sóng DSB, nó thỏa 2 yêu cầu của một hệ biến điệu. Đó là, băng cạnh chọn tần số sóng mang riêng, ta có thể chuyển sóng biến điệu thành một khoản tần số, mà ở đó truyền đi một cách hiệu qủa. Ta cũng có thể dùng những băng khác nhau cho những tín hiệu khác nhau (tức fc khác nhau). Nên, cùng lúc có thể truyền đi nhiều tín hiệu (đa hợp).</para>
+      <para id="id6008607">Chỉ còn một vấn đề cần chứng tỏ. Đó là, thông tin gốc có thể được hồi phực từ sóng được biến điệu SSB. Và sóng biến điệu có thể được tạo ra bởi các mạch tương đối đơn giãn. Vậy ta xét đến các khối biến điệu và hoàn điệu.</para>
+      <section id="id-825393915764">
+        <title>khối biến điệu cho ssb:</title>
+        <para id="id6008630">Vì băng cạnh trên và băng cạnh dưới tách biệt về tần số, các mạch lọc có thể dùng để chọn băng cạnh mong muốn. Hình 4.41, chỉ khối biến điệu cho băng cạnh dưới (LSB). Có các cách để tạo băng cạnh trên (USB). Ta có thể hoặc thay đổi dãy thông của lọc BPF để chỉ nhận USB, hoặc có thể lấy hệ số giữa DSB và LSB.</para>
+        <para id="id6008644"><figure id="id6008656"><media id="id1171816774726" alt=""><image src=".png" mime-type="image/png" height="158" width="500"/></media></figure>Hình 4.41: Khối biến điệu cho LSB, SSB</para>
+        <para id="id6008711"><figure id="id6008722"><media id="id1171814518480" alt=""><image src=".png" mime-type="image/png" height="274" width="546"/></media></figure>Hình 4.42: Khối biến điệu cho USB, SSB</para>
+        <para id="id6008806">Các mạch lọc ở 2 hình bên phải thật chính xác, vì không có dãy tần bảo vệ nào giữa băng cạnh trên và băng cạnh dưới.</para>
+        <para id="id6008815">* Một phương pháp khác tạo ra SSB. Sơ đồ khối vẽ ỡ hình 43 ( dùng LSB - SSB ). Giã sữ s(t) là một Sinusoide thuần túy. Với trường hợp đơn giản nầy, sự phân tích chỉ cần đến lượng giác.</para>
+        <para id="id6008828">S(t) = cos2fCt </para>
+        <para id="id6008843">Sóng DSB Amcó dạng:</para>
+        <para id="id6008854">sm(t) = cos2fCt + cos2fCt </para>
+        <para id="id6008885">= <figure id="id6008890"><media id="id1171819898936" alt=""><image src="graphics78.wmf" mime-type="image/wmf" height="43" width="229"/></media></figure> (4.23) </para>
+        <para id="id6008917">Sự nhận dạng các băng cạnh trong trường hợp đơn giãn nầy thật rỏ ràng: Số hạng thứ nhất là băng cạnh dưới, số hạng thứ nhì là băng cạnh trên.</para>
+        <figure id="id6008931">
+          <media id="id3891492" alt=""><image src="graphics79.png" mime-type="image/png" height="202" width="421"/></media>
+        </figure>
+        <para id="id6008955">Hình 4.43: Biến điệu cho LSB, SSB</para>
+        <para id="id6008961">Bây giờ ta khai triển băng cạnh dưới:</para>
+        <para id="id6008967">sLsb(t) = <figure id="id6008981"><media id="id1171817294493" alt=""><image src="graphics80.wmf" mime-type="image/wmf" height="43" width="113"/></media></figure></para>
+        <para id="id6009005">= <figure id="id6009011"><media id="id1171815696241" alt=""><image src="graphics81.wmf" mime-type="image/wmf" height="43" width="265"/></media></figure> (4.24)</para>
+        <para id="id6009038">Vậy ta có thể thấy tại sao sơ đồ khối hình 4.43 có thể tạo ra LSB. Số hạng thứ nhất của phương trình (4.24) là sóng DSB AM. Số hạng thứ nhì có được là do sự dời pha 900 cho mỗi sóng Cosine.</para>
+        <para id="id6009056">Sơ đồ trên đây có thể cải biến để tạo ra băng cạnh trên (USB). Chỉ cần thay bộ phận tổng bằng một bộ phận lấy hiệu số hai outputs của 2 mạch nhân.</para>
+        <para id="id6009067">khối hoàn điệu cho ssb:</para>
+        <para id="id6009073">Khối hoàn điệu đồng bộ hình 4.44 có thể dùng để hoàn điệu SSB</para>
+        <para id="id6009080"><figure id="id6009091"><media id="id1171816825909" alt=""><image src=".png" mime-type="image/png" height="94" width="246"/></media></figure>SSBHình 4.44: Hoàn điệu đồng bộ</para>
+        <para id="id6009140">* Về phương diện tần số, ta đã biết sự nhân cho một Sinusoide sẽ làm dời tần biến đổi F cả chiều lên và chiều xuống.</para>
+        <para id="id6009157">- Hình 4.45, chỉ biến đổi F của susb(t) khi nhân nó với một Sinusoide tại tần số fC.</para>
+        <para id="id6009186"><figure id="id6009197"><media id="id1303431" alt=""><image src=".png" mime-type="image/png" height="276" width="320"/></media></figure>SUSB(f)- Hình 4.46, chỉ kết quả tương tự đối với tín hiệu sLsb(t). Trong cả 2 trường hợp, một lọc LPF sẽ hồi phục lại bản sao của tín hiệu chứa thông tin gốc.</para>
+        <para id="id6009268">Hình 4.45: Biến đổi F của hoàn điệu USB và SSB</para>
+        <para id="id6009280">2fc-2fcfc-fc<figure id="id6009682"><media id="id1171815702826" alt=""><image src=".wmf" mime-type="image/wmf" height="31" width="129"/></media></figure>SLSB(f)Hình 4.46: Biến đổi F của hoàn điệu LSB và SSB</para>
+        <para id="id6009744">* Về phương diện thời gian ta thấy:</para>
+        <para id="id6009750">fSSB(t) cos2fCt = <figure id="id6009771"><media id="id1171818696110" alt=""><image src="graphics82.wmf" mime-type="image/wmf" height="46" width="268"/></media></figure> (4.25)</para>
+        <para id="id6009798">Dấu + cho LSB và dấu - cho USB. Khai triển lượng giác</para>
+        <para id="id6009805">=<figure id="id6009809"><media id="id1171821611818" alt=""><image src="graphics83.wmf" mime-type="image/wmf" height="46" width="231"/></media></figure> (4.26)</para>
+        <para id="id6009837">Output của LPF (với một input như vậy ) sẽ là s(t)/4</para>
+        <para id="id6009848">Và ta đã hoàn tất được sự hoàn điệu.</para>
+        <para id="id6009854">* Ghi chú: Ŝ(t) là biến đổi Hilbert của s(t)</para>
+        <para id="id6009877">Ŝ(t) = <figure id="id6009886"><media id="id1171820020682" alt=""><image src="graphics84.wmf" mime-type="image/wmf" height="43" width="92"/></media></figure>Và <figure id="id6009911"><media id="id1171815810409" alt=""><image src="graphics85.wmf" mime-type="image/wmf" height="57" width="121"/></media></figure>s(t)</para>
+        <list id="id6009936" list-type="bulleted">
+          <item>Biến đổi Hilbert của một hàm thời gian có được bằng cách quay tất cả thành phần tần số đi một góc 900.</item>
+        </list>
+        <para id="id6009956">Ví dụ: s(t)= cos(2fCt+) Ŝ(t)= sin(2fCt+)</para>
+      </section>
+    </section>
+    <section id="id-971164066293">
+      <title>BIẾN ĐIỆU AM TRỰC PHA:</title>
+      <para id="id6010013">Ta đã chứng tỏ rằng những tín hiệu không phủ nhau về tần số và thời gian thì có thể tách ra khỏi nhau. DSBAM giữa sự tách biệt về tần số và thời gian thì có thể tách biệt tần số để các kênh không bị giao thoa với nhau. Nhưng nó phải cần dùng khổ băng rộng gấp đôi SSBAM.</para>
+      <para id="id6010027">Tuy nhiên, trong trường hợp 2 tín hiệu DSBAM được gửi đi đồng thời mà có tần số và thời gian phủ nhau, chúng vẫn có thể tách ra tại máy thu. Thực vậy, biến điệu biên độ trực pha sẽ thực hiện được việc ấy. ( Quadrature Amplitude Modulation QAM ) . </para>
+      <para id="id6010042"><figure id="id6010046"><media id="id1171816859639" alt=""><image src="graphics86.png" mime-type="image/png" height="198" width="390"/></media></figure>Hình 4.47: Máy thu QAM</para>
+      <para id="id6010076">Giả sử, có 2 tín hiệu s1(t) và s2(t) có tần số giới hạn nhỏ hơn fm. Hai tín hiệu nầy biến điệu 2 sóng mang có tần số bằng nhau.</para>
+      <para id="id6010102">s1m(t) = s1(t).cos2fCt</para>
+      <para id="id6010128">s2m(t) = s2(t).sin2fCt</para>
+      <para id="id6010154">Tổng của 2 sóng:</para>
+      <para id="id6010160">AM = sm1(t) + sm2(t) = s1(t). cos2fCt + s2(t).sin2fCt </para>
+      <para id="id6010208">Mặc dù hai sóng phủ lên nhau, nhưng chúng có thể tách ra bởi máy thu như hình vẽ trên.</para>
+      <para id="id6010216">- Tín hiệu ngỏ vào LPF1:</para>
+      <para id="id6010226">sa(t) = [s1(t) cos2fCt + s2(t) sin2fCt].cos2fCt </para>
+      <para id="id6010282">= s1(t).cos22fCt + s2(t).sin2fCt.cos2fCt</para>
+      <para id="id6010335">= <media id="id1171820038858" alt=""><image src="graphics87.wmf" mime-type="image/wmf" height="43" width="17"/></media>[s1(t)+ s1(t) cos4fCt + s2(t) sin4fCt]</para>
+      <para id="id6010406">Mạch lọc LPF1 sẽ chỉ cho qua số hạng thứ nhất, là s­1(t)/2</para>
+      <para id="id6010423">- Tín hiệu ở ngỏ vào LPF2:</para>
+      <para id="id6010434">sb(t) = s1(t) cos2fCt.sin2fCt + s2(t) sin22fCt</para>
+      <para id="id6010493">= <media id="id1171815584653" alt=""><image src="graphics88.wmf" mime-type="image/wmf" height="43" width="17"/></media>[s1(t) sin4fCt + s2(t) - s2(t) cos4fCt]</para>
+      <para id="id6010564">Ngỏ ra của LPF1 là số hạng thứ hai, s2(t)/2</para>
+    </section>
+    <section id="id-851049488159">
+      <title>BIẾN ĐIỆU BĂNG CẬNH SÓT ( VESTIGIAL SIDEBAND ) VSB.</title>
+      <para id="id6010591">Biến điệu SSB có lợi hơn DSB về mặt sử dụng tần số. Đó là SSB chỉ dùng phân nữa khổ băng cần thiết tương ứng của DSB. Nhưng SSB có bất lợi là khó thiết kế một máy phát và một máy thu có hiệu quả. Một vấn đề nổi bật của SSB là việc thiết kế mạch lọc để loại bỏ một băng cạnh - Tính chất pha của mạch lọc sẽ tạo nên sóng dư. Việc nầy sẽ gây hậu quả xấu. Ví dụ, trong truyền hình, khổ băng rộng hơn trong truyền thanh (tiếng nói). Sự méo pha tín hiệu video gây nên hiệu ứng offset lên hình ảnh được quét, ( tạo ra bóng ma )- mắt người rất nhạy với dạng méo như vậy (hơn là sự méo tương tự của tiếng nói).</para>
+      <para id="id6010622">Vậy ta có lý do để nói đến một kiểu biến điệu nằm giữa SSB và DSB. Đó là kiểu băng cạnh sót (VSB). [ Một băng cạnh bị loại trừ không hoàn toàn bởi mạch lọc để tránh méo ].</para>
+      <para id="id6010635">-fc+fcsm(f)-fc+fcH(f)-fc+fcSm(f).H(f)VSB có xấp xĩ cùng khổ băng tần với SSB và không khó thiết kế mạch hoàn điệu. Như tên gọi, VSB có chứa phần sót lại của băng cạnh thứ nhì (không loại bỏ hoàn toàn như SSB).</para>
+      <para id="id6011196">Hình 4.48: Biến điệu VSB</para>
+      <para id="id6011202">Mạch lọc được dùng cho VSB không giống như trong SSB - nó không chặt chẽ.</para>
+      <para id="id6011209">Hình 4.48 chỉ biến đổi của DSB, đặc tính mạch lọc và biến đổi của output.</para>
+      <para id="id6011217">Nếu SV(f) là biến đổi F của tín hiệu VSB, thì:</para>
+      <para id="id6011237">SV(f) = Sm (f)H(f) = [ s(f + fC) + s(f - fC)]H(f) (4.27)</para>
+      <para id="id6011266">Output của bộ hoàn điệu đồng bộ có biến đổi:</para>
+      <para id="id6011272">S0(f) = <figure id="id6011282"><media id="id1171817684091" alt=""><image src="graphics89.wmf" mime-type="image/wmf" height="43" width="268"/></media></figure> &lt; fm(4.28)</para>
+      <para id="id6011314">Thay (4.27) vào (4.28), ta tìm được:</para>
+      <para id="id6011320">S0(f) = <figure id="id6011330"><media id="id1171818751644" alt=""><image src="graphics90.wmf" mime-type="image/wmf" height="43" width="181"/></media></figure> (4.29)</para>
+      <para id="id6011357">Phương trình (4.29) được dùng để đặt các điều kiện cho mạch lọc.</para>
+      <para id="id6011364">Tổng nằm trong [ ] được vẽ ở hình 4.49. Với một H(f) tiên biểu.</para>
+      <para id="id6011372"><figure id="id6011375"><media id="id1171817695934" alt=""><image src="../../media/graphics91.png" mime-type="image/png" height="210" width="397"/></media></figure>Hình 4.49: Lọc BPF cho VBS</para>
+      <para id="id6011406">Giã sữ rằng một số hạng sóng mang được cộng vào (TCAM). Sóng mang được truyền VSB có dạng</para>
+      <para id="id6011415">sv(t) + A cos2fCt </para>
+      <para id="id6011435">Số hạng sóng mang này được rút ra tại máy thu bằng cách dùng hoặc một lọc băng rất hẹp hoặc một vòng khóa pha. Nếu số hạng sóng mang đủ lớn, có thể dùng tách sóng bao hình [ ta đã thấy điều đó ở SSB. Ở đó, sóng mang lớn hơn nhiều so với tín hiệu. Còn ở DSB, sóng mang chỉ cần lớn cùng cở với tín hiệu. Đối với VBS, Biên độ sóng mang thì nằm giữa 2 kiểu ấy ].</para>
+      <para id="id6011450">Khi cộng một sóng mang vào, hiệu suất sẽ giảm. Sự dễ dàng trong việc thiết kế một mạch tách sóng bao hình khiến hệ nầy được chọn dùng trong truyền hình.</para>
+    </section>
+    <section id="id-463597214689">
+      <title>AM STEREO.</title>
+      <para id="id6011469">Ta chỉ giới thiệu những điểm chủ yếu về AM stereo. Sự phân giải sâu hơn cần đến những hiểu biết về biến điệu pha, mà ta sẽ nói ở chương 5.</para>
+      <para id="id6011480">Nguyên lý AM Stereo là gửi 2 tín hiệu audio độc lập trong khổ băng 10kHz nằm trong mỗi đài phát thanh thương mại. Những hiệu chỉnh cần thiết để có thể tương thích với các máy thu mono đang hiện hữu (nếu 2 tín hiệu biểu diển cho 2 kênh trái và phải, thì một máy thu mono phải hồi phục tổng của 2 tín hiệu nầy).</para>
+      <para id="id6011495">Nếu 2 tín hiệu kí hiệu là sL(t) và sR(t), tín hiệu tổng hợp có thể viết : </para>
+      <para id="id6011522">q(t) = sL(t) cos2fCt + sR(t) sin2fCt (4.30)</para>
+      <para id="id6011563">Nếu cả 2 tín hiệu sL(t) và sR(t) là tín hiệu aodio với tần số tối đa là 5kHz, q(t) chiếm dãy tần giữa fC - 5kHz đến fC+5KHz. ( khổ băng tổng cộng là 10kHz ).</para>
+      <para id="id6011603">Tín hiệu tổng hợp có thể viết lại như là một Sinusoide duy nhất:</para>
+      <para id="id6011611">q(t) = A(t) cos[2fCt+(t)](4.31) </para>
+      <para id="id6011634">Trong đó: A(t) =<figure id="id6011640"><media id="id1171815773650" alt=""><image src="graphics92.wmf" mime-type="image/wmf" height="31" width="97"/></media></figure></para>
+      <para id="id6011663">(t) = -tan-1<media id="id1171815582507" alt=""><image src="graphics93.wmf" mime-type="image/wmf" height="53" width="54"/></media></para>
+      <para id="id6011704">Mạch tách sóng bao hình trong một máy thu mono sẽ tạo A(t). Đó là một phiên bản bị méo của tỏng của 2 kênh và không cần cho yêu cầu tương thích.</para>
+      <para id="id6011714">Hình 4.50 Chỉ sơ đồ của khối biến điệu và hoàn điệu. Khối vẽ chấm chấm là một vòng khóa pha, được dùng để hồi phục sóng mang. Output của vòng khóa pha là cos(2fCt-450)</para>
+      <para id="id6011742">Các hàm thời gian khác được ghi trong hình là:</para>
+      <para id="id6011748">s1(t) = (2fCt - 450)</para>
+      <para id="id6011776">s2(t)= cos2fCt </para>
+      <para id="id6011797">s3(t)= sin2fCt </para>
+      <para id="id6011818">s4(t) = sL(t) cos22fCt + sR(t) sin2fCt + cos2fCt </para>
+      <para id="id6011876">s5(t)= sL(t) sin2fCt cos2fCt + sR(t) sin22fCt</para>
+      <para id="id6011935">s6(t)= <figure id="id6011944"><media id="id1171816745451" alt=""><image src="graphics94.wmf" mime-type="image/wmf" height="43" width="39"/></media></figure></para>
+      <para id="id6011968">s7(t)= <figure id="id6011978"><media id="id1171815295406" alt=""><image src="graphics95.wmf" mime-type="image/wmf" height="43" width="40"/></media></figure></para>
+      <para id="id6012002"><figure id="id6012005"><media id="id8104091" alt=""><image src="../../media/graphics96.png" mime-type="image/png" height="427" width="495"/></media></figure>=1/2sL(t)=1/2sR(t)</para>
+      <para id="id6012117">Hình 4.50: Hệ thống AM STEREO</para>
+    </section>
+  </content>
+</document>

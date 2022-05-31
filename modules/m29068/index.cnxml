@@ -1,0 +1,289 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Biến điệu xung</title>
+  <metadata>
+  <md:content-id>m29068</md:content-id><md:title>Biến điệu xung</md:title>
+  <md:abstract>+ LẤY MẪU (SAMPLING).
++ ERROR TRONG SỰ LẤY MẪU.
++ BIẾN ĐIỆU XUNG.
++ BIẾN ĐIỆU BIÊN ĐỘ XUNG: PAM.
++ MULTIPLEXING PHÂN THỜI GIAN - TDM (TIME - DIVISION MULTIPLEXING).
++ BIẾN ĐIỆU ĐỘ RỘNG XUNG PWM: (PLUSE WIDTH MODULATION).
++ BIẾN ĐIỆU VỊ TRÍ XUNG -PPM (PULSE POSITION MODULATION).</md:abstract>
+  <md:uuid>b727599a-d230-4627-9140-00191ca0bd1b</md:uuid>
+</metadata>
+
+<content>
+    <para id="id6341731">LẤY MẪU (Sampling).</para>
+    <para id="id6341736">Để đổi một sóng chứa tin Analog thành tín hiệu rời rạc, trục thời gian, phải bằng cách này hay cách khác, được rời rạc hoá.</para>
+    <para id="id6341743">Sự đổi trục thời gian liên tục thành một trục rời rạc được thực hiện nhờ phương pháp lấy mẫu.</para>
+    <para id="id6341752">Định lý lấy mẫu ( đôi khi còn gọi là định lý Shannon, hoặc định lý Kotelnikov ) chứng tỏ rằng: Nếu biến đổi F của một hàm thời gian là zero với f &gt; fm và những trị giá của hàm thời gian được biết với t = n TS ( với mọi trị nguyên của n ) thì hàm thời gian được biết một cách chính xác cho mọi trị của t.</para>
+    <para id="id6341801">Điều kiện hạn chế là TS &lt; <figure id="id6341812"><media id="id1172554528336" alt=""><image src="graphics1.wmf" mime-type="image/wmf" height="47" width="35"/></media></figure>.</para>
+    <para id="id6341837">Nói cách khác, s(t) có thể được xác định từ những trị giá của nó tại một loạt những thời điểm cách đều nhau.</para>
+    <para id="id6341848">Tần số lấy mẫu, ký hiệu là fS = 1/TS ,fS &gt; 2fm</para>
+    <para id="id6341875">Như vậy, tần số lấy mẫu ít nhất phải 2 lần cao hơn tần số của tín hiệu được lấy mẫu. Nhịp độ lấy mẫu tối thiểu, 2 fm, được gọi là nhịp lấy mẫu Nyquist. Thí dụ, nếu một tiếng nói có tần số max 4KHz, nó phải được lấy mẫu ít nhất 8.000 lần/sec. Ta thấy rằng khoảng cách giữa những thời điểm lấy mẫu thì tỷ lệ nghịch với tần số cao nhất của tín hiệu ( fm ).</para>
+    <para id="id6341905">Có ít nhất 3 cách để tiếp cận với định lý Shannon. Ta sẽ trình bày ở đây 2 cách.</para>
+    <para id="id6341913">1. Cách thứ nhất, chỉ cần sự hiểu biết cơ bản về định lý AM. </para>
+    <figure id="id6341923">
+      <media id="id4248213" alt=""><image src="../../media/graphics2-4a0a.png" mime-type="image/png" height="135" width="642"/></media>
+    </figure>
+    <para id="id6341947">Hình 6.1: Tích của chuỗi xung và s(t).</para>
+    <para id="id6341953">Ta lấy tích của một chuỗi xung và s(t). Nếu chuỗi gồm những xung hẹp, thì output của mạch nhân là một phiên bản được mẫu hoá của tín hiệu gốc. Output không chỉ tùy thuộc vào những trị mẫu của input mà còn vào một khoảng những trị chung quanh mỗi điểm lấy mẫu. Những hệ thống thực tế thường lấy mẫu trong một khoảng thời gian nhỏ xung quanh các điểm lấy mẫu. Hàm nhân không nhất thiết phải chứa các xung vuông hoàn toàn, nó có thể là một tín hiệu tuần hoàn bất kỳ.</para>
+    <para id="id6341967">Phép nhân s(t) với p(t) như hình 1 là một dạng " đóng mở cổng " (Time Gating ) hay Switching. Chủ đích của ta là chứng tỏ rằng tín hiệu gốc có thể được hồi phục từ sóng đã lấy mẫu, ss(t).</para>
+    <para id="id6341985">Giả sử s(t) bằng zero tại những tần số cao hơn fm. Biến đổi F của nó S(f) bị cắt tại fm.</para>
+    <figure id="id6342012">
+      <media id="id1172558856067" alt=""><image src="../../media/graphics3-7146.png" mime-type="image/png" height="105" width="166"/></media>
+    </figure>
+    <para id="id6342036">Hình 6.2: Biến đổi F của s(t)</para>
+    <para id="id6342051">Vì chuỗi xung nhân vào giả sử là tuần hoàn, nó có thể được khai triển thành chuỗi F. Và vì p(t) được chọn là hàm chẳn, ta có thể dùng chuỗi lượng giác chỉ chứa các số hạng cosine. Vậy :  ss(t) = s(t)p(t).</para>
+    <para id="id6342080">= s(t) <media id="id6814004" alt=""><image src="graphics4.wmf" mime-type="image/wmf" height="50" width="153"/></media>(6.1)</para>
+    <para id="id6342132">= ao s(t) + <media id="id1172565314038" alt=""><image src="graphics5.wmf" mime-type="image/wmf" height="61" width="38"/></media>an s(t) cos2nfSt</para>
+    <para id="id5398223">Mỗi số hạng trong  của phương trình (1) là một sóng AM, trong đó tín hiệu chứa tin là s(t) và sóng mang là nfS.</para>
+    <para id="id5398243">Biến đổi F của ss(t) vẽ ở hình 6.3.</para>
+    <para id="id5398262"><figure id="id5398272"><media id="id1172565541615" alt=""><image src=".png" mime-type="image/png" height="157" width="345"/></media></figure><figure id="id5398296"><media id="id1172557422588" alt=""><image src=".wmf" mime-type="image/wmf" height="25" width="16"/></media></figure>Hình 6.3: Biến đổi F của sóng mẫu hóa </para>
+    <para id="id5398337">Tập trung tại gốc, là biến đổi của aos (t). Các phiên bản bị dời tần là biến đổi của các số hạng biến điệu chứa trong dấu  . Ta thấy các thành phần không phủ nhau vì fS &gt; 2fm. (Đó là điều kiện của định lý lấy mẫu ). Vậy chúng ta có thể tách ra bằng cách dùng những mạch lọc tuyến tính. Một lọc LPF có tần số cắt fm sẽ hồi phục lại thành phần aos(t).</para>
+    <para id="id5398389">2. Ta nói đến cách thứ hai, vì nó đi vào các nguyên lý toán học của sự lấy mẫu.</para>
+    <para id="id5398397">Khai triển S(f) thành chuỗi F trong khoảng:</para>
+    <para id="id5398410">- fm &lt; f _&lt; fm</para>
+    <para id="id5398424">S(f) = <media id="id1172557728268" alt=""><image src="graphics6.wmf" mime-type="image/wmf" height="61" width="92"/></media> (6.2)</para>
+    <para id="id5398472">Trong đó: to = <media id="id1172561238249" alt=""><image src="graphics7.wmf" mime-type="image/wmf" height="47" width="26"/></media></para>
+    <para id="id5398515">Và Cn được cho bởi:</para>
+    <para id="id5398532">Cn = <media id="id6854441" alt=""><image src="graphics8.wmf" mime-type="image/wmf" height="53" width="168"/></media>(6.3)</para>
+    <para id="id5398583">Nhưng F -1 cho ta :</para>
+    <para id="id5398608">s(t) = <media id="id8547667" alt=""><image src="graphics9.wmf" mime-type="image/wmf" height="67" width="108"/></media> = <media id="id1172560930199" alt=""><image src="graphics10.wmf" mime-type="image/wmf" height="71" width="113"/></media> (6.4)</para>
+    <para id="id5398683">So sánh (6.3) và (6.4) ta thấy:</para>
+    <para id="id5398688">Cn = <media id="id1172556322605" alt=""><image src="graphics11.wmf" mime-type="image/wmf" height="53" width="199"/></media> (6.5)</para>
+    <para id="id5398744">Phương trình (6.5) cho thấy Cn sẽ được xác định một khi s(t) được biết tại điểm t =<figure id="id5398759"><media id="id1172557930976" alt=""><image src="graphics12.wmf" mime-type="image/wmf" height="47" width="35"/></media></figure>. Một khi Cn được biết thì S(f) được biết. Và một khi S(f) đã biết thì s(t) cũng sẽ được biết. Như vậy, ta đã chứng minh được định lý lấy mẫu.</para>
+    <para id="id5398796">Ta có thể giải để tìm s(t). Thay Cn vào phương trình (6.2):</para>
+    <para id="id5398808">S(f) = <figure id="id5398813"><media id="id2614510" alt=""><image src="graphics13.wmf" mime-type="image/wmf" height="47" width="36"/></media></figure><figure id="id5398837"><media id="id5680358" alt=""><image src="graphics14.wmf" mime-type="image/wmf" height="61" width="143"/></media></figure> (6.6)</para>
+    <para id="id5398864">F - 1  s(t) = <figure id="id5398885"><media id="id1172555267835" alt=""><image src="graphics15.wmf" mime-type="image/wmf" height="71" width="278"/></media></figure></para>
+    <para id="id5398910">= <media id="id6401665" alt=""><image src="graphics16.wmf" mime-type="image/wmf" height="61" width="232"/></media>(6.7)</para>
+    <para id="id5398953">Ta có thể dùng (6.7) để tìm trị giá của s(t) tại bất kỳ thời điểm nào bằng cách biết những trị mẫu hoá của s(t).</para>
+    <section id="id-843568894214">
+      <title>ERROR TRONG SỰ LẤY MẪU.</title>
+      <para id="id5398970">Định lý lấy mẫu chỉ rằng s(t) có thể được hồi phục hoàn toàn từ những trị mẫu của nó. Ta định nghĩa error như là sự sai biệt giữa hàm thời gian được hồi phục và hàm gốc. Trong thực tế, error là hậu quả từ 3 nguồn chính:</para>
+      <section id="id-195579443528">
+        <title>Lấy mẫu với tần số không đủ cao:</title>
+        <para id="id5398988">Ví dụ: Một hàm sin tần số 3 Hz như hình 4. Giả sử ta lấy mẫu hình sin này với nhịp 4 mẫu/sec. Định lý lấy mẫu cho biết, tần số lấy mẫu nhỏ nhất để có thể hồi phục tín hiệu </para>
+        <figure id="id5399003">
+          <media id="id8233058" alt=""><image src="graphics17.png" mime-type="image/png" height="130" width="279"/></media>
+        </figure>
+        <para id="id5399031">Hình 6.4: Error do lấy mẫu chậm </para>
+        <para id="id5399044">tlà 6 mẫu/sec. Vậy 4 mẫu/sec thì không đủ nhanh. Nên những mẫu này sẽ tạo nên một hàm sin 1Hz (đường chấm chấm ). Tín hiệu 3 Hz đã tự hoá thành tín hiệu 1 Hz (Hình 6.4).</para>
+        <para id="id5399079">Bây giờ ta xem một tín hiệu được lấy mẫu bằng một chuỗi xung lực lý tưởng ( dùng nó như giới hạn lý thuyết của các xung hẹp ) tại tần số nhỏ hơn nhịp Nyquist.( Hình 6.5 )</para>
+        <para id="id5399091"><figure id="id5399102"><media id="id1935770" alt=""><image src=".png" mime-type="image/png" height="231" width="540"/></media></figure>(t) Hình 6.5: Lấy mẫu xung lực với tần số nhỏ hơn nhịp Nyquist</para>
+        <para id="id5399169">Nếu ta định nghĩa error như sau: </para>
+        <para id="id6391308">e(t) <figure id="id6391312"><media id="id1172556502396" alt=""><image src="graphics18.png" mime-type="image/png" height="18" width="12"/></media></figure> so (t) - s(t)</para>
+        <para id="id6391342">Biến đổi F:</para>
+        <para id="id6391357">E(f) = So (f) - S(f) </para>
+        <para id="id6391367"> = S(f - fS) + S( f + fS ) ; f &lt; fm.</para>
+        <para id="id6391413">Nhớ rằng nếu s(f) bị giới hạn ở những tần số dưới fS/2, biến đổi F của error sẽ là zero.</para>
+      </section>
+      <section id="id-874078983127">
+        <title>Lấy mẫu trong một khoảng thời gian có giới hạn:</title>
+        <para id="id6391442">Định lý lấy mẫu cần thiết phải lấy mẫu tại mọi t trong một khoảng vô hạn, và mỗi mẫu được dùng để tạo lại trị giá của hàm gốc tại bất kỳ thời điểm nào. Trong một hệ thống thực tế, tín hiệu được quan sát trong một thời gian có giới hạn. </para>
+      </section>
+      <section id="id-784848454261">
+        <title>Trong các hệ thông tin digital:</title>
+        <para id="id6391466">Ta chỉ gửi đi những trị giá rời rạc. Do đó sinh ra Round-Off Error.</para>
+      </section>
+    </section>
+    <section id="id-228888896623">
+      <title>BIẾN ĐIỆU XUNG:</title>
+      <para id="id6391483">Định lý lấy mẫu gợi ra một kỹ thuật để đổi một tín hiệu Analog s(t) thành một tín hiệu rời rạc. Ta chỉ cần lấy mẫu tín hiệu liên tục tại những thời điểm rời rạc, thí dụ một danh sách các số được lấy mẫu s(0), s(T), s(2T)... Trong đó T&lt; <figure id="id6391498"><media id="id1172565590860" alt=""><image src="graphics19.wmf" mime-type="image/wmf" height="47" width="35"/></media></figure>.</para>
+      <para id="id6391523">Để truyền tín hiệu rời rạc mẫu hoá đó, danh sách các số sẽ được đọc trên một telephone hoặc được viết trên một mãnh giấy để gởi FAX.</para>
+      <para id="id6391530">Một phương pháp rất hấp dẫn cho viễn thông là biến điệu vài thông số của một sóng mang tùy vào danh sách các số. Tín hiệu được biến điệu sau đó được truyền trên dây hoặc trong không khí ( nếu băng tần nó chiếm cho phép ).</para>
+      <para id="id6391544">Vì thông tin có dạng rời rạc, nên chỉ cần dùng tín hiệu mang sóng rời rạc (thay vì dùng sóng sin liên tục như 2 chương trước).</para>
+      <para id="id6391554">Ta chọn một chuỗi xung tuần hoàn làm sóng mang. Các thông số có thể làm thay đổi là biên độ, bề rộng và vị trí của mỗi xung. Sự làm thay đổi một trong ba thông số ấy sẽ đưa đến 3 kiểu biến điệu:</para>
+      <para id="id6391566">- PAM ( Pulse Amlitude Modulation: Biến điệu biên độ xung ).</para>
+      <para id="id6391573">- PWM ( Pube Width Mod: Biến điệu độ rộng xung ).</para>
+      <para id="id6391579">- PPM ( Pulse Position Mod: Biến điệu vị trí xung ).</para>
+    </section>
+    <section id="id-29235791155">
+      <title>BIẾN ĐIỆU BIÊN ĐỘ XUNG: PAM.</title>
+      <para id="id6391595">- Hình 6.7 : Vẽ một sóng mang sC(t) một tín hiệu chứa tin s(t) và tín hiệu PAM sm(t). Ở đó ta thấy chỉ có biên độ của xung sóng mang bị thay đổi, còn dạng xung vẫn giữ không đổi.</para>
+      <para id="id6391617">Nhớ là sm(t) không phải là tích của s(t) với sC(t).</para>
+      <para id="id6391634">Ta gọi sm(t) trong trường hợp này là PAM đỉnh phẳng ( flat top PAM ) hoặc PAM lấy mẫu tức thời ( Instantanous Sampling PAM ) </para>
+      <figure id="id6391655">
+        <media id="id7582381" alt=""><image src="../../media/graphics20-0027.png" mime-type="image/png" height="399" width="558"/></media>
+      </figure>
+      <para id="id6391679">Hình 6.7: PAM đỉnh phẳng </para>
+      <para id="id6391684">- Nếu lấy tích của sC(t) và s(t), ta có kết quả là sóng PAM vẽ như hình 6.8. Ở đó, chiều cao các xung không phải là hằng mà thay đổi theo đường cong của s(t). Trường hợp này, ta gọi là PAM lấy mẫu tự nhiên ( Natural Sampling ).</para>
+      <figure id="id6391706">
+        <media id="id1172556823482" alt=""><image src="../../media/graphics21-e3b4.png" mime-type="image/png" height="185" width="481"/></media>
+      </figure>
+      <para id="id6391730">Hình 6.8: PAM lấy mẫu tự nhiên</para>
+      <list id="id6391736" list-type="bulleted">
+        <item>Bây giờ ta lấy biến đổi F của PAM để xác định kênh sóng cần thiết. Trước hết là xem trường hợp của PAM lấy mẫu tự nhiên. Dựa vào định lý lấy mẫu. Khai triển sC(t) thành chuỗi F. Rồi nhân với s(t). Kết quả thu được là 1 tổng gồm nhiều sóng AM với các tần số sóng mang là tần số căn bản và các hoạ tần sC(t) . Xem hình 6.9.</item>
+      </list>
+      <figure id="id6391786">
+        <media id="id8350015" alt=""><image src="graphics22.png" mime-type="image/png" height="149" width="346"/></media>
+      </figure>
+      <para id="id6391810">Hình 6.9: Biến đổi F của PAM lấy mẫu tự nhiên</para>
+      <list id="id6391821" list-type="bulleted">
+        <item>Biến đổi F của PAM đỉnh phẳng thì khó tính hơn. Để đơn giản ta xem hệ thống vẽ ở hình 6.10 Lấy mẫu s (t) bằng một chuỗi xung lực lý tưởng. Rồi định dạng mỗi xung lực thành dạng xung như ý muốn, trong trường hợp này là một xung vuông đỉnh phẳng.</item>
+      </list>
+      <figure id="id6391849">
+        <media id="id7012807" alt=""><image src="../../media/graphics23-abcf.png" mime-type="image/png" height="317" width="647"/></media>
+      </figure>
+      <para id="id6391873">Hình 6.10: Mạch tạo ra sóng biến điệu</para>
+      <para id="id6391879">Biến đổi F của tín hiệu đã lấy mẫu ở ngõ vô của lọc được tìm từ định lý lấy mẫu. Chuỗi F của chuỗi xung lực có những trị Cn bằng nhau với mọi n. Biến đổi F của sóng được lấy mẫu xung lực vẽ ở hình 6.11</para>
+      <figure id="id6391925">
+        <media id="id1172555690362" alt=""><image src="../../media/graphics24-f08f.png" mime-type="image/png" height="224" width="648"/></media>
+      </figure>
+      <para id="id6391949">Hình 6.11: Biến đổi F của sóng được lấy mẫu xung lực.</para>
+      <para id="id6391967">Biến đổi F của output của mạch lọc là tích của biến đổi trên đây với hàm chuyển của mạch lọc. Hàm chuyển này được vẽ ở hình 6.12.</para>
+      <para id="id6391982">Cuối cùng biến đổi của output vẽ ở hình 6.13. Nhớ rằng phần tần số thấp của nó không phải là một phiên bản bị méo của S(f).</para>
+      <figure id="id6391995">
+        <media id="id7237658" alt=""><image src="../../media/graphics25.png" mime-type="image/png" height="388" width="481"/></media>
+      </figure>
+      <para id="id6392019">Hình 6.12: Hàm chuyễn của mạch lọc</para>
+      <figure id="id6392028">
+        <media id="id8651687" alt=""><image src="../../media/graphics26.png" mime-type="image/png" height="208" width="647"/></media>
+      </figure>
+      <para id="id6392052">Hình 6.13: Biến đổi F của PAM đỉnh phẳng</para>
+      <para id="id6392069">Thí dụ 1: Một tín hiệu chứa tin có dạng: s(t) = <figure id="id6392080"><media id="id1172555618196" alt=""><image src="graphics27.wmf" mime-type="image/wmf" height="43" width="44"/></media></figure></para>
+      <para id="id6392104">sc(t)1T2TtĐược truyền bằng cách dùng PAM. Sóng mang là chuỗi xung tam giác tuần hoàn như hình 6.14. Tìm biến đổi F của sóng biến điệu. </para>
+      <para id="id6363166">Hình 14: Sóng mang.</para>
+      <para id="id6363171">Giải: </para>
+      <para id="id6363176">Ta xem hình 6.10. Output của mạch lấy mẫu bằng xung lực lý tưởng có biến đổi F. </para>
+      <para id="id6363189">S  (f ) = <figure id="id6363203"><media id="id1172558731733" alt=""><image src="graphics28.wmf" mime-type="image/wmf" height="61" width="117"/></media></figure></para>
+      <para id="id6363226">Trong đó S(f) là biến đổi F của <figure id="id6363238"><media id="id2557562" alt=""><image src="graphics29.wmf" mime-type="image/wmf" height="43" width="44"/></media></figure>. Biến đổi này là một xung như hình vẽ. </para>
+      <figure id="id6363267">
+        <media id="id6930762" alt=""><image src="graphics30.png" mime-type="image/png" height="93" width="91"/></media>
+      </figure>
+      <para id="id6363291">Mạch lọc phải thay đổi mỗi xung lực thành một xung tam giác. Đáp ứng xung lực của chúng là một xung tam giác mà biến đổi của nó là:</para>
+      <para id="id6363301">H(f ) = <media id="id2924750" alt=""><image src="graphics31.wmf" mime-type="image/wmf" height="50" width="81"/></media></para>
+      <para id="id6363340">Cuối cùng, biến đổi F của sóng PAM được cho bởi tích của S(f).H(f) như hình vẽ 6.15. <media id="id4114807" alt=""><image src="graphics32.png" mime-type="image/png" height="376" width="647"/></media></para>
+      <para id="id6363386">Hình 6.15: Biến đổi F của ví dụ 1.</para>
+      <para id="id6363403">Sự quan sát tổng quát có ý nghĩa về PAM là sóng PAM chiếm tất cả những tần số từ zero đến vô hạn. Như vậy, nó bị xem là không thể truyền có hiệu quả trong không khí cũng như Multiplexing.</para>
+      <para id="id6363426">Vì phần có ý nghĩa nhất của biến đổi F của sóng PAM nằm xung quanh tần số zero, ta thường dùng AM hoặc FM để gửi sóng PAM. Đó là, ta xem sóng PAM như là tín hiệu chứa tin và nó biến điệu một sóng mang hình sin. Nhưng tại sao ta phải thực hiện một biến điệu kép, mà không truyền tín hiệu gốc bằng AM hoặc FM ? Hãy nhớ là tín hiệu gốc không có dạng Analog liên tục mà là tín hiệu rời rạc.</para>
+      <para id="id6363458">Sau khi biến điệu AM hoặc FM với sóng PAM, khổ băng trở nên rất rộng. Vì lý do này biến điệu xung được kết hợp với AM hoặc FM thường không được truyền theo cùng cách thức như tín hiệu biến điệu khác. Nó thường truyền trên cáp đồng trục, vốn có khả năng truyền một khoảng rộng của tần số. Đôi khi nó cũng được truyền qua không khí tại tần số microwave. Tần số này đủ cao để khổ băng rộng không bị xem như là sự quá công suất ( over powering ) đối với sóng mang.</para>
+      <para id="id6363473">Vì Multiplexing tần số không được, nó chỉ truyền một tín hiệu tại một thời điểm. Tuy nhiên, ta sẽ thấy một dạng khác của Multiplexing thích hợp với tín hiệu biến điệu xung.</para>
+      <section id="id-595704896838">
+        <title>Khối biến điệu.</title>
+        <list id="id6363503" list-type="bulleted">
+          <item>Những mạch cổng đã dùng để biến điệu AM đều có thể dùng để biến điệu PAM lấy mẫu tự nhiên. Chỉ cần loại bỏ lọc dãy thông từ khối biến điệu ( Hình 6.16.a). Hình 6.16b chỉ khối biến điệu dùng cầu diode.</item>
+        </list>
+        <figure id="id6363524">
+          <media id="id1172556585344" alt=""><image src="../../media/graphics33-18f0.png" mime-type="image/png" height="269" width="452"/></media>
+        </figure>
+        <para id="id6363548">Hình 6.16: Khối biến điệu cho PAM</para>
+        <list id="id6363553" list-type="bulleted">
+          <item>Khối biến điệu cho PAM phẳng đỉnh thì đơn giản hơn cho PAM lấy mẫu tự nhiên. Ta chỉ cần dùng một mạch lấy mẫu và giữ ( Sample and Hold ). Mạch này được lý tưởng hoá như hình 6.17.</item>
+        </list>
+        <figure id="id6363578">
+          <media id="id7485341" alt=""><image src="graphics34.png" mime-type="image/png" height="105" width="248"/></media>
+        </figure>
+        <para id="id6363602">Hình 6.17: Mạch lấy mẫu và giữ.</para>
+        <list id="id6363608" list-type="bulleted">
+          <item>S1 đóng tuần hoàn tại những thời điểm lấy mẫu. Tụ C nạp điện đến trị mẫu mỗi khi s1 đóng và rồi S1 ngắt. Vì tụ không có đường xã điện, nên sẽ giữ trị giá mẫu và tạo nên đường phẳng của đỉnh sóng PAM. Khi S2 đóng, tụ sẽ xã đến zero. Ta tính trước tụ và mạch điện tử sao cho thời gian nạp thật nhanh và ta cũng chọn mạch có tổng trở ra thật nhỏ để thời hằng xã ngắn.</item>
+        </list>
+      </section>
+      <section id="id-7926290925">
+        <title>Khối hoàn điệu.</title>
+        <list id="id6363663" list-type="bulleted">
+          <item>Sự hoàn điệu PAM lấy mẫu tự nhiên dựa trực tiếp vào định lý lấy mẫu. Sự hồi phục tín hiệu Analog gốc từ phiên bản mẫu hoá của nó cần một LPF.</item>
+          <item>Sự hoàn điệu PAM đỉnh phẳng cần thêm một số việc. Ta sẽ dùng mạch S/H để phục hồi một dạng sóng hình bậc thang xấp xỉ với dạng sóng tín hiệu gốc. Đặt thời gian giữ bằng chu kỳ lấy mẫu. Kết quả vẽ ở hình 6.18. Hàm bậc thang có thể được lọc bởi một LPF để dạng sóng được trơn phẳng, gần giống với dạng sóng gốc.</item>
+        </list>
+        <figure id="id6363706">
+          <media id="id1172560799402" alt=""><image src="../../media/graphics35.png" mime-type="image/png" height="407" width="470"/></media>
+        </figure>
+        <para id="id6363730">Hình 6.18: Hoàn điệu dùng mạch S/H</para>
+        <para id="id6363736">- Biến đổi F của sóng PAM đỉnh phẳng như hình 6.11. Ta có được bằng cách nhân biến đổi F của tín hiệu mẫu hoá cho H(f) ( hàm chuyển của mạch lọc ) để đổi xung lực mẫu hoá thành xung mẫu hoá. Phần băng gốc ( base band ) của biến đổi F có dạng S(f)H(f). Vậy s(t) có thể được hồi phục từ sm(t) bằng cách dùng một mạch lọc LPF mà hàm chuyển của nó thì vẽ ở hình 6.19. Mạch lọc với hàm chuyển 1/H(f) được xem như là một mạch cân bằng vì nó triệt những hiệu quả của sự tạo dạng xung.</para>
+        <figure id="id6363786">
+          <media id="id1172559001830" alt=""><image src="../../media/graphics36-47ff.png" mime-type="image/png" height="145" width="209"/></media>
+        </figure>
+        <para id="id6363810">Hình 6.19: Hàm chuyển của hoàn điệu PAM</para>
+        <para id="id6363816">Tách sóng kiểu lấy mẫu và giữ cần một thông tin về thời gian để đồng bộ với đài phát. Đó là, máy thu phải lấy mẫu sóng nhận được tại những thời điểm lấy mẫu lúc đầu.</para>
+        <para id="id6363828">Thông tin về thời gian có thể lấy sóng thu được. Hoặc nó cũng có thể được gửi theo (Analog) dưới dạng những xung đánh dấu ( Marker Pulse ).</para>
+        <list id="id6363838" list-type="bulleted">
+          <item>Nếu sóng thu được có thời gian tăng, các bờ tăng có thể được dò bằng một mạch vi phân. Xung rộng kết quả có thể được dùng để thực hiện thời điểm lấy mẫu.</item>
+          <item>Ngược lại, xung đánh dấu tuần hoàn có thể được chen vào tín hiệu truyền. Các xung đánh dấu có biên độ lớn hơn xung tín hiệu, nên chúng có thể được nhận dạng dễ dàng tại máy thu.</item>
+        </list>
+      </section>
+    </section>
+    <section id="id-0206927013183">
+      <title>MULTIPLEXING PHÂN THỜI GIAN - TDM (Time - Division Multiplexing).</title>
+      <para id="id6363880">Ta đã nhiều lần nhấn mạnh rằng các tín hiệu có thể tách biệt nhau nếu chúng không phủ nhau về thời gian hoặc về tần số. Vì khổ băng của sóng biến điệu xung thì cực rộng, nên sự tách tần số thường không khả thi. May mắn, sóng biến điệu xung được đặc trưng bởi phần sóng xung quanh zero của trục thời gian ( tín hiệu băng gốc base band ). Vì vậy, có thể tách tín hiệu về mặt thời gian. TDM là tiến trình cộng các tín hiệu sao cho chúng không phủ nhau về thời gian.</para>
+      <section id="id-378048940924">
+        <title>Multiplexing những kênh có nhịp lấy mẫu giống nhau:</title>
+        <para id="id6363904">Trước hết, ta nói về TDM cho các tín hiệu có nhịp lấy mẫu giống nhau. Sau đó ta đưa vào những kỹ thuật để Multiplex các tín hiệu có nhịp lấy mẫu khác nhau. Kỹ thuật này bao gồm bộ siêu giao hoán ( supercommutation ) và bộ Multiplexer có Memory.</para>
+        <para id="id6363918">TDM các tín hiệu có nhịp lấy mẫu giống nhau có thể xem như những xung xen kẽ. Hình 6.20 chỉ TDM 2 tín hiệu.</para>
+        <figure id="id6363930">
+          <media id="id1172557905237" alt=""><image src="../../media/graphics37-3074.png" mime-type="image/png" height="165" width="567"/></media>
+        </figure>
+        <para id="id6363954">Hình 6.20: Multiplex có 2 kênh</para>
+        <para id="id6363959">Nhớ là SW thay đổi vị trí trong khoảng thời gian không lâu hơn một chu kỳ lấy mẫu. Đó là, hai xung được gửi trong mỗi chu kỳ lấy mẫu, vậy nhịp xung trên mỗi kênh thì gấp đôi nhịp lấy mẫu.</para>
+        <para id="id6363977">Giả sử ta tăng lên 10 kênh. SW trở thành một bộ giao hoán như hình 6.21.SW phải xoay giáp vòng đủ nhanh sao cho nó trở lại kênh 1 trong thời gian lấy mẫu lần 2. SW của máy thu phải xoay đồng bộ với SW đài phát. Nếu ta biết chính xác tin gì được gửi đi trên một của các kênh, ta sẽ có thể nhận dạng được mẫu của nó tại máy thu. Một phương pháp chung để tạo sự đồng bộ là hy sinh một kênh và gửi tín hiệu đồng bộ vào đó. Ta sẽ thấy điều đó trong vài hệ thống truyền Digital.</para>
+        <figure id="id6364005">
+          <media id="id3743304" alt=""><image src="../../media/graphics38-4517.png" mime-type="image/png" height="277" width="643"/></media>
+        </figure>
+        <para id="id6364029">Hình 6.21: Multiplexing10 kênh.</para>
+        <para id="id6364034">Điều duy nhất làm giới hạn vận tốc quay của SW ( và do đó giới hạn số kênh có thể Multiplex ) là tỷ số của độ rộng mỗi xung với khoảng cách giữa các mẫu gần nhau của một kênh. Vậy cần thiết kế mỗi xung hẹp hơn và khổ băng của tín hiệu rộng hơn.</para>
+      </section>
+      <section id="id-0188293585161">
+        <title>Multiplexing những kênh có nhịp lấy mẫu khác nhau:</title>
+        <para id="id6364059">Có 2 cách để Multiplex những tín hiệu có nhịp lấy mẫu khác nhau: Multiplex không đồng bộ và Multiplex siêu giao hoán.</para>
+        <para id="id6364068">a - Dùng một buffer để giữ những trị mẫu và rồi đưa chúng ra theo một nhịp độ cố định. Phương cách này cũng có hiệu quả nếu nhịp lấy mẫu có những thay đổi. Điều quan trọng để thiết kế một hệ thống như vậy là buffer phải luôn luôn có các mẫu để gửi khi kênh có yêu cầu. Điều này cần đến việc đưa vào các mẫu nhồi ( stuffing samples ) nếu buffer bị trống. Ngược lại, buffer phải đủ lớn sao cho nó không bị ngập tràn ( overflow ).</para>
+        <para id="id6364083">Phương pháp buffer cũng được dùng nếu các nguồn tin khác nhau được truyền không đồng bộ. Sự định cỡ cho bufffer cần đến sự phân giải xác suất, do đó đưa đến các bộ Multiplexer thống kê Stat.Mux ( Statistical Multiplexer ).</para>
+        <para id="id6364096">b - Kỹ thuật tổng quát thứ nhì là dùng siêu giao hoán. Tất cả nhịp lấy mẫu được nhân với nhịp cơ bản. Điều này sẽ gặp khi cần lấy mẫu những kênh với nhịp cao hơn, lúc dùng không có Multiplexing. Giả sử, nếu ta có hai kênh với nhịp lấy mẫu cần là 8 và 15,5 kHz, khi Multiplex chúng ta có thể chọn 16 kHz để lấy mẫu nhanh hơn.</para>
+        <para id="id6364119">Nguyên lý của siêu hoán thì đơn giản. Ta hãy xem thí dụ ở hình 6.22, vẽ một bánh xe giao hoán ( Commutator Wheel ) 32 khe và 2 bánh xe giao hoán phụ. Giả sử ta muốn Multiplex 44 kênh sau:</para>
+        <para id="id6364130">1 Kênh lấy mẫu tại 80 KHz</para>
+        <para id="id6364136">1 Kênh lấy mẫu tại 40 KHz</para>
+        <para id="id6364141">18 Kênh lấy mẫu tại 10 KHz</para>
+        <para id="id6364146">8 Kênh lấy mẫu tại 1250 Hz</para>
+        <para id="id6364153">16 Kênh lấy mẫu tại 625 Hz</para>
+        <para id="id6364158">Nhớ là tất cả nhịp lấy mẫu là bội số của 625 Hz. Ta chọn để đặt nhịp căn bản của bánh xe giao hoán ở 10.000 vòng /sec. Vậy mỗi kênh ( của 18 kênh lấy mẫu tại 10 kHz ) đem về một khe của bánh xe - Kênh lấy mẫu 40 kHz cần 4 khe cách đều nhau trên bánh xe; vậy nó được lấy mẫu 4 lần trong mỗi vòng quay ( 0,1 ms ) của bánh xe - Tương tự kênh lấy mẫu 80 kHz cần 8 khe cách đều nhau trên bánh xe.</para>
+        <para id="id6364183">Đối với những kênh có nhịp lấy mẫu nhỏ hơn 10 kHz, ta chỉ cần lấy mẫu chúng tại những vòng quay được chọn lựa của bánh xe. Thí dụ, 1 kênh 1250 Hz cần được lấy mẫu một lần khi bánh xe quay 8 vòng. Trong khi đó, kênh 625 Hz lấy mẫu 1 lần/mỗi 16 vòng quay của bánh xe. Ta thực hiện việc ấy bằng cách dùng hai bánh xe giao hoán phụ. Tám kênh 1250 Hz được giao hoán nhau nhờ một bánh xe 8 khe, với nhịp 1250 vòng/sec. Cứ mỗi 0,1 ms, một trong các kênh được nối vào một khe của bánh xe chính. Tương tự, 16 kênh 625 Hz được giao hoán nhờ bánh xe 16 khe , quay 625 vòng/sec.</para>
+        <figure id="id6364217">
+          <media id="id3576173" alt=""><image src="../../media/graphics39.png" mime-type="image/png" height="427" width="647"/></media>
+        </figure>
+        <para id="id6364240">Hình 6.22: Siêu giao hoán</para>
+      </section>
+    </section>
+    <section id="id-757295494777">
+      <title>BIẾN ĐIỆU ĐỘ RỘNG XUNG PWM: (Pluse Width Modulation).</title>
+      <para id="id6364257">Như trường hợp của PAM, ta lại bắt đầu với một sóng mang là một chuỗi xung tuần hoàn. Hình 6.23, chỉ một sóng mang chưa biến điệu, một tín hiệu chứa tin s(t) và sóng biến điệu PWM. Độ rộng của mỗi xung biến điệu thay đổi tuỳ theo trị mẫu tức thời của s(t). Trị mẫu lớn hơn sẽ làm độ rộng xung biến điệu rộng hơn. Vì độ rộng xung thay đổi, nên năng lượng của sóng cũng thay đổi. Vậy khi biên độ tín hiệu tăng, công suất truyền cũng tăng.</para>
+      <figure id="id6364274">
+        <media id="id1978744" alt=""><image src="../../media/graphics40-38dc.png" mime-type="image/png" height="427" width="550"/></media>
+      </figure>
+      <para id="id6364298">Hình 6.23: Biến điệu PWM</para>
+      <para id="id6364303">Cũng như trong trường hợp FM, PWM là một phép biến điệu phi tuyến. Xem một thí dụ đơn giản để minh chứng điều đó. Giả sử tín hiệu chứa tin là một hằng, s(t) = 1. Sóng PWM sẽ gần những xung có độ rộng bằng nhau, vì mỗi trị mẫu thì bằng với mỗi trị mẫu khác. Bây giờ nếu ta truyền s(t) = 2 theo PWM, thì ta lại có một chuỗi xung có độ rộng bằng nhau, nhưng độ rộng của chúng lớn hơn khi truyền s(t) = 1. Nguyên lý tuyến tính sẽ cho kết quả là độ rộng xung của trường hợp sau gấp đôi trường hợp trước. Nhưng ở đây không phải như vậy, như hình 6.24.</para>
+      <figure id="id6364335">
+        <media id="id2169575" alt=""><image src="../../media/graphics41-fb9c.png" mime-type="image/png" height="188" width="644"/></media>
+      </figure>
+      <para id="id6364359">Hình 6.24: PWM là phép biến điệu phi tuyến.</para>
+      <para id="id6364365">Nếu ta giả sử tín hiệu s(t) biến đổi chậm ( lấy mẫu với nhịp nhanh hơn so với nhịp Nyquist ) thì các xung lân cận sẽ có độ rộng hầu như bằng nhau. Với giả thiết này, có thể phân giải xấp xĩ cho sóng biến điệu, theo chuỗi Fourier. Mỗi số hạng của chuỗi là một sóng FM, thay vì là một sóng sin thuần tuý.</para>
+      <para id="id6364386">Ta sẽ trình bày một dạng của khối biến điệu và một dạng của khối hoàn điệu cho PWM. Trong cả hai, ta đều dùng sóng răng cưa để chuyển đổi giữa thời gian và biên độ. Điều này tương tự như cách thức cho FM, ở đó ta thấy rằng cách dễ nhất để biến điệu một tín hiệu là trước tiên đổi nó thành AM. Tín hiệu răng cưa được dùng vẽ ở hình 6.25.</para>
+      <figure id="id6364403">
+        <media id="id3649674" alt=""><image src="../../media/graphics42-be10.png" mime-type="image/png" height="130" width="308"/></media>
+      </figure>
+      <para id="id6364427">Hình 6.25</para>
+      <para id="id6364432">Cách xử lý được diễn tả ở hình 6.26. </para>
+      <para id="id6364438">Hình 6.26a chỉ khối biến điệu và hình 6.26b, chỉ những dạng sóng tiêu biểu.</para>
+      <figure id="id6364448">
+        <media id="id1172556796765" alt=""><image src="../../media/graphics43-ec03.png" mime-type="image/png" height="770" width="643"/></media>
+      </figure>
+      <para id="id6364472">Hình 6.26: Khối biến điệu PWM.</para>
+      <para id="id6364478">Trước tiên tín hiệu s(t) được lấy mẫu và giữ để có s1(t).</para>
+      <para id="id6364490">Tín hiệu răng cưa bị dời xuống 1 đơn vị tạo nên s2(t). Tổng của s1(t) và s2(t) tạo nên s3(t) và vào mạch so sánh. Những khoảng thời gian mà s3(t) dương là những khoảng mà ở đó độ rộng tỷ lệ với trị giá mẫu gốc. Output của mạch so sánh là 1 khi s3(t) dương và là 0 khi s3(t) âm. Kết quả là s4(t), là một sóng PWM. Độ rộng xung có thể được hiệu chỉnh bằng cách tăng giảm s(t). Trong hình vẽ, ta giả sử rằng bình thường s(t) nằm giữa 0 và 1. </para>
+      <para id="id6364569">Sự hoàn điệu được thực hiện bằng cách tích phân sóng PWM trong mỗi khoảng thời gian. Vì chiều cao của xung thì không đổi, tích phân tỷ lệ với độ rộng xung. Nếu output của tích phân được lấy mẫu và giữ tại trị giá cuối của nó, kết quả sẽ là một sóng PAM. </para>
+    </section>
+    <section id="id-254112791657">
+      <title>BIẾN ĐIỆU VỊ TRÍ XUNG -PPM (Pulse Position Modulation).</title>
+      <para id="id6399165">PPM có lợi hơn PWM về mặt triệt nhiễu và cũng không có vần đề công suất thay đổi theo biên độ tín hiệu.</para>
+      <para id="id6399173">Một tín hiệu chứa tin s(t) và sóng PPM tương ứng vẽ ở hình 6.27.</para>
+      <figure id="id6399184">
+        <media id="id2396506" alt=""><image src="../../media/graphics44-3c80.png" mime-type="image/png" height="570" width="575"/></media>
+      </figure>
+      <para id="id6399208">Hình 6.27: PPM</para>
+      <para id="id6399212">Ta thấy nếu trị giá mẫu lớn hơn sẽ có xung tương ứng dời xa hơn (so với vị trí không biến điệu của nó).</para>
+      <para id="id6399221">* Một sóng PPM có thể được suy từ một sóng PWM. Sự liên hệ giữa chúng là, trong khi vị trí của xung thay đổi trong PPM thì sườn khiển của xung thay đổi trong PWM. Giả sử ta dò mỗi sườn khiển của PWM, ( lấy đạo hàm và xem những xung âm ). Bây giờ nếu ta đặt một xung có độ rộng không đổi tại mỗi điểm này, kết quả là sóng PPM. Điều này được vẽ ở hình 6.28.</para>
+      <para id="id6399243">Rõ ràng, cả PWM và PPM đều rất phức tạp so với PAM. Chúng phức tạp hơn và còn có những tính chất khác. Trong các hệ TDM, ta phải bảo đảm rằng các xung mẫu lân cận không được phủ nhau. Nếu các xung dời tự do hoặc rộng hơn ( như trong PPM và PWM ), ta không thể chen vào một cách đơn giản các xung khác trong không gian mà tin chắc rằng không có sự tác động qua lại sẽ xãy ra. Khoảng cách đủ cần thiết phải được giữ để có thể truyền các trị mẫu lớn nhất. Điều này làm giảm số kênh khi Multiplex.</para>
+      <figure id="id6399272">
+        <media id="id1172557514512" alt=""><image src="../../media/graphics45-df24.png" mime-type="image/png" height="753" width="649"/></media>
+      </figure>
+      <para id="id6399296">Hình 6.28: Đổi PWM thành PPM</para>
+    </section>
+  </content>
+</document>
