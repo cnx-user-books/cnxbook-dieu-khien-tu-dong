@@ -1,3 +1,18 @@
-<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" type="Course">  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">  <md:content-id>col10865</md:content-id>  <md:title>Điều khiển tự động</md:title>      <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>  <md:language>vi</md:language>              <md:uuid>85f96826-31ff-497b-8941-9999e68b08cc</md:uuid>
-<md:slug>dieu-khien-tu-dong</md:slug>
-</metadata>  <col:content>          <col:module document="m30117"/>                            <col:module document="m29060"/>                            <col:module document="m30230"/>                            <col:module document="m29068"/>                            <col:module document="m30332"/>                    </col:content></col:collection>
+<?xml version="1.0"?>
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" type="Course" authors="ThS Ph&#x1EA1;m V&#x103;n T&#x1EA5;n">
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+    <md:content-id>col10865</md:content-id>
+    <md:title>&#x110;i&#x1EC1;u khi&#x1EC3;n t&#x1EF1; &#x111;&#x1ED9;ng</md:title>
+    <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+    <md:language>vi</md:language>
+    <md:uuid>85f96826-31ff-497b-8941-9999e68b08cc</md:uuid>
+    <md:slug>dieu-khien-tu-dong</md:slug>
+  </metadata>
+  <col:content>
+    <col:module document="m30117"/>
+    <col:module document="m29060"/>
+    <col:module document="m30230"/>
+    <col:module document="m29068"/>
+    <col:module document="m30332"/>
+  </col:content>
+</col:collection>
